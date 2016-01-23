@@ -45,17 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DarkACE\Scripts\Editor\ACEEditor.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Editor\AudioBezierHandleGUI.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Editor\AudioBezierPointGUI.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Editor\AudioEventsGUI.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Editor\AudioPointGUI.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Editor\AudioPosLine.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Editor\AudioPosTriggerGUI.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Editor\GUIDraggableObject.cs" />
      <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-     <None Include="Assets\DarkACE\README.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -112,8 +102,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{6CF2C175-F43B-219A-54A4-F717ECC4EF99}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{71CE57E9-B762-7922-E3E9-74EEB25D09DA}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>

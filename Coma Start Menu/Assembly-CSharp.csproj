@@ -46,25 +46,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BackButton.cs" />
-     <Compile Include="Assets\DarkACE\Examples\Scripts\CameraBackground.cs" />
-     <Compile Include="Assets\DarkACE\Examples\Scripts\CreateInstance.cs" />
-     <Compile Include="Assets\DarkACE\Examples\Scripts\CurveCamera.cs" />
-     <Compile Include="Assets\DarkACE\Examples\Scripts\CustomMethodExample.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\AudioBezierHandle.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\AudioBezierPoint.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\AudioBezierPointList.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\AudioEvents.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\AudioPoint.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\AudioPointValue.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\AudioPosTrigger.cs" />
-     <Compile Include="Assets\DarkACE\Scripts\Plugins\TestCurveBehaviour.cs" />
      <Compile Include="Assets\DeselectSelOLD.cs" />
      <Compile Include="Assets\ExitButton.cs" />
      <Compile Include="Assets\LinkedTitle.cs" />
      <Compile Include="Assets\TitleInput.cs" />
      <Compile Include="Assets\VolumeButton.cs" />
-     <None Include="Assets\DarkACE\README.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -77,10 +63,6 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{6CF2C175-F43B-219A-54A4-F717ECC4EF99}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
