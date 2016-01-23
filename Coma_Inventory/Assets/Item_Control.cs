@@ -82,7 +82,7 @@ public class Item_Control : MonoBehaviour
 			//mid:
 				//Index [0] is the top, Index [3] is the bottom
 			//anItem.transform.gameObject(x) is the text object
-			if (!open)
+			if (inventory_focus)
 			{
 				if (Input.GetKeyUp(KeyCode.UpArrow)){
 					if (iter > 4) {
@@ -104,11 +104,12 @@ public class Item_Control : MonoBehaviour
 			//Iter[4-7]
 			if (Input.GetKeyUp(KeyCode.Return))
 			{
-				open = true;
+				inventory_focus = false;
+				itemUse_focus = true;
 				item_opt = iter;
 				iter = 4;
 			}
-			if (open)
+			if (itemUse_focus)
 			{
 				//3 = use, 4 = examine, 5 = quit
 				inventory.transform.GetChild (use_opt).gameObject.SetActive (true);
@@ -180,7 +181,8 @@ public class Item_Control : MonoBehaviour
 					}
 				}
 				iter = 4; //set to position of objs
-				open = false;
+				inventory_focus = true;
+				itemUse_focus = false;
 				use_opt = 3;
 			}
 			//when inventory is closed:
