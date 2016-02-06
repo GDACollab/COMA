@@ -25,8 +25,8 @@ public class Item_Control : MonoBehaviour
 	bool exit;
 	bool inventory_focus;
 	bool itemUse_focus;
-	private int use_opt;
-	private int item_opt;
+	private int use_opt; //3 = use, 4 = examine, 5 = quit
+	private int item_opt; //item_opt determines which item the three options is being selected through [indices 4-7]
 	private int iter;
 
 	public List<Item> ItemList;
@@ -55,8 +55,10 @@ public class Item_Control : MonoBehaviour
 		I3 = GameObject.Find ("Item3");	
 */
 		inventory = GameObject.Find ("Inventory_BG");
-		for (iter = 0; iter < 12; iter++) {
-			if (iter < 6){
+		for (iter = 0; iter < 12; iter++) 
+		{
+			if (iter < 6)
+			{
 				anItem = inventory.transform.GetChild (iter).gameObject;
 				anItem.SetActive (false);
 			}
@@ -77,82 +79,124 @@ public class Item_Control : MonoBehaviour
 		{
 			inventory = this.transform.GetChild(0).gameObject;
 			anItem = inventory.transform.GetChild(6).gameObject;
+
 			//Initial:
 			//setup occurs under Input.GetKeyUp(KeyCode.I)
 			//mid:
 				//Index [0] is the top, Index [3] is the bottom
 			//anItem.transform.gameObject(x) is the text object
-			if (inventory_focus)
+			if (Input.GetKeyUp(KeyCode.UpArrow))
 			{
-				if (Input.GetKeyUp(KeyCode.UpArrow)){
-					if (iter > 4) {
+				if (inventory_focus)
+				{
+					if (iter > 4) 
+					{
 						//if (ItemList[iter-1].obtained)
 						anItem.transform.GetChild (iter).gameObject.SetActive (false); //deactivating current position;
 						anItem.transform.GetChild (iter-1).gameObject.SetActive (true); //activate position higher on list
 						iter--;
 					}
 				}
-				if (Input.GetKeyUp(KeyCode.DownArrow)){
-					if (iter < ItemList.Count+3) {
+				if (itemUse_focus) 
+				{
+					if (use_opt == 5) 
+					{
+						//if (ItemList[iter-1].obtained)
+						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
+						use_opt = 3;
+						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
+					}
+				}
+			}
+			if (Input.GetKeyUp(KeyCode.DownArrow)){
+				if (inventory_focus)
+				{
+					if (iter < ItemList.Count+3) 
+					{
 						//if (ItemList[iter+1].obtained)
 						anItem.transform.GetChild (iter).gameObject.SetActive (false); //deactivating current position;
 						anItem.transform.GetChild (iter+1).gameObject.SetActive (true); //activating position lower on list
 						iter++;
 					}
 				}
-			}
-			//Iter[4-7]
-			if (Input.GetKeyUp(KeyCode.Return))
-			{
-				inventory_focus = false;
-				itemUse_focus = true;
-				item_opt = iter;
-				iter = 4;
-			}
-			if (itemUse_focus)
-			{
-				//3 = use, 4 = examine, 5 = quit
-				inventory.transform.GetChild (use_opt).gameObject.SetActive (true);
-				if (Input.GetKeyUp(KeyCode.UpArrow)){
-					if (use_opt == 5) {
-						//if (ItemList[iter-1].obtained)
-						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
-						use_opt = 3;
-						anItem.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
-					}
-				}
-				if (Input.GetKeyUp(KeyCode.RightArrow)){
-					if (use_opt == 5 || use_opt == 3) {
-						//if (ItemList[iter-1].obtained)
-						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
-						use_opt = 4;
-						anItem.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
-					}
-				}
-				if (Input.GetKeyUp(KeyCode.LeftArrow)){
-						//if (ItemList[iter-1].obtained)
-						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
-					if (use_opt == 4) {
-						use_opt = 3;
-					} else if (use_opt == 3) {
-						use_opt = 4;
-					}
-					anItem.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
-				}
-				if (Input.GetKeyUp(KeyCode.DownArrow)){
-					if (use_opt == 3 || use_opt == 4) {
+				if (itemUse_focus)
+				{
+					if (use_opt == 3 || use_opt == 4) 
+					{
 						//if (ItemList[iter-1].obtained)
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
 						use_opt = 5;
-						anItem.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
+						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
 					}
 				}
 			}
-			//If item is clicked, turn on selected for clicked item and turn off for others (or use arrows)
-			//If USE or EXAMINE is clicked, check which item is selected if any change USE/EXAMINE sprite. THEN USE/EXAMINE the item
-			//If another item is clicked, revert USE and EXAMINE sprites back to normal
-			//Item have base descriptions separate from EXAMINE
+			if (Input.GetKeyUp(KeyCode.RightArrow)){
+				if (itemUse_focus)
+				{
+					if (use_opt == 5 || use_opt == 3) 
+					{
+						//if (ItemList[iter-1].obtained)
+						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
+						use_opt = 4;
+						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
+					}
+				}
+			}
+			if (Input.GetKeyUp(KeyCode.LeftArrow)){
+				if (itemUse_focus)
+				{
+					if (use_opt == 4) 
+					{
+						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
+						use_opt = 3;
+						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
+					}
+				}
+			}
+			if (Input.GetKeyUp(KeyCode.Return))
+			{
+				if (itemUse_focus) 
+				{
+					//PUT CODE HERE FOR USE, EXAMINE AND QUIT BASED ON THE ITEM BEING SELECTED (check item_opt 4-7 for items 0-3 respectively)
+					//Activate use, examine, or quit based on use_opt (3 = use, 4 = examine, 5 = quit)
+
+
+
+					if (use_opt == 3)
+					{
+						//bring up separate textbox asking if user would like to use item with yes/no options; control with arrow keys
+						//if yes, implements the 'use' function of item 
+						//if no, return to selecting use_opt (use/examine/quit)
+					}
+
+					if (use_opt == 4)
+					{
+						//display item description based on item_opt
+					}
+
+					if (use_opt == 5) 
+					{
+						//deactivate all 3 use/examine/quit options and return to iterating through item list
+						for (int i = 3; i < 6; i++)	inventory.transform.GetChild (i).gameObject.SetActive (false);
+						itemUse_focus = false;
+						inventory_focus = true;
+						//deactivate any item description texts that are active
+					}
+				} else if (inventory_focus) {
+					inventory_focus = false;
+					itemUse_focus = true;
+					item_opt = iter;
+					inventory.transform.GetChild (use_opt).gameObject.SetActive (true);
+				}
+			}
 		}
+			
+			
+			//If item is selected, turn on selected for clicked item and turn off for others (or use arrows)
+			//If USE or EXAMINE is selected, check which item is selected if any change USE/EXAMINE sprite. THEN USE/EXAMINE the item
+			//If another item is selected, revert USE and EXAMINE sprites back to normal
+			//Item have base descriptions separate from EXAMINE
+
 		//This happens only when 'I' is pressed:
 		if (Input.GetKeyUp (KeyCode.I)) 
 		{
