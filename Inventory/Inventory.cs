@@ -157,18 +157,24 @@ public class Inventory : MonoBehaviour
 public abstract class Item : System.IComparable<Item>
 {
   public string name;
+  public string description;
   public string examineText;
   public int quantity;
+  public bool obtained;
+  public bool selected;
   
   /**
    * Creates a new item with the given name, examination flavor text, and
    * quantity. The flavor text is optional, but highly recommended.
    */
-  public Item(string name, string examineText = "An item.", int quantity = 1)
+  public Item(string name, string description, string examineText = "An item.", int quantity = 1)
   {
     this.name = name;
+    this.description = description;
     this.examineText = examineText;
     this.quantity = quantity;
+    this.obtained = false;
+    this.selected = false;
   }
   
   /**
@@ -244,8 +250,9 @@ public class HealingItem : Item
    * quantity, and healing magnitude. The flavor text is optional, but highly
    * recommended.
    */
-  public HealingItem(string name, int healingAmt, string examineText = "A healing item.", int quantity = 1)
-    : base(name, examineText, quantity)
+  public HealingItem(string name, string description, string examineText = "A healing item.",
+    int healingAmt, int quantity = 1)
+    : base(name, description, examineText, quantity)
   {
     this.healingAmt = healingAmt;
   }
@@ -268,8 +275,9 @@ public class QuestItem : Item
    * Creates a new quest item with the given name, examination flavor text, and
    * quantity. The flavor text is optional, but highly recommended.
    */
-  public QuestItem(string name, string examineText = "A quest item.", int quantity = 1)
-    :base(name, examineText, quantity) {}
+  public QuestItem(string name, string description, string examineText = "A quest item.",
+    int quantity = 1)
+    :base(name, description, examineText, quantity) {}
   
   /**
    * Operates the quest item.
