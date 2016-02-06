@@ -3,7 +3,7 @@ using System.Collections;
 
 public class movScript : MonoBehaviour {
 
-	const float speed = 10.0f;
+	public float speed;
 
 	// Use this for initialization
 	void Start () {
@@ -16,9 +16,8 @@ public class movScript : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		BoxCollider2D boxC = this.gameObject.GetComponent<BoxCollider2D> ();
 		this.gameObject.GetComponent<Rigidbody2D> ().velocity = 
-			new Vector2 (Input.GetAxis ("Horizontal") * speed, Input.GetAxis ("Vertical") * speed);
+			new Vector2 (Input.GetAxisRaw ("Horizontal") * speed, Input.GetAxisRaw ("Vertical") * speed);
 
 		
 	}
