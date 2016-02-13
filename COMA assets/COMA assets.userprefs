@@ -1,12 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement\ChangeArea.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DarkACE/Scripts/Editor/ACEEditor.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement\PlayerMovement.cs" Line="34" Column="36" />
-      <File FileName="Assets\Scripts\PlayerMovement\ShadowCollision.cs" Line="18" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMovement\Collision.cs" Line="16" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMovement\Exit.cs" Line="23" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMovement\ChangeArea.cs" Line="28" Column="1" />
+      <File FileName="Assets/DarkACE/Scripts/Editor/ACEEditor.cs" Line="341" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
