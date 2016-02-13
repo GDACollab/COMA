@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement\DiscoBall.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\DiscoLights.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\Exit.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement\MoveBehind.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\ShadowCollision.cs" />
      <Compile Include="Assets\Spawn scripts\spawnA.cs" />

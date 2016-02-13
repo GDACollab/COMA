@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/NEET/Scraproom.unity
+- path: Assets/Scenes/MotherZone/Toybox.unity
   isLoaded: 1
   isActive: 1

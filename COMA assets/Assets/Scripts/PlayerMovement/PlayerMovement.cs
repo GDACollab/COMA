@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour {
 	public bool hitRightWall = false;
 	public bool shaded = false;
 
-	//private float prevPosition = new Vector3(0,0,0);
-
 	// Use this for initialization
 	void Start ()
     {
@@ -55,7 +53,6 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (isWalking)
         {
-			//prevPosition = transform.position;
 			transform.position += new Vector3(input_x, input_y, 0).normalized * Time.deltaTime * speed;
         }
     }
@@ -73,12 +70,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D obj){
-		if (obj.tag == "Boundry" && obj.name == "BackGroundBlockCeiling")
+		if (obj.tag != "Background" && obj.transform.position.y <= transform.position.y)
 			transform.GetComponent<SpriteRenderer> ().sortingOrder = 9;
-	}
-
-	void OnTriggerExit2D(Collider2D obj){
-		if (obj.tag == "Boundry" && obj.name == "BackGroundBlockCeiling")
-			transform.GetComponent<SpriteRenderer> ().sortingOrder = 100;
 	}
 }
