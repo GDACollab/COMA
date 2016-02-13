@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float speed;
+  public float speed;
 	public float rightX = 0.2f;
 	public float leftX = -0.1f;
 	public GameObject background;
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
-    {
+  {
 		if (background == null)
 			background = GameObject.FindGameObjectWithTag ("Background");
 		
@@ -32,8 +32,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate ()
-    {
-        float input_x = 0;
+  {
+    float input_x = 0;
 		float input_y = Input.GetAxisRaw ("Vertical");
 
 		//to make sure the player does not go beyond the walking space
@@ -45,18 +45,17 @@ public class PlayerMovement : MonoBehaviour {
 		CheckIfHitWall ();
 
 		bool isWalking = (Mathf.Abs(input_x) + Mathf.Abs(input_y)) > 0;
-
-
+    
 		anim.SetBool("isWalking", isWalking);
 		anim.SetFloat("x", input_x);
 		anim.SetFloat("y", input_y);
 
 		if (isWalking)
-        {
+    {
 			//prevPosition = transform.position;
 			transform.position += new Vector3(input_x, input_y, 0).normalized * Time.deltaTime * speed;
-        }
     }
+  }
 
 	void CheckIfHitWall()
 	{
@@ -70,12 +69,12 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D obj){
+	void OnTriggerStay2D(Collider2D obj) {
 		if (obj.tag == "Boundry" && obj.name == "BackGroundBlockCeiling")
 			transform.GetComponent<SpriteRenderer> ().sortingOrder = 9;
 	}
 
-	void OnTriggerExit2D(Collider2D obj){
+	void OnTriggerExit2D(Collider2D obj) {
 		if (obj.tag == "Boundry" && obj.name == "BackGroundBlockCeiling")
 			transform.GetComponent<SpriteRenderer> ().sortingOrder = 100;
 	}
