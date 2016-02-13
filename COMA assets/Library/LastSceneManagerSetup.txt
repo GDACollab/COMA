@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ScarletZone/ScarletDisco.unity
+- path: Assets/Scenes/NEET/Scraproom.unity
   isLoaded: 1
   isActive: 1
