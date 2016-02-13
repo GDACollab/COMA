@@ -9,14 +9,5 @@ public class Exit : MonoBehaviour {
 		if (obj.gameObject.tag == "Player") {
 			Application.LoadLevel (LevelLoad);
 		}
-
-		if (obj.gameObject.tag == "Pillar") {
-			GameObject.Find("Player").GetComponent<SpriteRenderer> ().sortingOrder = 9;
-		}
-	}
-
-	void OnTriggerExit2D(Collider2D obj){
-		if (obj.tag == "Boundry" && obj.name == "BackGroundBlockCeiling")
-			GameObject.Find("Player").GetComponent<SpriteRenderer> ().sortingOrder = 100;
 	}
 }
