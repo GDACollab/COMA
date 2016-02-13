@@ -305,7 +305,7 @@ public class ACEEditor  : EditorWindow
 	
 	void OnGUI()
 	{
-
+		
 		doRepaint = false;
 		if(audioEvents != null){
 			soloCurves = 0;
@@ -335,18 +335,20 @@ public class ACEEditor  : EditorWindow
 			//Main Audio GUI
 			Handles.BeginGUI();
 
-			Handles.color = new Color(.8f, .8f, .8f, .8f);
+			//Handles.color = new Color(.8f, .8f, .8f, .8f);
+			Handles.color = Color.red;
 
 			//Vertical line
 			float pointx = CalculateGUIAudioPosition(zoomFactor, hScrollPosition, guiRect, clip, audioEvents.GetComponent<AudioSource>().time);
-
-			bool lineUpdating = posLine.OnGUI(new Rect(pointx, 0, 1, guiRect.height));
+			GUI.color = Color.red; 
+			bool lineUpdating = posLine.OnGUI(new Rect(pointx, 0, 2, guiRect.height));
 			if(lineUpdating){
 				audioEvents.GetComponent<AudioSource>().time = CalculateAudioPosition(zoomFactor, hScrollPosition, guiRect, clip, posLine.Position.x);
 			}
 			doRepaint = lineUpdating || doRepaint;
-
+			GUI.color = new Color(1f, 1f, 1f); 
 			Handles.color = new Color(.5f, .5f, .5f, .5f);
+		
 
 			//Vertical lines
 
@@ -379,7 +381,7 @@ public class ACEEditor  : EditorWindow
 				}
 			}
 
-			
+
 			//Bezier points
 
 			for(int i=0; i<points.Count; ++i){

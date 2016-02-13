@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{4A1EED65-5B42-BFDA-2E3F-E28483CAC3F0}") = "ComaPlayerMovement", "Assembly-CSharp.csproj", "{B68B3624-9541-DA38-F846-82F4E1CA9387}"
+EndProject
+Project("{4A1EED65-5B42-BFDA-2E3F-E28483CAC3F0}") = "ComaPlayerMovement", "Assembly-CSharp-Editor.csproj", "{22E9E164-8837-959B-05B7-8329C5333564}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B68B3624-9541-DA38-F846-82F4E1CA9387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68B3624-9541-DA38-F846-82F4E1CA9387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68B3624-9541-DA38-F846-82F4E1CA9387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68B3624-9541-DA38-F846-82F4E1CA9387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E9E164-8837-959B-05B7-8329C5333564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E9E164-8837-959B-05B7-8329C5333564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E9E164-8837-959B-05B7-8329C5333564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E9E164-8837-959B-05B7-8329C5333564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
