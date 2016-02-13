@@ -1,0 +1,10 @@
+.gitignore
+
+Library/
+Temp/
+*.csproj
+*.sln
+*.userprefs
+
+ProjectVersion.txt
+UnityAnalyticsManager.asset
