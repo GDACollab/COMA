@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool hitLeftWall = false;
 	public bool hitRightWall = false;
+	public bool shaded = false;
 
 	// Use this for initialization
 	void Start ()
@@ -46,6 +47,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
 		anim.SetBool("isWalking", isWalking);
+		anim.SetBool ("shaded", shaded);
 		anim.SetFloat("x", input_x);
 		anim.SetFloat("y", input_y);
 

@@ -22,11 +22,11 @@ public class contactD : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.D)) {
 			if ( missed == 0){
-				if (Vector3.Distance(this.transform.position, source.Dscore[source.top].transform.position) < 2.01){
+				if (Vector3.Distance(this.transform.position, source.Dscore[source.top].transform.position) < .16){
 					source.kill ();
 					words.enabled = true;
 					words.text = "Good";
-				}else if (Vector3.Distance(this.transform.position, source.Dscore[source.top].transform.position)<2.1){
+				}else if (Vector3.Distance(this.transform.position, source.Dscore[source.top].transform.position)<.33){
 					source.kill ();
 					words.enabled = true;
 					words.text = "Bad";
