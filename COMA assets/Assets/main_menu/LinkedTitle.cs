@@ -43,7 +43,6 @@ public class LinkedTitle : MonoBehaviour {
 					buttonList.Add(t.gameObject);
 					++ totalNumChoices;
 					if(t.childCount > 1) {
-						print (t.gameObject);
 						LinkedT linT = new LinkedT(t.gameObject, this);
 						linT.hideLevel();
 						subMenuList.Add(linT);
@@ -84,7 +83,6 @@ public class LinkedTitle : MonoBehaviour {
 		private void nextLevel() {
 			this.hideLevel ();
 			subMenuList [currC].showLevel ();
-			print ("nextlevel");
 		}
 
 		public LinkedT prevLevel() {
@@ -106,7 +104,6 @@ public class LinkedTitle : MonoBehaviour {
 				gob.GetComponent<SpriteRenderer>().enabled = false;
 				getDesObject(gob).enabled = false;
 			}
-			print ("hides");
 		}
 
 		private SpriteRenderer getDesObject(GameObject gob) {
