@@ -41,6 +41,11 @@ public class LinkedTitle : MonoBehaviour {
 				}
 				else {
 					buttonList.Add(t.gameObject);
+
+					// Add a default script onto the button if none exists
+					if(t.gameObject.GetComponent<MenuCode>() == null)
+						t.gameObject.AddComponent<DoNothing>();
+
 					++ totalNumChoices;
 					if(t.childCount > 1) {
 						LinkedT linT = new LinkedT(t.gameObject, this);
