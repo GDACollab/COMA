@@ -126,6 +126,59 @@ var keydown = function(ke) {
 var update = function(elapsed) {
 };
 
+var draw_waveform = function(ctx) {
+	// Draw waveform.
+	var buf = glob.buffer;
+	var array = buf.getChannelData(0);
+	var y = function(s) {return Math.floor(HEIGHT * (1-s) / 2);};
+	var start = glob.x_left;
+	var finish = glob.x_right;
+	var step = WIDTH / (finish-start);
+	ctx.beginPath();
+	if(step < 0.25) {
+		var i;
+		var base_x;
+		if(start < 0) {
+			i = 0;
+			base_x = Math.floor(-start * step);
+		} else {
+			i = start;
+			base_x = 0;
+		}
+		var min = 0;
+		var max = 0;
+		ctx.beginPath();
+		for(; i<finish; ++i) {
+			if(i >= buf.length)
+				break;
+
+			var x = (i-start) * step;
+
+			while(x >= base_x+1) {
+				ctx.moveTo(base_x+.5, y(min)+1);
+				ctx.lineTo(base_x+.5, y(max)-1);
+
+				++base_x;
+				min = 1;
+				max = -1;
+			}
+
+			min = Math.min(min, array[i]);
+			max = Math.max(max, array[i]);
+		}
+	} else {
+		ctx.moveTo(0, HEIGHT/2);
+		for(var i=start; i<finish; ++i) {
+			var x = (i-start) * step;
+			if(i < 0 || i >= buf.length)
+				ctx.moveTo(x, y(0));
+			else
+				ctx.lineTo(x, y(array[i]));
+		}
+	}
+	ctx.stroke();
+};
+
 var draw = function(ctx) {
 	ctx.canvas.width = WIDTH = window.innerWidth;
 	ctx.canvas.height = HEIGHT = window.innerHeight;
@@ -137,56 +190,7 @@ var draw = function(ctx) {
 		ctx.fillText('Press spacebar to skip this step and just start '
 		             + 'with an empty beatmap.', 50, 100);
 	} else if(glob.type === 'editing') {
-		// Draw waveform.
-		var buf = glob.buffer;
-		var array = buf.getChannelData(0);
-		var y = function(s) {return Math.floor(HEIGHT * (1-s) / 2);};
-		var start = glob.x_left;
-		var finish = glob.x_right;
-		var step = WIDTH / (finish-start);
-		ctx.beginPath();
-		if(step < 0.25) {
-			var i;
-			var base_x;
-			if(start < 0) {
-				i = 0;
-				base_x = Math.floor(-start * step);
-			} else {
-				i = start;
-				base_x = 0;
-			}
-			var min = 0;
-			var max = 0;
-			ctx.beginPath();
-			for(; i<finish; ++i) {
-				if(i >= buf.length)
-					break;
-
-				var x = (i-start) * step;
-
-				while(x >= base_x+1) {
-					ctx.moveTo(base_x+.5, y(min)+1);
-					ctx.lineTo(base_x+.5, y(max)-1);
-
-					++base_x;
-					min = 1;
-					max = -1;
-				}
-
-				min = Math.min(min, array[i]);
-				max = Math.max(max, array[i]);
-			}
-		} else {
-			ctx.moveTo(0, HEIGHT/2);
-			for(var i=start; i<finish; ++i) {
-				var x = (i-start) * step;
-				if(i < 0 || i >= buf.length)
-					ctx.moveTo(x, y(0));
-				else
-					ctx.lineTo(x, y(array[i]));
-			}
-		}
-		ctx.stroke();
+		draw_waveform(ctx);
 	}
 };
 
