@@ -19,20 +19,19 @@ public class LinkedTitle : MonoBehaviour {
 
 		public LinkedT(GameObject gob) {
 			this.gob = gob;
-			totalNumChoices = 0;
-			currC = 0;
 			createList();
 		}
 
 		LinkedT(GameObject gob, LinkedT lt) {
 			this.gob = gob;
 			this.parentLT = lt;
-			totalNumChoices = 0;
-			currC = 0;
 			createList();
 		}
 
 		private void createList() {
+			totalNumChoices = 0;
+			currC = 0;
+
 			bool isDes = false;
 			foreach (Transform t in gob.transform) {
 				if(isDes == false) {
