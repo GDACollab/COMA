@@ -1,5 +1,14 @@
-var HEIGHT = 480;
+var assert = function(b) {
+	if(b) {
+		// Do nothing.
+	} else {
+		debugger;
+		throw 'Assertion failed.'
+	}
+};
+
 var WIDTH = 640;
+var HEIGHT = 480;
 
 var uploader;
 var audio_ctx;
@@ -16,10 +25,18 @@ window.onload = function() {
 		return message;
 	};
 
+	// Disable context menu
+	document.body.oncontextmenu = function(e) {return false;};
+
 	// Create canvas.
 	var canvas = document.createElement('canvas');
-	canvas.setAttribute('width', '640');
-	canvas.setAttribute('height', '480');
+	canvas.style.width = '100%';
+	canvas.style.height = '100%';
+	canvas.style.position = 'absolute';
+	canvas.style.top = '0';
+	canvas.style.left = '0';
+	canvas.setAttribute('width', WIDTH);
+	canvas.setAttribute('height', HEIGHT);
 	document.body.appendChild(canvas);
 
 	// Create file-upload form element.
@@ -30,6 +47,10 @@ window.onload = function() {
 	document.body.appendChild(uploader);
 
 	// Register event listeners.
+	canvas.addEventListener('mousemove', mousemove);
+	canvas.addEventListener('mousedragged', mousemove);
+	canvas.addEventListener('mousedown', mousedown);
+	canvas.addEventListener('mouseup', mouseup);
 	canvas.addEventListener('click', on_click);
 	canvas.addEventListener('wheel', on_wheel);
 	document.addEventListener('keydown', keydown);
@@ -80,6 +101,7 @@ var on_file_select = function() {
 	} else if(glob.type === 'wait_for_beatmap') {
 		fr.onload = function(e) {
 			var json = JSON.parse(e.target.result);
+			assert(false);
 			glob = {type: 'editing'};
 		};
 		fr.readAsText(this.files[0]);
@@ -97,6 +119,7 @@ var keydown = function(ke) {
 
 	if(glob.type === 'wait_for_beatmap') {
 		glob.type = 'editing';
+		glob.dragging = false;
 	}
 };
 
@@ -104,6 +127,9 @@ var update = function(elapsed) {
 };
 
 var draw = function(ctx) {
+	ctx.canvas.width = WIDTH = window.innerWidth;
+	ctx.canvas.height = HEIGHT = window.innerHeight;
+
 	if(glob.type === 'wait_for_audio') {
 		ctx.fillText('Click to upload an audio file.', 50, 50);
 	} else if(glob.type === 'wait_for_beatmap') {
@@ -114,22 +140,33 @@ var draw = function(ctx) {
 		// Draw waveform.
 		var buf = glob.buffer;
 		var array = buf.getChannelData(0);
-		var y = function(s) {return HEIGHT * (1-s) / 2;};
+		var y = function(s) {return Math.floor(HEIGHT * (1-s) / 2);};
 		var start = glob.x_left;
-		var len = glob.x_right - start;
-		var step = WIDTH/len;
+		var finish = glob.x_right;
+		var step = WIDTH / (finish-start);
 		ctx.beginPath();
-		if(step < 0.5) {
-			var base_x = 0;
+		if(step < 0.25) {
+			var i;
+			var base_x;
+			if(start < 0) {
+				i = 0;
+				base_x = Math.floor(-start * step);
+			} else {
+				i = start;
+				base_x = 0;
+			}
 			var min = 0;
 			var max = 0;
 			ctx.beginPath();
-			for(var i=start; i<len; ++i) {
-				var x = i*step;
+			for(; i<finish; ++i) {
+				if(i >= buf.length)
+					break;
+
+				var x = (i-start) * step;
 
 				while(x >= base_x+1) {
-					ctx.moveTo(base_x+.5, y(min)-1);
-					ctx.lineTo(base_x+.5, y(max)+1);
+					ctx.moveTo(base_x+.5, y(min)+1);
+					ctx.lineTo(base_x+.5, y(max)-1);
 
 					++base_x;
 					min = 1;
@@ -141,9 +178,12 @@ var draw = function(ctx) {
 			}
 		} else {
 			ctx.moveTo(0, HEIGHT/2);
-			for(var i=start; i<len; ++i) {
-				var x = i*step;
-				ctx.lineTo(x, y(array[i]));
+			for(var i=start; i<finish; ++i) {
+				var x = (i-start) * step;
+				if(i < 0 || i >= buf.length)
+					ctx.moveTo(x, y(0));
+				else
+					ctx.lineTo(x, y(array[i]));
 			}
 		}
 		ctx.stroke();
@@ -154,7 +194,93 @@ var on_wheel = function(e) {
 	if(glob.type !== 'editing')
 		return;
 
+	if(glob.dragging.type === true)
+		return;
+
+//	const rect = game.canvas.getBoundingClientRect();
+	var mx = e.clientX;
+	var my = e.clientY;
+
 	var k = Math.exp(e.deltaY / 20);
-	var n = glob.x_right * k;
-	glob.x_right = Math.max(10, Math.min(n, glob.buffer.length));
+
+	var x0 = glob.x_left;
+	var x1 = glob.x_right;
+
+	xm = x0 + (x1-x0)*mx/WIDTH;
+
+	var nx0 = xm + (x0-xm)*k;
+	var nx1 = xm + (x1-xm)*k;
+
+	if(nx1 - nx0 >= 10  &&  nx1 - nx0 <= glob.buffer.length*2)
+		set_camera(nx0, nx1)
+};
+
+var mousedown = function(e) {
+	if(glob.type !== 'editing')
+		return;
+
+	if(e.button !== 2)
+		return;
+
+//	const rect = game.canvas.getBoundingClientRect();
+	var mx = e.clientX;
+	var my = e.clientY;
+
+	glob.dragging = {
+		type: true,
+		x: mx,
+		x0: glob.x_left,
+		x1: glob.x_right,
+		y: my,
+	};
+};
+
+var mouseup = function(e) {
+	if(glob.type !== 'editing')
+		return;
+
+	if(e.button !== 2)
+		return;
+
+	glob.dragging.type = false;
+};
+
+var set_camera = function(nx0, nx1) {
+	var m;
+	var dx;
+
+	m = (nx0 + nx1) / 2;
+	dx = m - glob.buffer.length;
+	if(dx > 0) {
+		nx0 -= dx;
+		nx1 -= dx;
+	}
+
+	m = (nx0 + nx1) / 2;
+	dx = 0 - m;
+	if(dx > 0) {
+		nx0 += dx;
+		nx1 += dx;
+	}
+
+	glob.x_left = Math.floor(nx0);
+	glob.x_right = Math.floor(nx1);
+};
+
+var mousemove = function(e) {
+	if(glob.type !== 'editing'  ||  glob.dragging.type !== true)
+		return;
+
+//	const rect = game.canvas.getBoundingClientRect();
+	var mx = e.clientX;
+	var my = e.clientY;
+
+	var dx = glob.dragging.x - mx;
+
+	var x0 = glob.dragging.x0;
+	var x1 = glob.dragging.x1;
+	var scale = (x1 - x0) / WIDTH;
+	var nx0 = x0 + scale * dx;
+	var nx1 = x1 + scale * dx;
+	set_camera(nx0, nx1);
 };
