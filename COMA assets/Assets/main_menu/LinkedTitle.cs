@@ -71,6 +71,8 @@ public class LinkedTitle : MonoBehaviour {
 		}
 
 		public LinkedT selectChoice() {
+			getCurrObject().GetComponent<MenuCode>().on_select();
+
 			if (subMenuList [currC] != null) {
 				nextLevel ();
 				return subMenuList [currC];
