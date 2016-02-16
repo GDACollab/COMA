@@ -1,3 +1,21 @@
+/*
+Citation:
+http://stackoverflow.com/questions/3665115/create-a-file-in-memory-for-user-to-download-not-through-server
+2016 Feb 15, 5:04pm PST
+*/
+var download = function(filename, text) {
+	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	element.setAttribute('download', filename);
+
+	element.style.display = 'none';
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
+};
+
 var assert = function(b) {
 	if(b) {
 		// Do nothing.
@@ -81,6 +99,8 @@ window.onload = function() {
 
 var on_file_select = function() {
 	var fr = new FileReader();
+	var file = this.files[0];
+	var filename = file.name;
 
 	if(glob.type === 'wait_for_audio') {
 		fr.onload = function(e) {
@@ -94,15 +114,19 @@ var on_file_select = function() {
 					},
 					s0: 0,
 					s1: buf.length,
+					filename: filename,
 				};
 			});
 		};
-		fr.readAsArrayBuffer(this.files[0]);
+		fr.readAsArrayBuffer(file);
 	} else if(glob.type === 'wait_for_beatmap') {
 		fr.onload = function(e) {
 			var json = JSON.parse(e.target.result);
-			assert(false);
-			glob = {type: 'editing'};
+
+			glob.type = 'editing';
+			glob.beatmap = json;
+			glob.dragging = {type: false};
+			glob.filename = filename;
 		};
 		fr.readAsText(this.files[0]);
 	}
@@ -114,34 +138,48 @@ var on_click = function(me) {
 };
 
 var keydown = function(ke) {
-	if(ke.keyCode !== 32)
-		return;
+	if(ke.keyCode === 32) {
+		if(glob.type === 'wait_for_beatmap') {
+			glob.type = 'editing';
+			glob.dragging = {type: false};
+			glob.beatmap = [];
+		} else if(glob.type === 'editing') {
+			if(glob.playback.type === 'stopped') {
+				var source = audio_ctx.createBufferSource();
+				source.buffer = glob.buffer;
+				source.connect(audio_ctx.destination);
+				var time = audio_ctx.currentTime;
+				source.start(time + 0.15, glob.playback.position);
 
-	if(glob.type === 'wait_for_beatmap') {
-		glob.type = 'editing';
-		glob.dragging = false;
-	} else if(glob.type === 'editing') {
-		if(glob.playback.type === 'stopped') {
-			var source = audio_ctx.createBufferSource();
-			source.buffer = glob.buffer;
-			source.connect(audio_ctx.destination);
-			var time = audio_ctx.currentTime;
-			source.start(time + 0.15, glob.playback.position);
+				var start_time = time + 0.15 - glob.playback.position;
+				glob.playback = {
+					type: 'playing',
+					source: source,
+					start_time: start_time,
+				};
+			} else if(glob.playback.type === 'playing') {
+				glob.playback.source.stop();
 
-			var start_time = time + 0.15 - glob.playback.position;
-			glob.playback = {
-				type: 'playing',
-				source: source,
-				start_time: start_time,
-			};
-		} else if(glob.playback.type === 'playing') {
-			glob.playback.source.stop();
+				var position = audio_ctx.currentTime - glob.playback.start_time;
+				glob.playback = {
+					type: 'stopped',
+					position: position,
+				};
+			}
+		}
+	} else if(ke.keyCode === 27) {
+		if(glob.type === 'editing') {
+			var filename = glob.filename;
 
-			var position = audio_ctx.currentTime - glob.playback.start_time;
-			glob.playback = {
-				type: 'stopped',
-				position: position,
-			};
+			// Set the file type to .beatmap
+			var a = filename.split('.');
+			a.pop();
+			if(a.length === 0)
+				a.push('file');
+			a.push('beatmap');
+			filename = a.join('.');
+
+			download(filename, JSON.stringify(glob.beatmap));
 		}
 	}
 };
@@ -210,10 +248,32 @@ var t2p = function(pos) {
 	var s0 = glob.s0;
 	var s1 = glob.s1;
 
-	var temp = (pos / glob.buffer.duration * glob.buffer.length - s0)
-	temp /= (s1-s0)
-//	temp = 1 - temp;
+	var temp = pos;
+	temp *= glob.buffer.length / glob.buffer.duration;  // sampleRate?
+	temp -= s0;
+	temp /= (s1-s0);
+	temp = 1 - temp;
 	temp *= HEIGHT;
+	return temp;
+};
+var p2t = function(y) {
+	assert(glob.type === 'editing');
+
+	var temp = y;
+	temp /= HEIGHT;
+	temp = 1 - temp;
+	temp *= glob.s1 - glob.s0;
+	temp += glob.s0;
+	temp *= glob.buffer.duration / glob.buffer.length;  // sampleRate?
+	return temp;
+};
+// Returns the current zoom level in "pixels per second of music"
+var scale = function() {
+	var temp = glob.s1 - glob.s0;  // Samples per screen
+	temp = 1/temp;                 // Screens per sample
+	temp *= HEIGHT;                // Pixels per sample
+	temp *= glob.buffer.length;    // Pixels
+	temp /= glob.buffer.duration;  // Pixels per second
 	return temp;
 };
 
@@ -230,12 +290,18 @@ var draw = function(ctx) {
 	} else if(glob.type === 'editing') {
 		// Draw sideways waveform.
 		ctx.save();
-//		ctx.rotate(-Math.PI / 2);
-//		ctx.translate(-HEIGHT, WIDTH/2);
-		ctx.rotate(Math.PI / 2);
-		ctx.translate(0, -WIDTH);
+		ctx.rotate(-Math.PI / 2);
+		ctx.translate(-HEIGHT, WIDTH/2);
 		draw_waveform(ctx, HEIGHT, WIDTH/2);
 		ctx.restore();
+
+		// Draw the "beats"
+		ctx.fillStyle = 'blue';
+		var scal = scale();
+		for(var i=0; i<glob.beatmap.length; ++i) {
+			var beat = glob.beatmap[i];
+			ctx.fillRect(0, t2p(beat.time) - scal*.1 , HEIGHT/2/10, scal*.2);
+		}
 
 		// Draw current playback position
 		if(glob.playback.type === 'playing') {
@@ -262,7 +328,7 @@ var on_wheel = function(e) {
 	var s0 = glob.s0;
 	var s1 = glob.s1;
 
-	ms = s0 + (s1-s0)*my/HEIGHT;
+	ms = s0 + (s1 - s0) * (1 - my/HEIGHT);
 
 	var ns0 = ms + (s0-ms)*k;
 	var ns1 = ms + (s1-ms)*k;
@@ -275,20 +341,24 @@ var mousedown = function(e) {
 	if(glob.type !== 'editing')
 		return;
 
-	if(e.button !== 2)
-		return;
-
 //	const rect = game.canvas.getBoundingClientRect();
 	var mx = e.clientX;
 	var my = e.clientY;
 
-	glob.dragging = {
-		type: true,
-		x: mx,
-		s0: glob.s0,
-		s1: glob.s1,
-		y: my,
-	};
+	if(e.button === 0) {  // left
+		var beat = {
+			time: p2t(my),
+		};
+		glob.beatmap.push(beat);
+	} else if(e.button === 2) {  // right
+		glob.dragging = {
+			type: true,
+			x: mx,
+			s0: glob.s0,
+			s1: glob.s1,
+			y: my,
+		};
+	}
 };
 
 var mouseup = function(e) {
@@ -331,7 +401,7 @@ var mousemove = function(e) {
 	var mx = e.clientX;
 	var my = e.clientY;
 
-	var dy = glob.dragging.y - my;
+	var dy = my - glob.dragging.y;
 
 	var s0 = glob.dragging.s0;
 	var s1 = glob.dragging.s1;
