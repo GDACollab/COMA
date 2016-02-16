@@ -85,15 +85,15 @@ var on_file_select = function() {
 	if(glob.type === 'wait_for_audio') {
 		fr.onload = function(e) {
 			audio_ctx.decodeAudioData(e.target.result, function(buf) {
-				var source = audio_ctx.createBufferSource();
-				source.buffer = buf;
-
 				glob = {
 					type: 'wait_for_beatmap',
 					buffer: buf,
-					source: source,
-					x_left: 0,
-					x_right: buf.length,
+					playback: {
+						type: 'stopped',
+						position: 0,
+					},
+					s0: 0,
+					s1: buf.length,
 				};
 			});
 		};
@@ -120,20 +120,43 @@ var keydown = function(ke) {
 	if(glob.type === 'wait_for_beatmap') {
 		glob.type = 'editing';
 		glob.dragging = false;
+	} else if(glob.type === 'editing') {
+		if(glob.playback.type === 'stopped') {
+			var source = audio_ctx.createBufferSource();
+			source.buffer = glob.buffer;
+			source.connect(audio_ctx.destination);
+			var time = audio_ctx.currentTime;
+			source.start(time + 0.15, glob.playback.position);
+
+			var start_time = time + 0.15 - glob.playback.position;
+			glob.playback = {
+				type: 'playing',
+				source: source,
+				start_time: start_time,
+			};
+		} else if(glob.playback.type === 'playing') {
+			glob.playback.source.stop();
+
+			var position = audio_ctx.currentTime - glob.playback.start_time;
+			glob.playback = {
+				type: 'stopped',
+				position: position,
+			};
+		}
 	}
 };
 
 var update = function(elapsed) {
 };
 
-var draw_waveform = function(ctx) {
+var draw_waveform = function(ctx, w, h) {
 	// Draw waveform.
 	var buf = glob.buffer;
 	var array = buf.getChannelData(0);
-	var y = function(s) {return Math.floor(HEIGHT * (1-s) / 2);};
-	var start = glob.x_left;
-	var finish = glob.x_right;
-	var step = WIDTH / (finish-start);
+	var y = function(s) {return Math.floor(h * (1-s) / 2);};
+	var start = glob.s0;
+	var finish = glob.s1;
+	var step = w / (finish-start);
 	ctx.beginPath();
 	if(step < 0.25) {
 		var i;
@@ -167,7 +190,7 @@ var draw_waveform = function(ctx) {
 			max = Math.max(max, array[i]);
 		}
 	} else {
-		ctx.moveTo(0, HEIGHT/2);
+		ctx.moveTo(0, h/2);
 		for(var i=start; i<finish; ++i) {
 			var x = (i-start) * step;
 			if(i < 0 || i >= buf.length)
@@ -177,6 +200,21 @@ var draw_waveform = function(ctx) {
 		}
 	}
 	ctx.stroke();
+};
+
+// Converts a song "time" coordinate into a screen "pixel" coordinate.
+// Takes the current "camera" into account.
+var t2p = function(pos) {
+	assert(glob.type === 'editing');
+
+	var s0 = glob.s0;
+	var s1 = glob.s1;
+
+	var temp = (pos / glob.buffer.duration * glob.buffer.length - s0)
+	temp /= (s1-s0)
+//	temp = 1 - temp;
+	temp *= HEIGHT;
+	return temp;
 };
 
 var draw = function(ctx) {
@@ -190,7 +228,21 @@ var draw = function(ctx) {
 		ctx.fillText('Press spacebar to skip this step and just start '
 		             + 'with an empty beatmap.', 50, 100);
 	} else if(glob.type === 'editing') {
-		draw_waveform(ctx);
+		// Draw sideways waveform.
+		ctx.save();
+//		ctx.rotate(-Math.PI / 2);
+//		ctx.translate(-HEIGHT, WIDTH/2);
+		ctx.rotate(Math.PI / 2);
+		ctx.translate(0, -WIDTH);
+		draw_waveform(ctx, HEIGHT, WIDTH/2);
+		ctx.restore();
+
+		// Draw current playback position
+		if(glob.playback.type === 'playing') {
+			var y = t2p(audio_ctx.currentTime - glob.playback.start_time);
+			ctx.fillStyle = 'red';
+			ctx.fillRect(0, y, WIDTH, 2);
+		}
 	}
 };
 
@@ -207,16 +259,16 @@ var on_wheel = function(e) {
 
 	var k = Math.exp(e.deltaY / 20);
 
-	var x0 = glob.x_left;
-	var x1 = glob.x_right;
+	var s0 = glob.s0;
+	var s1 = glob.s1;
 
-	xm = x0 + (x1-x0)*mx/WIDTH;
+	ms = s0 + (s1-s0)*my/HEIGHT;
 
-	var nx0 = xm + (x0-xm)*k;
-	var nx1 = xm + (x1-xm)*k;
+	var ns0 = ms + (s0-ms)*k;
+	var ns1 = ms + (s1-ms)*k;
 
-	if(nx1 - nx0 >= 10  &&  nx1 - nx0 <= glob.buffer.length*2)
-		set_camera(nx0, nx1)
+	if(ns1 - ns0 >= 10  &&  ns1 - ns0 <= glob.buffer.length*2)
+		set_camera(ns0, ns1)
 };
 
 var mousedown = function(e) {
@@ -233,8 +285,8 @@ var mousedown = function(e) {
 	glob.dragging = {
 		type: true,
 		x: mx,
-		x0: glob.x_left,
-		x1: glob.x_right,
+		s0: glob.s0,
+		s1: glob.s1,
 		y: my,
 	};
 };
@@ -249,26 +301,26 @@ var mouseup = function(e) {
 	glob.dragging.type = false;
 };
 
-var set_camera = function(nx0, nx1) {
-	var m;
-	var dx;
+var set_camera = function(ns0, ns1) {
+	var ms;
+	var ds;
 
-	m = (nx0 + nx1) / 2;
-	dx = m - glob.buffer.length;
-	if(dx > 0) {
-		nx0 -= dx;
-		nx1 -= dx;
+	ms = (ns0 + ns1) / 2;
+	ds = ms - glob.buffer.length;
+	if(ds > 0) {
+		ns0 -= ds;
+		ns1 -= ds;
 	}
 
-	m = (nx0 + nx1) / 2;
-	dx = 0 - m;
-	if(dx > 0) {
-		nx0 += dx;
-		nx1 += dx;
+	ms = (ns0 + ns1) / 2;
+	ds = 0 - ms;
+	if(ds > 0) {
+		ns0 += ds;
+		ns1 += ds;
 	}
 
-	glob.x_left = Math.floor(nx0);
-	glob.x_right = Math.floor(nx1);
+	glob.s0 = Math.floor(ns0);
+	glob.s1 = Math.floor(ns1);
 };
 
 var mousemove = function(e) {
@@ -279,12 +331,12 @@ var mousemove = function(e) {
 	var mx = e.clientX;
 	var my = e.clientY;
 
-	var dx = glob.dragging.x - mx;
+	var dy = glob.dragging.y - my;
 
-	var x0 = glob.dragging.x0;
-	var x1 = glob.dragging.x1;
-	var scale = (x1 - x0) / WIDTH;
-	var nx0 = x0 + scale * dx;
-	var nx1 = x1 + scale * dx;
-	set_camera(nx0, nx1);
+	var s0 = glob.dragging.s0;
+	var s1 = glob.dragging.s1;
+	var scale = (s1 - s0) / HEIGHT;
+	var ns0 = s0 + scale * dy;
+	var ns1 = s1 + scale * dy;
+	set_camera(ns0, ns1);
 };
