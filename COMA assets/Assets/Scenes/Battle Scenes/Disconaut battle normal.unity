@@ -1633,25 +1633,23 @@ MonoBehaviour:
   dirty: 0
   colors: []
   triggers:
-  - audioPos: 0.001
+  - audioPos: 0.01
     methodName: MakerC
   - audioPos: 0.5
     methodName: MakerK
   - audioPos: 1.0
-    methodName: Play
+    methodName: MakerL
   - audioPos: 1.021
     methodName: MakerL
   - audioPos: 1.5
     methodName: MakerJ
-  - audioPos: 2
+  - audioPos: 2.0
     methodName: MakerA
   - audioPos: 2.5
     methodName: MakerA
-  - audioPos: 3
-    methodName: MakerA
+  - audioPos: 3.0
+    methodName: MakerD
   - audioPos: 3.5
-    methodName: MakerF
-  - audioPos: 4
     methodName: MakerF
   - audioPos: 4.25
     methodName: MakerJ
@@ -1661,31 +1659,29 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 5.5
     methodName: MakerJ
-  - audioPos: 6
+  - audioPos: 6.0
     methodName: MakerF
   - audioPos: 6.75
     methodName: MakerL
-  - audioPos: 7
+  - audioPos: 7.0
     methodName: MakerL
   - audioPos: 7.5
     methodName: MakerL
   - audioPos: 7.75
     methodName: MakerK
-  - audioPos: 9
+  - audioPos: 9.0
     methodName: MakerF
   - audioPos: 9.5
     methodName: MakerD
-  - audioPos: 10
+  - audioPos: 10.0
     methodName: MakerA
   - audioPos: 10.5
     methodName: MakerA
-  - audioPos: 11
-    methodName: MakerA
+  - audioPos: 11.0
+    methodName: MakerD
   - audioPos: 11.5
     methodName: MakerF
-  - audioPos: 12
-    methodName: MakerF
-  - audioPos: 12.5
+  - audioPos: 12.25
     methodName: MakerJ
   - audioPos: 12.75
     methodName: MakerJ
@@ -1693,21 +1689,115 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 13.5
     methodName: MakerJ
-  - audioPos: 14
+  - audioPos: 14.0
     methodName: MakerF
   - audioPos: 14.75
     methodName: MakerL
-  - audioPos: 15
+  - audioPos: 15.0
     methodName: MakerL
   - audioPos: 15.5
     methodName: MakerL
   - audioPos: 15.75
     methodName: MakerK
-  - audioPos: 17
+  - audioPos: 17.0
     methodName: MakerF
   - audioPos: 17.5
     methodName: MakerD
-  --- !u!82 &1409466854
+  - audioPos: 18.0
+    methodName: MakerL
+  - audioPos: 18.5
+    methodName: MakerL
+  - audioPos: 19.0
+    methodName: MakerK
+  - audioPos: 19.5
+    methodName: MakerJ
+  - audioPos: 20.0
+    methodName: MakerK
+  - audioPos: 20.5
+    methodName: MakerK
+  - audioPos: 21.0
+    methodName: MakerJ
+  - audioPos: 21.5
+    methodName: MakerF
+  - audioPos: 22.0
+    methodName: MakerA
+  - audioPos: 22.75
+    methodName: MakerA
+  - audioPos: 23.25
+    methodName: MakerA
+  - audioPos: 24.0
+    methodName: MakerA
+  - audioPos: 24.75
+    methodName: MakerA
+  - audioPos: 25.25
+    methodName: MakerA
+  - audioPos: 26.0
+    methodName: MakerL
+  - audioPos: 26.5
+    methodName: MakerL
+  - audioPos: 27.0
+    methodName: MakerK
+  - audioPos: 27.5
+    methodName: MakerJ
+  - audioPos: 28.0
+    methodName: MakerC
+  - audioPos: 28.5
+    methodName: MakerC
+  - audioPos: 29.0
+    methodName: MakerL
+  - audioPos: 29.5
+    methodName: MakerJ
+  - audioPos: 30.0
+    methodName: MakerA
+  - audioPos: 30.75
+    methodName: MakerA
+  - audioPos: 31.25
+    methodName: MakerA
+  - audioPos: 32.0
+    methodName: MakerA
+  - audioPos: 32.75
+    methodName: MakerA
+  - audioPos: 33.25
+    methodName: MakerA
+  - audioPos: 34.0
+    methodName: MakerJ
+  - audioPos: 34.75
+    methodName: MakerJ
+  - audioPos: 35.5
+    methodName: MakerJ
+  - audioPos: 36.0
+    methodName: MakerF
+  - audioPos: 36.75
+    methodName: MakerF
+  - audioPos: 37.5
+    methodName: MakerF
+  - audioPos: 38.0
+    methodName: MakerA
+  - audioPos: 38.5
+    methodName: MakerS
+  - audioPos: 39.0
+    methodName: MakerD
+  - audioPos: 39.5
+    methodName: MakerF
+  - audioPos: 40.0
+    methodName: MakerJ
+  - audioPos: 40.5
+    methodName: MakerK
+  - audioPos: 41.0
+    methodName: MakerL
+  - audioPos: 41.5
+    methodName: MakerC
+  - audioPos: 42.0
+    methodName: MakerC
+  - audioPos: 42.5
+    methodName: MakerK
+  - audioPos: 43.0
+    methodName: MakerL
+  - audioPos: 43.5
+    methodName: MakerJ
+  - audioPos: 44.0
+    methodName: MakerA
+--- !u!82 &1409466854
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
