@@ -1607,6 +1607,7 @@ GameObject:
   - 114: {fileID: 1409466855}
   - 82: {fileID: 1409466854}
   - 114: {fileID: 1409466853}
+  - 114: {fileID: 1409466857}
   m_Layer: 0
   m_Name: Maestro
   m_TagString: Untagged
@@ -1634,17 +1635,79 @@ MonoBehaviour:
   triggers:
   - audioPos: 0.001
     methodName: MakerC
-  - audioPos: 0.4970999
+  - audioPos: 0.5
     methodName: MakerK
-  - audioPos: 1.0082532
-    methodName: MakerL
-  - audioPos: 1.4970134
-    methodName: MakerJ
-  - audioPos: 2.005541
-    methodName: MakerA
-  - audioPos: 1.006503
+  - audioPos: 1.0
     methodName: Play
---- !u!82 &1409466854
+  - audioPos: 1.021
+    methodName: MakerL
+  - audioPos: 1.5
+    methodName: MakerJ
+  - audioPos: 2
+    methodName: MakerA
+  - audioPos: 2.5
+    methodName: MakerA
+  - audioPos: 3
+    methodName: MakerA
+  - audioPos: 3.5
+    methodName: MakerF
+  - audioPos: 4
+    methodName: MakerF
+  - audioPos: 4.25
+    methodName: MakerJ
+  - audioPos: 4.75
+    methodName: MakerJ
+  - audioPos: 5.25
+    methodName: MakerJ
+  - audioPos: 5.5
+    methodName: MakerJ
+  - audioPos: 6
+    methodName: MakerF
+  - audioPos: 6.75
+    methodName: MakerL
+  - audioPos: 7
+    methodName: MakerL
+  - audioPos: 7.5
+    methodName: MakerL
+  - audioPos: 7.75
+    methodName: MakerK
+  - audioPos: 9
+    methodName: MakerF
+  - audioPos: 9.5
+    methodName: MakerD
+  - audioPos: 10
+    methodName: MakerA
+  - audioPos: 10.5
+    methodName: MakerA
+  - audioPos: 11
+    methodName: MakerA
+  - audioPos: 11.5
+    methodName: MakerF
+  - audioPos: 12
+    methodName: MakerF
+  - audioPos: 12.5
+    methodName: MakerJ
+  - audioPos: 12.75
+    methodName: MakerJ
+  - audioPos: 13.25
+    methodName: MakerJ
+  - audioPos: 13.5
+    methodName: MakerJ
+  - audioPos: 14
+    methodName: MakerF
+  - audioPos: 14.75
+    methodName: MakerL
+  - audioPos: 15
+    methodName: MakerL
+  - audioPos: 15.5
+    methodName: MakerL
+  - audioPos: 15.75
+    methodName: MakerK
+  - audioPos: 17
+    methodName: MakerF
+  - audioPos: 17.5
+    methodName: MakerD
+  --- !u!82 &1409466854
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1654,7 +1717,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a07ae77834dd18d4cb11bf58ce7d30d8, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1750,6 +1813,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!114 &1409466857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1409466852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528d3bb5900301c46be83c87382d32ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1419568662
 GameObject:
   m_ObjectHideFlags: 0
