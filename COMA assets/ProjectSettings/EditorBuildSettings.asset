@@ -19,3 +19,13 @@ EditorBuildSettings:
     path: Assets/Scenes/MotherZone/Greenhouse.unity
   - enabled: 1
     path: Assets/main_menu/title.unity
+  - enabled: 1
+    path: Assets/Scenes/NEET/Hallway.unity
+  - enabled: 1
+    path: Assets/Scenes/NEET/Crossroads.unity
+  - enabled: 0
+    path: Assets/Scenes/NEET/Scraproom.unity
+  - enabled: 1
+    path: Assets/Scenes/NEET/Scraproom1.unity
+  - enabled: 1
+    path: Assets/Scenes/NEET/Scraproom2.unity
