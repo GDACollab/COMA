@@ -11,6 +11,7 @@ public class makeNote : MonoBehaviour {
 	public spawnK greed;
 	public spawnL lust;
 	public spawnC chub;
+    public AudioSource monstro;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,11 @@ public class makeNote : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	}
+
+    void Play ()
+    {
+        monstro.Play();
+    }
 
 	void MakerA () {
 		wrath.ANoteS ();
