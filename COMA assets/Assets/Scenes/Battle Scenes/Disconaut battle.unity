@@ -986,7 +986,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfd5e1bdbe301994194ac4bc8069b375, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a07ae77834dd18d4cb11bf58ce7d30d8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1632,14 +1632,18 @@ MonoBehaviour:
   dirty: 0
   colors: []
   triggers:
-  - audioPos: 5
-    methodName: MakerA
-  - audioPos: 8.550515
+  - audioPos: 0.001
+    methodName: MakerC
+  - audioPos: 0.4970999
     methodName: MakerK
-  - audioPos: 14.745981
+  - audioPos: 1.0082532
+    methodName: MakerL
+  - audioPos: 1.4970134
     methodName: MakerJ
-  - audioPos: 30.4
-    methodName: MakerD
+  - audioPos: 2.005541
+    methodName: MakerA
+  - audioPos: 1.006503
+    methodName: Play
 --- !u!82 &1409466854
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1649,7 +1653,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfd5e1bdbe301994194ac4bc8069b375, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a07ae77834dd18d4cb11bf58ce7d30d8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
