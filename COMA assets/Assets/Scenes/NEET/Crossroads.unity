@@ -155,7 +155,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1861542360}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &139507698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +182,49 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.1, y: 0.3}
+--- !u!1 &324079034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 141594, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 324079035}
+  - 61: {fileID: 324079036}
+  m_Layer: 0
+  m_Name: BackGroundBlockCeiling (1)
+  m_TagString: Boundry
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &324079035
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 462072, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 324079034}
+  m_LocalRotation: {x: 0, y: 0, z: -0.15233184, w: 0.9883294}
+  m_LocalPosition: {x: 0.419, y: 0.247, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1861542360}
+  m_RootOrder: 1
+--- !u!61 &324079036
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6174878, guid: 676a9826d28300d4e9f4f5a8b1124426,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 324079034}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.73, y: 0.44}
 --- !u!1 &344204059
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,19 +431,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6174878, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
       propertyPath: m_Offset.x
-      value: -7.25
+      value: -7.711891
       objectReference: {fileID: 0}
     - target: {fileID: 6174878, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
       propertyPath: m_Size.x
-      value: 1.43
+      value: 0.50621796
       objectReference: {fileID: 0}
     - target: {fileID: 6174878, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
       propertyPath: m_Size.y
-      value: 0.3
+      value: 0.3455814
       objectReference: {fileID: 0}
     - target: {fileID: 6174878, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
       propertyPath: m_Offset.y
-      value: 1
+      value: 1.0227907
       objectReference: {fileID: 0}
     - target: {fileID: 11416124, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
       propertyPath: RightLevelLoad
@@ -434,6 +477,10 @@ Prefab:
       propertyPath: m_Size.x
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 486362, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
   m_IsPrefabParent: 0
@@ -465,7 +512,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1861542360}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1679616525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,9 +536,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.12060034}
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.7}
+  m_Size: {x: 0.5, y: 0.4587993}
 --- !u!4 &1861542360 stripped
 Transform:
   m_PrefabParentObject: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
