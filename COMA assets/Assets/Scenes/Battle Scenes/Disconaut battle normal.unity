@@ -1721,11 +1721,15 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 22.0
     methodName: MakerA
+  - audioPos: 22.5
+    methodName: MakerA
   - audioPos: 22.75
     methodName: MakerA
   - audioPos: 23.25
     methodName: MakerA
   - audioPos: 24.0
+    methodName: MakerA
+  - audioPos: 24.5
     methodName: MakerA
   - audioPos: 24.75
     methodName: MakerA
@@ -1749,11 +1753,15 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 30.0
     methodName: MakerA
+  - audioPos: 30.5
+    methodName: MakerA
   - audioPos: 30.75
     methodName: MakerA
   - audioPos: 31.25
     methodName: MakerA
   - audioPos: 32.0
+    methodName: MakerA
+  - audioPos: 32.5
     methodName: MakerA
   - audioPos: 32.75
     methodName: MakerA

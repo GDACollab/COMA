@@ -49,6 +49,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &182606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 411450}
+  - 61: {fileID: 6125572}
+  - 114: {fileID: 11404988}
+  m_Layer: 0
+  m_Name: Exit
+  m_TagString: Exit
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &183218
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +95,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 448072}
   m_RootOrder: 2
+--- !u!4 &411450
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 448072}
+  m_RootOrder: 3
 --- !u!4 &435802
 Transform:
   m_ObjectHideFlags: 1
@@ -103,6 +132,7 @@ Transform:
   - {fileID: 475050}
   - {fileID: 435802}
   - {fileID: 401114}
+  - {fileID: 411450}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &475050
@@ -128,9 +158,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -8.129105, y: 1.286035}
+  m_Offset: {x: -8.15144, y: 1.5421731}
   serializedVersion: 2
-  m_Size: {x: 8.492041, y: 2.7819886}
+  m_Size: {x: 8.44736, y: 2.2697122}
 --- !u!61 &6124624
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -145,6 +175,20 @@ BoxCollider2D:
   m_Offset: {x: -11.78344, y: 1.7777082}
   serializedVersion: 2
   m_Size: {x: 1.1833678, y: 3.7653363}
+--- !u!61 &6125572
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.12285662, y: 0.27214724}
+  serializedVersion: 2
+  m_Size: {x: 0.7542847, y: 0.6798269}
 --- !u!61 &6186280
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -156,9 +200,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -3.2100787, y: 1.5433242}
+  m_Offset: {x: -3.2212524, y: 1.7914584}
   serializedVersion: 2
-  m_Size: {x: 1.3249059, y: 2.2777379}
+  m_Size: {x: 1.3919178, y: 1.78147}
 --- !u!61 &6197324
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -173,6 +217,18 @@ BoxCollider2D:
   m_Offset: {x: -7.28128, y: 4.249299}
   serializedVersion: 2
   m_Size: {x: 10.359915, y: 0.5572863}
+--- !u!114 &11404988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0cb8c1dd6bd114e99f80406bfa9132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelLoad: ScarletStage
 --- !u!114 &11469454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,7 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftLevelLoad: ScarletDisco
-  RightLevelLoad: ScarletStage
+  RightLevelLoad: 
+  player: {fileID: 0}
 --- !u!212 &21244934
 SpriteRenderer:
   m_ObjectHideFlags: 1
