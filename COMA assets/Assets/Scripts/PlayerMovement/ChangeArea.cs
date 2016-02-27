@@ -15,12 +15,12 @@ public class ChangeArea : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (player != null && player.GetComponent<PlayerMovement> ().hitLeftWall && LeftLevelLoad != "") {
-			Application.LoadLevel (LeftLevelLoad);
+			Angel.TransitionFromFieldToField(LeftLevelLoad);
 			player.GetComponent<PlayerMovement> ().hitLeftWall = false;
 		}
 
 		if (player != null && player.GetComponent<PlayerMovement> ().hitRightWall && RightLevelLoad != "") {
-			Application.LoadLevel (RightLevelLoad);
+			Angel.TransitionFromFieldToField(RightLevelLoad);
 			player.GetComponent<PlayerMovement> ().hitRightWall = false;
 		}
 	}
