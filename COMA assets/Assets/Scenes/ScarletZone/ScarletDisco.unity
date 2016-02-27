@@ -796,6 +796,52 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.14, y: 1.48}
+--- !u!1001 &853694376
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 432282, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421338, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2147168463}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ce318100dfeb94a46957c9a0a7bc2f20, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &876583607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,48 +1111,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1001 &1164952131
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 408174, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 676a9826d28300d4e9f4f5a8b1124426, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1317720605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,3 +1687,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &2147168463 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 188102, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+  m_PrefabInternal: {fileID: 1366921427}

@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftLevelLoad: 
-  RightLevelLoad: SpaceBar
+  RightLevelLoad: 
+  player: {fileID: 0}
 --- !u!212 &21298202
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -164,7 +165,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: RightLevelLoad
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110324}
