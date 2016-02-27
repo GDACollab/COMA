@@ -1571,19 +1571,17 @@ MonoBehaviour:
   - audioPos: 35.999625
     methodName: MakerS
   - audioPos: 36.7055
-    methodName: MakerL
+    methodName: MakerJ
   - audioPos: 37.23490625
-    methodName: MakerL
+    methodName: MakerJ
   - audioPos: 37.58784375
-    methodName: MakerL
+    methodName: MakerJ
   - audioPos: 38.11725
-    methodName: MakerC
+    methodName: MakerF
   - audioPos: 38.4701875
-    methodName: MakerL
+    methodName: MakerD
   - audioPos: 38.823125
-    methodName: MakerC
-  - audioPos: 40.234875
-    methodName: MakerC
+    methodName: MakerF
   - audioPos: 40.94075
     methodName: MakerK
   - audioPos: 41.646625
