@@ -3,7 +3,8 @@ using System.Collections;
 
 public class spawnS : MonoBehaviour {
 	
-	public GameObject noteS;
+	public GameObject note;
+    public Sprite noteS;
 	public Sprite noteD;
 	public GameObject[] Sscore = new GameObject[10];
 	public int bottom = -1;
@@ -24,16 +25,19 @@ public class spawnS : MonoBehaviour {
 		top = (top == 9) ? 0 : top + 1;
 	}
 	public void SNoteS(){
-		GameObject temp = Instantiate (noteS);
+		GameObject temp = Instantiate (note);
 		temp.transform.position = new Vector3 (-5, 0, 2);
 		temp.name = "Note";
+        temp.GetComponent<SpriteRenderer>().sprite = noteS;
 		bottom = (bottom == 9) ? 0:bottom+1;
 		Sscore [bottom] = temp;
 	}
 	public void SNoteD(){
-        GameObject temp = Instantiate(noteS);
+        GameObject temp = Instantiate(note);
         temp.transform.position = new Vector3(-5, 0, 2);
         temp.name = "Note";
         temp.GetComponent<SpriteRenderer>().sprite = noteD;
+        bottom = (bottom == 9) ? 0 : bottom + 1;
+        Sscore[bottom] = temp;
     }
 }
