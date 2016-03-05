@@ -1811,6 +1811,16 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 53.87628294
     methodName: MakerK
+  - audioPos: 54.27211875
+    methodName: MakerF
+  - audioPos: 54.58
+    methodName: MakerD
+  - audioPos: 54.89
+    methodName: MakerS
+  - audioPos: 55.26
+    methodName: MakerA
+  - audioPos: 57.26
+    methodName: MakerA
 --- !u!82 &1409466854
 AudioSource:
   m_ObjectHideFlags: 0
