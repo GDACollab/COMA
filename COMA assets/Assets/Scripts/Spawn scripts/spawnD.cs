@@ -4,7 +4,7 @@ using System.Collections;
 public class spawnD : MonoBehaviour {
 	
 	public GameObject noteS;
-	public GameObject noteD;
+	public Sprite noteD;
 	public GameObject[] Dscore = new GameObject[10];
 	public int bottom = -1;
 	public int top = 0;
@@ -26,11 +26,14 @@ public class spawnD : MonoBehaviour {
 	public void DNoteS(){
 		GameObject temp = Instantiate (noteS);
 		temp.transform.position = new Vector3 (-3, 0, 2);
-		temp.name = "singleNote_mother";
+		temp.name = "Note";
 		bottom = (bottom == 9) ? 0:bottom+1;
 		Dscore [bottom] = temp;
 	}
 	public void DNoteD(){
-		Instantiate (noteD);
-	}
+        GameObject temp = Instantiate(noteS);
+        temp.transform.position = new Vector3(-3, 0, 2);
+        temp.name = "Note";
+        temp.GetComponent<SpriteRenderer>().sprite = noteD;
+    }
 }
