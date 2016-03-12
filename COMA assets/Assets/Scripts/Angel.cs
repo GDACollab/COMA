@@ -25,11 +25,10 @@ public class Angel : MonoBehaviour {
 //		Application.LoadLevel(field_scene_name);
 	}
 
-	public static void TransitionFromFieldToBattle() {
-//		field_scene_name = ???;
-//		field_blue_pos = ???;
-
-//		Application.LoadLevel(???);
+	public static void TransitionFromFieldToBattle(string destination) {
+		marshalled_state = new FieldToBattle();
+		//Application.LoadLevel(destination);
+		Application.LoadLevel(Application.loadedLevelName);
 	}
 
 	public static void TransitionFromFieldToField(string destination) {
@@ -76,6 +75,28 @@ public class Angel : MonoBehaviour {
 				blue.transform.position = new Vector3(3, -1, 0);
 				return;
 			}
+		}
+	}
+
+	class FieldToBattle : MarshalledState {
+		string field_name;
+		Vector3 blue_pos;
+
+		public FieldToBattle() {
+			field_name = Application.loadedLevelName;
+			blue_pos = getBlue().transform.position;
+		}
+
+		public void Start() {
+			GameObject blue = getBlue();
+
+			// I'm expecting this code to run ONLY when starting a FIELD scene!
+			// The following assertion is an attempt to guarantee this ...
+			if(blue == null)
+				throw new System.Exception("Assertion failed");
+
+			blue.transform.position = blue_pos;
+			Debug.Log("returning from a random encounter");
 		}
 	}
 

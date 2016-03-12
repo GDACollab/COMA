@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour {
 	public float rightX = 0.2f;
 	public float leftX = -0.1f;
 	public GameObject background;
+
+	public List<string> random_encounters;
 
 	private Animator anim;
 
@@ -58,7 +61,24 @@ public class PlayerMovement : MonoBehaviour {
         {
 			transform.position += new Vector3(input_x, input_y, 0).normalized * Time.deltaTime * speed;
         }
+
+		// Random encounter
+		if(isWalking && Random.Range(0f,1f) < 0.005)
+			get_into_a_random_encounter();
     }
+
+	void get_into_a_random_encounter() {
+		// For testing purposes
+		//Angel.TransitionFromFieldToBattle("Disconaut battle normal");
+		//return;
+
+		if(random_encounters.Count == 0)
+			return;
+
+		int random_index = Random.Range(0, random_encounters.Count);
+		string chosen = random_encounters[random_index];
+		Angel.TransitionFromFieldToBattle(chosen);
+	}
 
 	void CheckIfHitWall()
 	{
