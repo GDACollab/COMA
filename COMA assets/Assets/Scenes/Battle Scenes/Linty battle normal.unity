@@ -1752,7 +1752,7 @@ MonoBehaviour:
   dirty: 0
   colors: []
   triggers:
-  - audioPos: 1
+  - audioPos: 1.0
     methodName: Play
   - audioPos: 0.01
     methodName: MakerJ
@@ -1764,7 +1764,7 @@ MonoBehaviour:
     methodName: MakerC
   - audioPos: 2.4
     methodName: MakerJ
-  - audioPos: 3
+  - audioPos: 3.0
     methodName: MakerK
   - audioPos: 3.6
     methodName: MakerL
@@ -1774,7 +1774,7 @@ MonoBehaviour:
     methodName: MakerA
   - audioPos: 5.4
     methodName: MakerS
-  - audioPos: 6
+  - audioPos: 6.0
     methodName: MakerD
   - audioPos: 6.6
     methodName: MakerD
@@ -1796,7 +1796,7 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 11.7
     methodName: MakerK
-  - audioPos: 12
+  - audioPos: 12.0
     methodName: MakerJ
   - audioPos: 12.6
     methodName: MakerJ
@@ -1812,7 +1812,7 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 16.8
     methodName: MakerL
-  - audioPos: 18
+  - audioPos: 18.0
     methodName: MakerK
   - audioPos: 18.6
     methodName: MakerJ
@@ -1822,7 +1822,7 @@ MonoBehaviour:
     methodName: MakerA
   - audioPos: 20.4
     methodName: MakerS
-  - audioPos: 21
+  - audioPos: 21.0
     methodName: MakerS
   - audioPos: 21.6
     methodName: MakerD
@@ -1832,7 +1832,7 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 23.4
     methodName: MakerF
-  - audioPos: 24
+  - audioPos: 24.0
     methodName: MakerA
   - audioPos: 24.6
     methodName: MakerD
@@ -1844,7 +1844,7 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 26.7
     methodName: MakerD
-  - audioPos: 27
+  - audioPos: 27.0
     methodName: MakerS
   - audioPos: 27.6
     methodName: MakerD
@@ -1854,7 +1854,7 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 29.4
     methodName: MakerK
-  - audioPos: 30
+  - audioPos: 30.0
     methodName: MakerL
   - audioPos: 30.6
     methodName: MakerC
@@ -1868,7 +1868,7 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 32.7
     methodName: MakerK
-  - audioPos: 33
+  - audioPos: 33.0
     methodName: MakerJ
   - audioPos: 33.6
     methodName: MakerA
@@ -1882,7 +1882,7 @@ MonoBehaviour:
     methodName: MakerS
   - audioPos: 35.4
     methodName: MakerF
-  - audioPos: 36
+  - audioPos: 36.0
     methodName: MakerL
   - audioPos: 36.6
     methodName: MakerL
@@ -1896,7 +1896,7 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 38.4
     methodName: MakerK
-  - audioPos: 39
+  - audioPos: 39.0
     methodName: MakerK
   - audioPos: 39.6
     methodName: MakerK
@@ -1910,7 +1910,7 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 41.7
     methodName: MakerF
-  - audioPos: 42
+  - audioPos: 42.0
     methodName: MakerJ
   - audioPos: 42.6
     methodName: MakerL
@@ -1926,7 +1926,7 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 47.4
     methodName: MakerS
-  - audioPos: 48
+  - audioPos: 48.0
     methodName: MakerD
   - audioPos: 48.6
     methodName: MakerF
@@ -1936,7 +1936,7 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 50.4
     methodName: MakerA
-  - audioPos: 51
+  - audioPos: 51.0
     methodName: MakerS
   - audioPos: 51.6
     methodName: MakerD
@@ -1948,7 +1948,7 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 53.4
     methodName: MakerJ
-  - audioPos: 54
+  - audioPos: 54.0
     methodName: MakerF
 --- !u!82 &1409466854
 AudioSource:
