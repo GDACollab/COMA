@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class contactA : MonoBehaviour {
 
 	public Sprite greyNote;
+    public GameObject glow;
 	int missed = 0;
 	spawnA source;
 	new GameObject textObject;
@@ -21,6 +22,8 @@ public class contactA : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.A)) {
+            GameObject temp = Instantiate(glow);
+            temp.transform.position = new Vector3(-7, -1, 2);
 			if ( missed == 0){
 				if (Vector3.Distance(transform.position, source.Ascore[source.top].transform.position)<2.01){
 					source.kill ();
@@ -31,7 +34,7 @@ public class contactA : MonoBehaviour {
 					words.enabled = true;
 					words.text = "Bad";
 					//lower health
-					Health.hp -= 2.5f;
+					//Health.hp -= 2.5f;
 				}else{
 					source.Ascore[source.top].GetComponent<SpriteRenderer>().sprite = greyNote;
 					missed = 1;
@@ -46,6 +49,6 @@ public class contactA : MonoBehaviour {
 		words.enabled = true;
 		words.text = "Miss";
 		//lower health a lot
-		Health.hp -= 5f;
+		Health.hp -= 2.5f;
 	}
 }
