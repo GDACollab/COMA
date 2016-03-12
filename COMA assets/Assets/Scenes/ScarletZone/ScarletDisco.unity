@@ -196,6 +196,7 @@ GameObject:
   - 4: {fileID: 263223349}
   - 212: {fileID: 263223348}
   - 61: {fileID: 263223350}
+  - 114: {fileID: 263223351}
   m_Layer: 0
   m_Name: coma boombox sprite1
   m_TagString: NPC
@@ -259,6 +260,25 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.14, y: 1.48}
+--- !u!114 &263223351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263223347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "How do you like Starlet\u2019s latest hit? I helped with the audio."
+  - "I can maybe put in a word for you to see her, but it\u2019s not likely."
+  path1:
+  - I know nothing
+  path2:
+  - Bye
+  - RESET
 --- !u!1 &286403002
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +289,7 @@ GameObject:
   - 4: {fileID: 286403004}
   - 212: {fileID: 286403003}
   - 61: {fileID: 286403005}
+  - 114: {fileID: 286403006}
   m_Layer: 0
   m_Name: coma saturn
   m_TagString: NPC
@@ -332,6 +353,25 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.89, y: 2.31}
+--- !u!114 &286403006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286403002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Yooooo! Come dance with me baby!
+  - Ayeee. Miss me? ;)
+  path1:
+  - I know nothing
+  path2:
+  - Bye
+  - RESET
 --- !u!1 &317808544
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +773,7 @@ GameObject:
   - 4: {fileID: 807451584}
   - 212: {fileID: 807451583}
   - 61: {fileID: 807451585}
+  - 114: {fileID: 807451586}
   m_Layer: 0
   m_Name: coma boombox sprite2
   m_TagString: NPC
@@ -796,6 +837,27 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.14, y: 1.48}
+--- !u!114 &807451586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 807451582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - I Love this song
+  - CHOICE
+  - Question
+  - Walk Away
+  path1:
+  - I know nothing
+  path2:
+  - Bye
+  - RESET
 --- !u!1001 &853694376
 Prefab:
   m_ObjectHideFlags: 0
@@ -1238,6 +1300,7 @@ GameObject:
   - 212: {fileID: 1468013245}
   - 61: {fileID: 1468013247}
   - 114: {fileID: 1468013248}
+  - 114: {fileID: 1468013249}
   m_Layer: 0
   m_Name: coma bambox sprite1
   m_TagString: NPC
@@ -1313,6 +1376,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bluePillarDistance: -0.1
+--- !u!114 &1468013249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468013244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - I Love this song
+  - CHOICE
+  - Question
+  - Walk Away
+  path1:
+  - I know nothing
+  path2:
+  - Bye
+  - RESET
 --- !u!1 &1479726723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1408,7 @@ GameObject:
   - 212: {fileID: 1479726724}
   - 61: {fileID: 1479726726}
   - 114: {fileID: 1479726727}
+  - 114: {fileID: 1479726728}
   m_Layer: 0
   m_Name: coma bambox sprite2
   m_TagString: NPC
@@ -1399,6 +1484,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bluePillarDistance: -0.1
+--- !u!114 &1479726728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1479726723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Oh my gosh, yes. I love this song! Starlet is amazing.
+  - "What\u2019s your favorite song?"
+  - CHOICE
+  - Question
+  - Walk Away
+  path1:
+  - "Is it really a rumor if we\u2019re talking about it at full volume? Okay\u2026
+    word is that Eyestravagant wears contact lenses. \u2018Scuse me. Contact\u2026
+    lens."
+  path2:
+  - Bye
+  - RESET
 --- !u!1 &1520858927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1723,160 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1001 &1732629110
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2147168471}
+    m_Modifications:
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22475994, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22321154, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22321154, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1712841591}
+    - target: {fileID: 22321154, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_SortingOrder
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478836, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_ScaleFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478836, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478836, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478836, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478836, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451392, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451392, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -156.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451392, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 266
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451392, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -87
+      objectReference: {fileID: 0}
+    - target: {fileID: 22429886, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 389
+      objectReference: {fileID: 0}
+    - target: {fileID: 22429886, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 285
+      objectReference: {fileID: 0}
+    - target: {fileID: 22429886, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -422
+      objectReference: {fileID: 0}
+    - target: {fileID: 22429886, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478244, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_Text
+      value: 43616e63656c
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476882, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+      propertyPath: m_Text
+      value: 5375626d6974
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bfebab26d97a2a94eaf6919e8ee345d5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2091269894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,4 +1953,19 @@ SpriteRenderer:
 --- !u!1 &2147168463 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 188102, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+  m_PrefabInternal: {fileID: 1366921427}
+--- !u!114 &2147168464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2147168463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0488b33fb7ad7c14aa5f8aa57a8f912f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2147168471 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 431442, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
   m_PrefabInternal: {fileID: 1366921427}
