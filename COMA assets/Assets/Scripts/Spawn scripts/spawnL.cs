@@ -3,8 +3,9 @@ using System.Collections;
 
 public class spawnL : MonoBehaviour {
 	
-	public GameObject noteS;
-	public GameObject noteD;
+	public GameObject note;
+    public Sprite noteS;
+	public Sprite noteD;
 	public GameObject[] Lscore = new GameObject[10];
 	public int bottom = -1;
 	public int top = 0;
@@ -24,13 +25,19 @@ public class spawnL : MonoBehaviour {
 		top = (top == 9) ? 0 : top + 1;
 	}
 	public void LNoteS(){
-		GameObject temp = Instantiate (noteS);
+		GameObject temp = Instantiate (note);
 		temp.transform.position = new Vector3 (5, 0, 2);
-		temp.name = "singleNote_mother";
+		temp.name = "Note";
+        temp.GetComponent<SpriteRenderer>().sprite = noteS;
 		bottom = (bottom == 9) ? 0:bottom+1;
 		Lscore [bottom] = temp;
 	}
 	public void LNoteD(){
-		Instantiate (noteD);
-	}
+        GameObject temp = Instantiate(note);
+        temp.transform.position = new Vector3(5, 0, 2);
+        temp.name = "Note";
+        temp.GetComponent<SpriteRenderer>().sprite = noteD;
+        bottom = (bottom == 9) ? 0 : bottom + 1;
+        Lscore[bottom] = temp;
+    }
 }
