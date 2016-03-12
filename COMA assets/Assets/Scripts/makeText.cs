@@ -27,6 +27,8 @@ public class makeText : MonoBehaviour {
 	public List<string> dialogue = new List<string>();
 	public List<string> path1 = new List<string> ();
 	public List<string> path2 = new List<string> ();
+	public List<string> nextDialog = new List<string>();
+	public List<List<string>> allDiologs = new List<List<string>> ();
 	List<string> storage = new List<string> ();
 	/*public List<string> waiting = new List<string> ();
 	public List<string> thanks = new List<string> ();
@@ -64,7 +66,8 @@ public class makeText : MonoBehaviour {
 					words.text = dialogue [i];
 				}
 				if (Input.GetKeyDown (KeyCode.Space) && words.enabled == true) {
-					i++;
+					if(i < dialogue.Count) i++;
+
 					if (i > dialogue.Count - 1) {
 						words.enabled = false;
 						BG.enabled = false;
@@ -74,9 +77,9 @@ public class makeText : MonoBehaviour {
 						choice1.enabled = true;
 						choice2.enabled = true;
 						ChBG.enabled = true;
-						i++;
+						if(i < dialogue.Count) i++;
 						choice1.text = dialogue [i];
-						i++;
+						if(i < dialogue.Count) i++;
 						choice2.text = dialogue [i];
 					}
 					/*if (dialogue[i].CompareTo("QUEST") == 0){
@@ -85,6 +88,13 @@ public class makeText : MonoBehaviour {
 				 * }*/
 					if (dialogue [i].CompareTo ("RESET") == 0) {
 						dialogue = storage;
+						i = 0;
+						words.enabled = false;
+						BG.enabled = false;
+						inConversation = false;
+					}
+					if (dialogue [i].CompareTo ("SECOND") == 0) {
+						dialogue = nextDialog;
 						i = 0;
 						words.enabled = false;
 						BG.enabled = false;
@@ -114,8 +124,12 @@ public class makeText : MonoBehaviour {
 				if (Input.GetKeyDown (KeyCode.UpArrow))
 					j = 0;
 				if (Input.GetKeyDown (KeyCode.Space)) {
-					if (j == 0)
-						dialogue = path1;
+					if (j == 0) {
+						if (dialogue != path1)
+							dialogue = path1;
+						else
+							dialogue = nextDialog;
+					}
 					else
 						dialogue = path2;
 					i = 0;
