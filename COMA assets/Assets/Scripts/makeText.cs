@@ -28,7 +28,7 @@ public class makeText : MonoBehaviour {
 	public List<string> path1 = new List<string> ();
 	public List<string> path2 = new List<string> ();
 	public List<string> nextDialog = new List<string>();
-	public List<List<string>> allDiologs = new List<List<string>> ();
+	public List<string> allDiologs = new List<string> ();
 	List<string> storage = new List<string> ();
 	/*public List<string> waiting = new List<string> ();
 	public List<string> thanks = new List<string> ();

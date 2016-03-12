@@ -236,6 +236,7 @@ MonoBehaviour:
   path2: []
   nextDialog:
   - How to get home? I think Starlet may know.
+  allDiologs: []
 --- !u!61 &512932318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -309,6 +310,18 @@ Prefab:
       propertyPath: background
       value: 
       objectReference: {fileID: 696375912}
+    - target: {fileID: 22445386, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 279
+      objectReference: {fileID: 0}
+    - target: {fileID: 22445386, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 295
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412310, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
   m_IsPrefabParent: 0
@@ -327,6 +340,7 @@ GameObject:
   - 212: {fileID: 955974877}
   - 61: {fileID: 955974876}
   - 68: {fileID: 955974879}
+  - 114: {fileID: 955974880}
   m_Layer: 0
   m_Name: table_space
   m_TagString: Untagged
@@ -343,11 +357,11 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.02714511}
+  m_Offset: {x: 0, y: -0.025197826}
   serializedVersion: 2
-  m_Size: {x: 0.71999997, y: 0.21570984}
+  m_Size: {x: 0.71999997, y: 0.3203957}
 --- !u!212 &955974877
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -406,6 +420,23 @@ EdgeCollider2D:
   - {x: -0.35999998, y: 0}
   - {x: 0.000046386434, y: -0.07099485}
   - {x: 0.35999998, y: 0}
+--- !u!114 &955974880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 955974875}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "There\u2019s a mess on this table. The owner must be pretty lousy."
+  path1: []
+  path2: []
+  nextDialog: []
+  allDiologs: []
 --- !u!1 &1016308164
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,8 +526,8 @@ MonoBehaviour:
   - "OOOO! The DESPAIR! The futility of it all! My oh my, darling, I\u2019m parched,
     go and fetch me a drink."
   - CHOICE
-  - Accept Quest
-  - Walk Away
+  - You do seem thirsty
+  - Busy
   path1:
   - "The finest spring water, drawn from petite italian grottos, cradled artfully
     in the most magnificent champagne flute... To a commoner like you, it\u2019s probably
@@ -512,6 +543,16 @@ MonoBehaviour:
   - "FINALLY. While you were running around in circles looking for my beverage, I\u2019ve
     been here in absolute shambles.% Now. I see there\u2019s been a little rumor spreading
     about this place. Obviously, it must be about me."
+  allDiologs:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1681320360
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +629,7 @@ MonoBehaviour:
   path1: []
   path2: []
   nextDialog: []
+  allDiologs: []
 --- !u!61 &1681320364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -721,6 +763,7 @@ MonoBehaviour:
   path1: []
   path2: []
   nextDialog: []
+  allDiologs: []
 --- !u!61 &1776385816
 BoxCollider2D:
   m_ObjectHideFlags: 0
