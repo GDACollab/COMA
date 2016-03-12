@@ -20,9 +20,8 @@ public class Angel : MonoBehaviour {
 //	public static List<Item> inventory;
 
 	public static void TransitionFromBattleToField() {
-//		marshalled_state = new BattleToField();
-//
-//		Application.LoadLevel(field_scene_name);
+		FieldToBattle x = (FieldToBattle) marshalled_state;
+		Application.LoadLevel(x.field_name);
 	}
 
 	public static void TransitionFromFieldToBattle(string destination) {
@@ -79,7 +78,7 @@ public class Angel : MonoBehaviour {
 	}
 
 	class FieldToBattle : MarshalledState {
-		string field_name;
+		public string field_name;
 		Vector3 blue_pos;
 
 		public FieldToBattle() {
