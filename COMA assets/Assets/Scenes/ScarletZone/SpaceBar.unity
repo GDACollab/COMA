@@ -158,6 +158,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &417800162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 417800164}
+  - 114: {fileID: 417800165}
+  m_Layer: 0
+  m_Name: DialogCSVParserObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417800164
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417800162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: 0.05, z: -3.96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+--- !u!114 &417800165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417800162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e348ac4ba891da4dbf8ea7e4e42160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: 3099401c3811b6147907be84141f9741, type: 3}
 --- !u!1 &512932314
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +210,7 @@ GameObject:
   - 114: {fileID: 512932317}
   - 61: {fileID: 512932318}
   m_Layer: 0
-  m_Name: coma_court
+  m_Name: Court
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,13 +269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - "Ugh, I want to go home already. I\u2019m tired of dancing."
-  - SECOND
+  dialogue: []
   path1: []
   path2: []
-  nextDialog:
-  - How to get home? I think Starlet may know.
+  nextDialog: []
   allDiologs: []
 --- !u!61 &512932318
 BoxCollider2D:
@@ -342,7 +379,7 @@ GameObject:
   - 68: {fileID: 955974879}
   - 114: {fileID: 955974880}
   m_Layer: 0
-  m_Name: table_space
+  m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,7 +486,7 @@ GameObject:
   - 61: {fileID: 1016308165}
   - 114: {fileID: 1016308168}
   m_Layer: 0
-  m_Name: Eyestravagant_starletsdomain
+  m_Name: Eyestravagant
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,37 +559,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - "OOOO! The DESPAIR! The futility of it all! My oh my, darling, I\u2019m parched,
-    go and fetch me a drink."
-  - CHOICE
-  - You do seem thirsty
-  - Busy
-  path1:
-  - "The finest spring water, drawn from petite italian grottos, cradled artfully
-    in the most magnificent champagne flute... To a commoner like you, it\u2019s probably
-    just water in a teardrop shaped glass."
-  - CHOICE
-  - Give Drink
-  - Deny Drink
-  path2:
-  - I guess my stardom ends here. Come talk to me if you need anything else from this
-    has-been!
-  - RESET
-  nextDialog:
-  - "FINALLY. While you were running around in circles looking for my beverage, I\u2019ve
-    been here in absolute shambles.% Now. I see there\u2019s been a little rumor spreading
-    about this place. Obviously, it must be about me."
-  allDiologs:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  dialogue: []
+  path1: []
+  path2: []
+  nextDialog: []
+  allDiologs: []
 --- !u!1 &1681320360
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +576,7 @@ GameObject:
   - 114: {fileID: 1681320363}
   - 61: {fileID: 1681320364}
   m_Layer: 0
-  m_Name: coma boombox sprite1
+  m_Name: Boombox
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,8 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - "I\u2019ve been waiting thirty minutes for my drink. I hope I get my money back!"
+  dialogue: []
   path1: []
   path2: []
   nextDialog: []
