@@ -198,7 +198,7 @@ GameObject:
   - 61: {fileID: 263223350}
   - 114: {fileID: 263223351}
   m_Layer: 0
-  m_Name: coma boombox sprite1
+  m_Name: Boombox
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,13 +271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - "How do you like Starlet\u2019s latest hit? I helped with the audio."
-  - SECOND
+  player: {fileID: 2147168463}
+  dialogue: []
   path1: []
   path2: []
-  nextDialog:
-  - "I can maybe put in a word for you to see her, but it\u2019s not likely."
+  nextDialog: []
 --- !u!1 &286403002
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +288,7 @@ GameObject:
   - 61: {fileID: 286403005}
   - 114: {fileID: 286403006}
   m_Layer: 0
-  m_Name: coma saturn
+  m_Name: Saturn
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,13 +361,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - Yooooo! Come dance with me baby!
-  - SECOND
+  player: {fileID: 2147168463}
+  dialogue: []
   path1: []
   path2: []
-  nextDialog:
-  - Ayeee. Miss me? ;)
+  nextDialog: []
 --- !u!1 &317808544
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +768,7 @@ GameObject:
   - 212: {fileID: 807451583}
   - 61: {fileID: 807451585}
   m_Layer: 0
-  m_Name: coma boombox sprite2
+  m_Name: Boombox2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1274,7 +1270,7 @@ GameObject:
   - 114: {fileID: 1468013248}
   - 114: {fileID: 1468013249}
   m_Layer: 0
-  m_Name: coma bambox sprite1
+  m_Name: Bambox2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,11 +1350,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468013244}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   dialogue:
   - I Love this song
   - CHOICE
@@ -1384,7 +1381,7 @@ GameObject:
   - 114: {fileID: 1479726727}
   - 114: {fileID: 1479726728}
   m_Layer: 0
-  m_Name: coma bambox sprite2
+  m_Name: Bambox
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1469,24 +1466,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - Oh my gosh, yes. I love this song! Starlet is amazing.
-  - CHOICE
-  - Question
-  - Walk Away
-  path1:
-  - "Is it really a rumor if we\u2019re talking about it at full volume? Okay\u2026
-    word is that Eyestravagant wears contact lenses. \u2018Scuse me. Contact\u2026
-    lens."
-  - SECOND
-  path2:
-  - Bye
-  - SECOND
-  nextDialog:
-  - "What\u2019s your favorite song?"
-  - CHOICE
-  - Question
-  - Walk Away
+  player: {fileID: 2147168463}
+  dialogue: []
+  path1: []
+  path2: []
+  nextDialog: []
 --- !u!1 &1520858927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1600,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0
+--- !u!1 &1688428675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1688428677}
+  - 114: {fileID: 1688428676}
+  m_Layer: 0
+  m_Name: cvs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1688428676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688428675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e348ac4ba891da4dbf8ea7e4e42160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: 3099401c3811b6147907be84141f9741, type: 3}
+--- !u!4 &1688428677
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688428675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3066064, y: -0.07941143, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1 &1712841587
 GameObject:
   m_ObjectHideFlags: 0

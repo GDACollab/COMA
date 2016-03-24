@@ -14,11 +14,14 @@ using System.Collections.Generic;
  * If the player denies a quest, or otherwise needs to restart the conversation,
  * type "RESET" as the last box of that tree.*/
 
+//current issue if you are collising with more then one npc then the diolog box will not open
+
 public class makeText : MonoBehaviour {
 
 	new GameObject textObject;
 	new GameObject choiceObject;
 	new GameObject choiceObject2;
+	public GameObject player;
 	Text choice1;
 	Text choice2;
 	Image ChBG;
@@ -28,7 +31,6 @@ public class makeText : MonoBehaviour {
 	public List<string> path1 = new List<string> ();
 	public List<string> path2 = new List<string> ();
 	public List<string> nextDialog = new List<string>();
-	public List<string> allDiologs = new List<string> ();
 	List<string> storage = new List<string> ();
 	/*public List<string> waiting = new List<string> ();
 	public List<string> thanks = new List<string> ();
@@ -71,39 +73,42 @@ public class makeText : MonoBehaviour {
 					if (i > dialogue.Count - 1) {
 						words.enabled = false;
 						BG.enabled = false;
-						inConversation = false;
-					}
-					if (dialogue [i].CompareTo ("CHOICE") == 0) {
-						choice1.enabled = true;
-						choice2.enabled = true;
-						ChBG.enabled = true;
-						if(i < dialogue.Count) i++;
-						choice1.text = dialogue [i];
-						if(i < dialogue.Count) i++;
-						choice2.text = dialogue [i];
-					}
-					/*if (dialogue[i].CompareTo("QUEST") == 0){
+						player.GetComponent<PlayerMovement> ().inDialog = false;
+					} else {
+						if (dialogue [i].CompareTo ("CHOICE") == 0) {
+							choice1.enabled = true;
+							choice2.enabled = true;
+							ChBG.enabled = true;
+							if (i < dialogue.Count)
+								i++;
+							choice1.text = dialogue [i];
+							if (i < dialogue.Count)
+								i++;
+							choice2.text = dialogue [i];
+						}
+						/*if (dialogue[i].CompareTo("QUEST") == 0){
 				 * this.quest = 1;
 				 * dialogue = waiting;
 				 * }*/
-					if (dialogue [i].CompareTo ("RESET") == 0) {
-						dialogue = storage;
-						i = 0;
-						words.enabled = false;
-						BG.enabled = false;
-						inConversation = false;
-					}
-					if (dialogue [i].CompareTo ("SECOND") == 0) {
-						dialogue = nextDialog;
-						i = 0;
-						words.enabled = false;
-						BG.enabled = false;
-						inConversation = false;
+						if (dialogue [i].CompareTo ("RESET") == 0) {
+							dialogue = storage;
+							i = 0;
+							words.enabled = false;
+							BG.enabled = false;
+							inConversation = false;
+						}
+						if (dialogue [i].CompareTo ("SECOND") == 0) {
+							dialogue = nextDialog;
+							i = 0;
+							words.enabled = false;
+							BG.enabled = false;
+							inConversation = false;
+						}
 					}
 				} else if (Input.GetKeyDown (KeyCode.Space)) {
 					words.enabled = true;
 					BG.enabled = true;
-					inConversation = true;
+					player.GetComponent<PlayerMovement> ().inDialog = true;
 					i = 0;
 					/*if (this.quest == 1 && inventory.questItem.obtained == true){
 					inventory.questItem.obtained = false;
@@ -141,20 +146,15 @@ public class makeText : MonoBehaviour {
 		}
 	}
 
-	public void OnTriggerStay2D(Collider2D obj){
-		if (obj.tag.Equals ("Player") && !inConversation) {
+	public void OnTriggerEnter2D(Collider2D obj){
+		if (obj.tag.Equals ("Player") && obj.isTrigger)
 			nearCharacter = true;
-			obj.GetComponent<PlayerMovement> ().inDialog = false;
-		}
-
-		if (obj.tag.Equals ("Player") && inConversation) {
-			obj.GetComponent<PlayerMovement> ().inDialog = true;
-		}
 	}
 
 	public void OnTriggerExit2D(Collider2D obj){
-		if (obj.tag.Equals ("Player")) {
+		if (obj.tag.Equals ("Player") && obj.isTrigger) {
 			nearCharacter = false;
+			obj.GetComponent<PlayerMovement> ().inDialog = false;
 		}
 	}
 }

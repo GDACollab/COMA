@@ -67,6 +67,8 @@ public class PlayerMovement : MonoBehaviour {
 			if(isWalking && Random.Range(0f,1f) < 0.005)
 				get_into_a_random_encounter();
 		}
+		else
+			anim.SetBool ("isWalking", false);
     }
 
 	void get_into_a_random_encounter() {

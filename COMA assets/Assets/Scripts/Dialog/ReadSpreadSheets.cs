@@ -57,6 +57,8 @@ public class ReadSpreadSheets
 				case 4:
 					if (csvFile.text [i].Equals (',')) {
 						row.Conversation_Path_Chain = row.Conversation_Path_Chain.Trim ();
+						if (row.Conversation_Path_Chain.Equals ("\"\""))
+							row.Conversation_Path_Chain = string.Empty;
 						j++;
 					}
 					else row.Conversation_Path_Chain += csvFile.text [i];
@@ -118,6 +120,10 @@ public class ReadSpreadSheets
 		return parsedRows;
 	}
 
+	public int getRowsLength(){
+		return parsedRows.Count;
+	}
+
 	public List<Row> FindAll_ACTOR(string name){
 		List<Row> actorsRows = new List<Row> ();
 		for(int i = 0; i < parsedRows.Count; i++){
@@ -126,5 +132,44 @@ public class ReadSpreadSheets
 		}
 
 		return actorsRows;
+	}
+
+	public int[] FindDiologIndexes(){
+		List<Row> tempParsedRows = new List<Row>(parsedRows);
+		int[] indexRows = new int[tempParsedRows.Count];
+		int index = 0;
+
+		while(tempParsedRows.Count > 0){
+			List<Row> actorsDiolog = FindAll_ACTOR (tempParsedRows [index].ACTOR);
+
+			for (int j = 0; j < actorsDiolog.Count; j++) {
+				int temp = 0;
+				if(int.TryParse(actorsDiolog[j].Identifier, out temp)){
+					temp = int.Parse (actorsDiolog [j].Identifier);
+					indexRows [temp] = j;
+					tempParsedRows.Remove (actorsDiolog [j]);
+				}
+			}
+		}
+
+		return indexRows;
+	}
+
+	private List<Row> RemoveAll_ACTOR(string name, List<Row> pR){
+		for(int i = 0; i < pR.Count; i++){
+			if (pR [i].ACTOR.Equals (name))
+				pR.RemoveAt (i);
+		}
+
+		return pR;
+	}
+
+	private bool actorExists(string name){
+		for(int i = 0; i < parsedRows.Count; i++){
+			if (parsedRows [i].ACTOR.Equals (name))
+				return true;
+		}
+
+		return false;
 	}
 }
