@@ -5,9 +5,9 @@ Identifier,ACTOR,CUE,CONTEXT,Conversation Path Chain,Choice Type,GameObject Inte
 3,Blue ,“Eyestravagant’s drink. It’s an aspiring singer’s drink of choice!”,Activate drink,,,Eyestravagant,,Disco,,
 4,Blue ,“There’s a wet handkerchief here. You barely lift it with two fingers into your pocket.”,Activate huge handkerchief,,,Handkercheif,,Disco,,
 5,Boombox,“How do you like Starlet’s latest hit? I helped with the audio.”,1st approach,,,Blue,,Disco,,
-6,Boombox,"“I can maybe put in a word for you to see her, but it’s not likely.”",2nd approach ,-1,,Blue,,Disco,,
+6,Boombox,"“I can maybe put in a word for you to see her, but it’s not likely.”",2nd approach ,,,Blue,,Disco,,
 8,Saturn,“Yooooo! Come dance with me baby!”,1st approach,,,Blue,,Disco,,
-7,Saturn,“Ayeee. Miss me? ;)”,2nd approach,-1,,Blue,,Disco,,Blue turns to face the camera
+7,Saturn,“Ayeee. Miss me? ;)”,2nd approach,,,Blue,,Disco,,Blue turns to face the camera
 9,Blue ,“There’s a mess on this table. The owner must be pretty lousy.”,Activate big booth and table,,,Table,,SpaceBar,,
 10,Blue ,“You do seem thirsty.”,Blue decides to fetch the water,25,,Eyestravagant,,SpaceBar,,Quest 1 accept
 11,Blue ,"""Busy.""",Blue denies the fetch quest,27,,Eyestravagant,,SpaceBar,,Quest 1 deny
@@ -15,10 +15,10 @@ Identifier,ACTOR,CUE,CONTEXT,Conversation Path Chain,Choice Type,GameObject Inte
 13,Blue ,“Here’s the rumor: no.”,Blue decides to not help with the rumor,26,,Eyestravagant,,SpaceBar,,Quest 2 deny
 14,Blue ,“Not like I’m doing anything else with my time.”,Blue decides to help find the hankerchief,,,Eyestravagant,,SpaceBar,,Quest 3 accept
 15,Blue ,“How about I take a break from “running around” instead?”,Blue isn't going to help with the hankerchief,,,Eyestravagant,,SpaceBar,,Quest 3 deny
-16,Boombox,“I’ve been waiting thirty minutes for my drink. I hope I get my money back!”,1st approach,-1,,Blue,,SpaceBar,,
+16,Boombox,“I’ve been waiting thirty minutes for my drink. I hope I get my money back!”,1st approach,,,Blue,,SpaceBar,,
 17,Court,"“Ugh, I want to go home already. I’m tired of dancing.”",1st approach,,,Blue,,SpaceBar,,
-18,Court ,“How to get home? I think Starlet may know.”,2nd approach,-1,,Blue,,SpaceBar,,
-19,Eyestravagant,"“Ah well, I suppose that I’m all glammed up as much as I can be. Darling, I’ll keep you in mind when I’m up with the stars. Give Starlet my blessings when you see her.”",After Blue is done helping ,-1,,Blue,,SpaceBar,,"Eyestravagant questline complete, healing item in inventory"
+18,Court ,“How to get home? I think Starlet may know.”,2nd approach,,,Blue,,SpaceBar,,
+19,Eyestravagant,"“Ah well, I suppose that I’m all glammed up as much as I can be. Darling, I’ll keep you in mind when I’m up with the stars. Give Starlet my blessings when you see her.”",After Blue is done helping ,,,Blue,,SpaceBar,,"Eyestravagant questline complete, healing item in inventory"
 20,Eyestravagant,"“FINALLY. While you were running around in circles looking for my beverage, I’ve been here in absolute shambles.% Now. I see there’s been a little rumor spreading about this place. Obviously, it must be about me.”",Blue returns with the water,12|13,Quest,Blue,,SpaceBar,,"Quest 1 complete, Quest 2 start, Bambox dialogue change"
 21,Eyestravagant,"“OOOO! The DESPAIR! The futility of it all! My oh my, darling, I’m parched, go and fetch me a drink. ”",1st approach,10|11|22,Quest,Blue,,SpaceBar,,Quest 1 start
 22,Eyestravagant,“Me? Wearing a contact lens? How foolish! My eye is perfect on its own. I’ll see to it that SOMEONE is uninvited from the afterparty...”,Confronted with the rumor,,,Blue,,SpaceBar,,Quest 2 complete
@@ -29,6 +29,6 @@ Identifier,ACTOR,CUE,CONTEXT,Conversation Path Chain,Choice Type,GameObject Inte
 27,Eyestravagant,“I guess my stardom ends here. Come talk to me if you need anything else from this has-been!”,Blue decides to not fetch the water,,,Blue,,SpaceBar,,
 28,Blue ,"""The name is... Blue?""",Response to Starlets introduction,30,,Starlet,,StarletsStage,,
 29,Starlet,"“That’s exactly why I like you, Blue! You and I, we’re very similar. Passion! Prowess! ...Perfect hair! We’re a match made in heaven. An unstoppable duo!% I’ll miss seeing my adoring friends around, but… Absence does seem to make the heart grow fonder, doesn’t it…? Maybe I should let you miss me instead, then.% Oh, nevermind! I’ve always wanted to go on tour!”",<Good/True Path> Starlet is defeated but not dead.,,,Blue,,StarletsStage,,"<UI message> ""Starlet has joined the party!"""
-30,Starlet,"""What a wonderful name, Blue! It's a wonderful color. Well, it definitely suits you, but it could use some flair. Let's get acquianted. You can be my back up singer. Sound good? Of course it does!""",Response to Blue's name,-1,,Blue,,StarletsStage,,Initiates rythm battle with Starlet
+30,Starlet,"""What a wonderful name, Blue! It's a wonderful color. Well, it definitely suits you, but it could use some flair. Let's get acquianted. You can be my back up singer. Sound good? Of course it does!""",Response to Blue's name,,,Blue,,StarletsStage,,Initiates rythm battle with Starlet
 31,Starlet,“But... you were supposed to back me up?”,<Evil Path/ Terrible finish> Starlet passes away and Blue is visibly horrified at her action.,,,Blue,,StarletsStage,,NPC's in Starlets Domain respond with cold dialogue
-32,Starlet,"“Oh, they weren’t kidding when they said Blue!% Need I introduce myself? You've probably heard so much about me..."" ",After Blue enters Starets Stage,28,,Blue,,StarletsStage,,
+32,Starlet,"“Oh, they weren’t kidding when they said Blue!% Need I introduce myself? You've probably heard so much about me..."" ",After Blue enters Starets Stage,28,1st approach,Blue,,StarletsStage,,

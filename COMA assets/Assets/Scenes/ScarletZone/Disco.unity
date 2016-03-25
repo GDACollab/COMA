@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2147168463}
+  dialogCSVParserObject: {fileID: 1688428675}
   dialogue: []
   path1: []
   path2: []
@@ -362,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2147168463}
+  dialogCSVParserObject: {fileID: 1688428675}
   dialogue: []
   path1: []
   path2: []
@@ -1355,7 +1357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2147168463}
+  dialogCSVParserObject: {fileID: 1688428675}
   dialogue:
   - I Love this song
   - CHOICE
@@ -1467,6 +1470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2147168463}
+  dialogCSVParserObject: {fileID: 1688428675}
   dialogue: []
   path1: []
   path2: []
@@ -1610,7 +1614,7 @@ GameObject:
   - 4: {fileID: 1688428677}
   - 114: {fileID: 1688428676}
   m_Layer: 0
-  m_Name: cvs
+  m_Name: DialogCSVParserObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

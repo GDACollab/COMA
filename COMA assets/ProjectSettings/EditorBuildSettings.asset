@@ -5,12 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletDisco.unity
   - enabled: 1
-    path: Assets/Scenes/ScarletZone/SpaceBar.unity
+    path: Assets/Scenes/ScarletZone/Disco.unity
   - enabled: 1
+    path: Assets/Scenes/ScarletZone/SpaceBar.unity
+  - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletStage.unity
+  - enabled: 1
+    path: Assets/Scenes/ScarletZone/StarletsStage.unity
   - enabled: 1
     path: Assets/Scenes/MotherZone/Toybox.unity
   - enabled: 1

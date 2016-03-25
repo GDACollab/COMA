@@ -158,9 +158,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -8.15144, y: 1.5421731}
+  m_Offset: {x: -8.15144, y: 1.4806727}
   serializedVersion: 2
-  m_Size: {x: 8.44736, y: 2.2697122}
+  m_Size: {x: 8.44736, y: 2.392713}
 --- !u!61 &6124624
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0cb8c1dd6bd114e99f80406bfa9132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelLoad: ScarletStage
+  LevelLoad: StarletsStage
 --- !u!114 &11469454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,9 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580921fdbd68572418d72b2490e95473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftLevelLoad: ScarletDisco
+  LeftLevelLoad: Disco
   RightLevelLoad: 
-  player: {fileID: 0}
 --- !u!212 &21244934
 SpriteRenderer:
   m_ObjectHideFlags: 1

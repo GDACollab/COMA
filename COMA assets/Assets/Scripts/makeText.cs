@@ -22,6 +22,7 @@ public class makeText : MonoBehaviour {
 	new GameObject choiceObject;
 	new GameObject choiceObject2;
 	public GameObject player;
+	public GameObject dialogCSVParserObject;
 	Text choice1;
 	Text choice2;
 	Image ChBG;
@@ -31,6 +32,7 @@ public class makeText : MonoBehaviour {
 	public List<string> path1 = new List<string> ();
 	public List<string> path2 = new List<string> ();
 	public List<string> nextDialog = new List<string>();
+	public string response = string.Empty;
 	List<string> storage = new List<string> ();
 	/*public List<string> waiting = new List<string> ();
 	public List<string> thanks = new List<string> ();
@@ -86,16 +88,22 @@ public class makeText : MonoBehaviour {
 								i++;
 							choice2.text = dialogue [i];
 						}
+						if (dialogue [i].CompareTo ("CONTINUE") == 0) {
+							choice1.enabled = true;
+							ChBG.enabled = true;
+							choice1.text = response;
+						}
 						/*if (dialogue[i].CompareTo("QUEST") == 0){
-				 * this.quest = 1;
-				 * dialogue = waiting;
-				 * }*/
+						  this.quest = 1;
+						  dialogue = waiting;
+						  }*/
 						if (dialogue [i].CompareTo ("RESET") == 0) {
 							dialogue = storage;
 							i = 0;
 							words.enabled = false;
 							BG.enabled = false;
 							inConversation = false;
+							player.GetComponent<PlayerMovement> ().inDialog = false;
 						}
 						if (dialogue [i].CompareTo ("SECOND") == 0) {
 							dialogue = nextDialog;
@@ -103,6 +111,14 @@ public class makeText : MonoBehaviour {
 							words.enabled = false;
 							BG.enabled = false;
 							inConversation = false;
+							player.GetComponent<PlayerMovement> ().inDialog = false;
+						}
+						if (dialogue [i].CompareTo ("BATTLE") == 0) {
+							words.enabled = false;
+							BG.enabled = false;
+							inConversation = false;
+							player.GetComponent<PlayerMovement> ().inDialog = false;
+							//start the boss battle
 						}
 					}
 				} else if (Input.GetKeyDown (KeyCode.Space)) {
@@ -129,19 +145,48 @@ public class makeText : MonoBehaviour {
 				if (Input.GetKeyDown (KeyCode.UpArrow))
 					j = 0;
 				if (Input.GetKeyDown (KeyCode.Space)) {
-					if (j == 0) {
-						if (dialogue != path1)
-							dialogue = path1;
-						else
-							dialogue = nextDialog;
+					if (choice1.enabled && choice2.enabled) {
+						if (j == 0) {
+							if (dialogue != path1)
+								dialogue = path1;
+							else
+								dialogue = nextDialog;
+						}  else
+							dialogue = path2;
 					}
-					else
-						dialogue = path2;
+					else {
+						dialogue = nextDialog;
+					}
 					i = 0;
 					choice1.enabled = false;
 					choice2.enabled = false;
 					ChBG.enabled = false;
 				}
+			}
+		}
+
+		//this is for each characters dialogs
+		if (dialogCSVParserObject.GetComponent<GatherDiologs> ().dialogsInOrder.ContainsKey (gameObject)) {
+			List<string> characterDialog = dialogCSVParserObject.GetComponent<GatherDiologs> ().dialogsInOrder [gameObject];
+
+			//here check when diolog == path1 if it does then check for next diolg sequence also check first if END exists
+
+			//check if next diolag has been set then change last SECOND path string to RESET
+			if (nextDialog.Equals (dialogue) && path1.Count > 0 && path2.Count > 0) {
+			
+				bool setNextDialog = false;
+				for (int i = 0; i < characterDialog.Count; i++) {
+					if (characterDialog [i].Equals (nextDialog [0])) {
+						dialogue = new List<string> ();
+						setNextDialog = true;
+					}
+					if (setNextDialog && !characterDialog [i].Equals ("END")) {
+						dialogue.Add (characterDialog [i]);
+					}
+				}
+				storage = dialogue;
+				path1 [path1.Count - 1] = "RESET";
+				path2 [path2.Count - 1] = "RESET";
 			}
 		}
 	}

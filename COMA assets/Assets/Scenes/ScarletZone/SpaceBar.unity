@@ -274,10 +274,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 424304465}
+  dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  response: 
 --- !u!61 &512932318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -489,10 +491,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 424304465}
+  dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  response: 
 --- !u!1 &1016308164
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,10 +583,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 424304465}
+  dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  response: 
 --- !u!1 &1681320360
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,10 +661,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 424304465}
+  dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  response: 
 --- !u!61 &1681320364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -788,11 +796,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 424304465}
+  dialogCSVParserObject: {fileID: 417800162}
   dialogue:
   - "There\u2019s a mess on this table. The owner must be pretty lousy."
   path1: []
   path2: []
   nextDialog: []
+  response: 
 --- !u!61 &1776385816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -857,18 +867,6 @@ Prefab:
     - target: {fileID: 448072, guid: 2a3d1d0fdc8920248b5f991414f3e8c9, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469454, guid: 2a3d1d0fdc8920248b5f991414f3e8c9, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122340, guid: 2a3d1d0fdc8920248b5f991414f3e8c9, type: 2}
-      propertyPath: m_Offset.y
-      value: 1.4806727
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122340, guid: 2a3d1d0fdc8920248b5f991414f3e8c9, type: 2}
-      propertyPath: m_Size.y
-      value: 2.392713
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a3d1d0fdc8920248b5f991414f3e8c9, type: 2}
