@@ -6,22 +6,22 @@ public class ChangeArea : MonoBehaviour {
 	public string LeftLevelLoad = "";
 	public string RightLevelLoad = "";
 
-	private GameObject player;
+	private PlayerMovement player_movement;
 
-	void Start(){
-		player = GameObject.FindGameObjectWithTag ("Player") as GameObject;
+	void Awake(){
+		player_movement = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement>();
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (player != null && player.GetComponent<PlayerMovement> ().hitLeftWall && LeftLevelLoad != "") {
-			Application.LoadLevel (LeftLevelLoad);
-			player.GetComponent<PlayerMovement> ().hitLeftWall = false;
+		if (player_movement.hitRightWall && RightLevelLoad != "") {
+			Angel.TransitionFromFieldToField(RightLevelLoad);
+			player_movement.hitRightWall = false;
 		}
 
-		if (player != null && player.GetComponent<PlayerMovement> ().hitRightWall && RightLevelLoad != "") {
-			Application.LoadLevel (RightLevelLoad);
-			player.GetComponent<PlayerMovement> ().hitRightWall = false;
+		if (player_movement.hitLeftWall && LeftLevelLoad != "") {
+			Angel.TransitionFromFieldToField(LeftLevelLoad);
+			player_movement.hitLeftWall = false;
 		}
 	}
 }

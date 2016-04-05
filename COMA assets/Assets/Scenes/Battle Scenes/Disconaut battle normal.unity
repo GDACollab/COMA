@@ -114,7 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4149ab9703f8b94282e885dd162e99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &69909068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -200,7 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb93cd53c1476b64c8950677cea2131c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &175125243
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -342,6 +344,64 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 185307618}
+--- !u!1 &412836653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412836655}
+  - 212: {fileID: 412836654}
+  m_Layer: 0
+  m_Name: name_disconaut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &412836654
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412836653}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3b39de0cccc091746ada7e85f7fe6da8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &412836655
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412836653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.32, y: 2.39, z: 0}
+  m_LocalScale: {x: 0.7622986, y: 0.8052865, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
 --- !u!1 &413016724
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,8 +429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1b05ed873d69c4a8a2b3088d678d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Ascore:
   - {fileID: 0}
   - {fileID: 0}
@@ -595,7 +656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70daa3e06cbbf2459aed80a535ba791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &470779250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -894,7 +956,7 @@ MonoBehaviour:
     y: 275
     width: 0
     height: 0
-  lifebar: {fileID: 2800000, guid: d9fe228181eeaba4aacff782c919a2f9, type: 3}
+  lifebar: {fileID: 2800000, guid: 0cd18a0682ee6504098563d1aab34ab4, type: 3}
 --- !u!4 &812914537
 Transform:
   m_ObjectHideFlags: 0
@@ -934,8 +996,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5956e70e9232c47a83c00bc00f6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Dscore:
   - {fileID: 0}
   - {fileID: 0}
@@ -1166,7 +1229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8ab55abfdd23b40989135d3ed25705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &1154286412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1252,7 +1316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6073d69632a2dad4395bd36dc78dfabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &1168246372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1309,6 +1374,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1 &1179962164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1179962166}
+  - 212: {fileID: 1179962165}
+  m_Layer: 0
+  m_Name: battlescreen_start_tutorial_tophalf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1179962165
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179962164}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1f9b7bb08045f1b408519eef06878ea9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &1179962166
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179962164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.08, z: 1}
+  m_LocalScale: {x: 0.9721782, y: 0.7441393, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &1285224664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,8 +1459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a457f1dafe243ad428326c2f28aeb8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Kscore:
   - {fileID: 0}
   - {fileID: 0}
@@ -1477,7 +1601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0731b63f0044641b1bb5f53d4cd9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &1319495848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1561,7 +1686,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 061088c5ad4bfca4b8fc39c90aaf1bc1, type: 2}
+  - {fileID: 2100000, guid: 8eb40bfb295ab8d4c8c82e1bf4b148eb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1655,17 +1780,11 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 4.75
     methodName: MakerJ
-  - audioPos: 5.25
-    methodName: MakerJ
   - audioPos: 5.5
     methodName: MakerJ
   - audioPos: 6.0
     methodName: MakerF
-  - audioPos: 6.75
-    methodName: MakerL
   - audioPos: 7.0
-    methodName: MakerL
-  - audioPos: 7.5
     methodName: MakerL
   - audioPos: 7.75
     methodName: MakerK
@@ -1685,17 +1804,11 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 12.75
     methodName: MakerJ
-  - audioPos: 13.25
-    methodName: MakerJ
   - audioPos: 13.5
     methodName: MakerJ
   - audioPos: 14.0
     methodName: MakerF
-  - audioPos: 14.75
-    methodName: MakerL
   - audioPos: 15.0
-    methodName: MakerL
-  - audioPos: 15.5
     methodName: MakerL
   - audioPos: 15.75
     methodName: MakerK
@@ -1721,15 +1834,19 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 22.0
     methodName: MakerA
-  - audioPos: 22.75
+  - audioPos: 22.5
     methodName: MakerA
-  - audioPos: 23.25
+  - audioPos: 23.0
     methodName: MakerA
+  - audioPos: 23.5
+    methodName: MakerD
   - audioPos: 24.0
     methodName: MakerA
-  - audioPos: 24.75
+  - audioPos: 24.5
     methodName: MakerA
-  - audioPos: 25.25
+  - audioPos: 25.0
+    methodName: MakerA
+  - audioPos: 25.5
     methodName: MakerA
   - audioPos: 26.0
     methodName: MakerL
@@ -1749,16 +1866,20 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 30.0
     methodName: MakerA
-  - audioPos: 30.75
+  - audioPos: 30.5
     methodName: MakerA
-  - audioPos: 31.25
+  - audioPos: 31.0
     methodName: MakerA
+  - audioPos: 31.5
+    methodName: MakerD
   - audioPos: 32.0
     methodName: MakerA
-  - audioPos: 32.75
+  - audioPos: 32.5
     methodName: MakerA
-  - audioPos: 33.25
+  - audioPos: 33.0
     methodName: MakerA
+  - audioPos: 33.5
+    methodName: MakerD
   - audioPos: 34.0
     methodName: MakerJ
   - audioPos: 34.75
@@ -1999,64 +2120,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1419568662}
---- !u!1 &1554257573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1554257575}
-  - 212: {fileID: 1554257574}
-  m_Layer: 0
-  m_Name: battlescreen_start_mother_tophalf
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1554257574
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1554257573}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10255062388731847b25619867a13cf5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!4 &1554257575
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1554257573}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.08, z: 1}
-  m_LocalScale: {x: 0.9721782, y: 0.7441393, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
 --- !u!1 &1572091096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,8 +2147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba74d4f271ac084bb16dd8761c12c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Lscore:
   - {fileID: 0}
   - {fileID: 0}
@@ -2236,8 +2300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8cade7efeebec45b289510aaa1bb17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Fscore:
   - {fileID: 0}
   - {fileID: 0}
@@ -2292,7 +2357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edce45fc9e1afe745adf3e60e67e0cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &1962785881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2376,8 +2442,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8867d60388800f242b85e8fdd6f3afc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Cscore:
   - {fileID: 0}
   - {fileID: 0}
@@ -2515,8 +2582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97a03dbdeee8e44d964234640360a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Jscore:
   - {fileID: 0}
   - {fileID: 0}
@@ -2571,7 +2639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d920b8853a36ea6419b3bb5b370873db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greyNote: {fileID: 21300000, guid: d772e954c0e910b49a56405a734325a0, type: 3}
+  greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 174400, guid: 9017da7282a226b4cb137e21f744d418, type: 2}
 --- !u!61 &2005465857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2741,8 +2810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcb8e240aa00f44c9f217875ee9b4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteS: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
-  noteD: {fileID: 161374, guid: 9d4b69669d0287249bad3c51e27e2901, type: 2}
+  note: {fileID: 136812, guid: a7d565d480c0a264c909c10b1ea8cee3, type: 2}
+  noteS: {fileID: 21300000, guid: f8be6ffad2f16144e85c8da58d0b3596, type: 3}
+  noteD: {fileID: 21300000, guid: 63e3fca92764fbc4696b2d43f1b2ca19, type: 3}
   Sscore:
   - {fileID: 0}
   - {fileID: 0}

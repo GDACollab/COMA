@@ -7,7 +7,7 @@ public class Exit : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D obj){
 		if (obj.gameObject.tag == "Player") {
-			Application.LoadLevel (LevelLoad);
+			Angel.TransitionFromFieldToField(LevelLoad);
 		}
 
 		if (obj.gameObject.tag == "Pillar") {
