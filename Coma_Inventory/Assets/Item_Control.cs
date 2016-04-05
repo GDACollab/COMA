@@ -1,7 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Collections;
 using System.Collections.Generic;
+
+using UnityEngine;
 using UnityEngine.UI;
+
+using Object = System.Object;
+using UnityObject = UnityEngine.Object;
 
 public class Item_Control : MonoBehaviour 
 {
@@ -54,29 +60,23 @@ public class Item_Control : MonoBehaviour
 	Text Description_Text; //default description text
 
 	public List<int> ItemOptList;
-	public List<Item> ItemList;
+	Inventory itemss;
 	// Use this for initialization
 	void Start () 
 	{
-		//ItemList is actually completely useless, but its count variable is used in calculating certain values in Update. x_x meh.
-		ItemList = new List<Item> ();
-		Item0 = new HealingItem ();
-		Item1 = new QuestItem1 ();
-		Item2 = new QuestItem2 ();
-		Item3 = new QuestItem3 ();
-		Item4 = new QuestItem1 ();
-		Item5 = new QuestItem2 ();
-		Item6 = new QuestItem3 ();
-		Item7 = new QuestItem1 ();
-		Item8 = new QuestItem2 ();
-		Item9 = new QuestItem3 ();
-		Item10 = new QuestItem1 ();
-		Item11 = new QuestItem2 ();
-		ItemList.Add (Item0);
-		ItemList.Add (Item1);
-		ItemList.Add (Item2);
-		ItemList.Add (Item3);
+		itemss = new Inventory ();
+		Item0 = new HealingItem ("Cherry.", "This is a\nCherry.", 30, "Heals 30% of \nyour Health.", 1);
+		Item1 = new QuestItem ("Sword.", "This is a\nSword.", "It has a cute\ntattoo on its\nhilt.", 2); 
+		Item2 = new QuestItem ("Boob.", "It's a boob.", "Still a boob.", 1);
+		itemss.Add (Item0);
+		itemss.Add (Item1);
+		itemss.Add (Item2);
 
+		//(string name, string description, string examineText = "A quest item.",
+		//int quantity = 1)
+
+		//(string name, string description, string examineText = "A healing item.",
+		//int healingAmt, int quantity = 1)
 		inventory = GameObject.Find ("Inventory_BG");
 		theCanvas = inventory.transform.GetChild (6).gameObject; //theCanvas is the Canvas at index(6), child of Inventory_BG; do not change this variable
 		for (iter = 0; iter < 25; iter++) {
@@ -123,7 +123,7 @@ public class Item_Control : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		//****DEFINING COLLISION AND COLLECTION OF ITEMS****//
+		//****DEFINING COLLISION AND COLLECTION OF items****//
 		//Somehow item is either collided against or collected.
 
 		//***********TO OPEN INVENTORY PRESS 'I'*************//
@@ -145,52 +145,51 @@ public class Item_Control : MonoBehaviour
 					inventory.transform.GetChild (iter).gameObject.SetActive (true);
 				}
 
-				//Do operations based on Count of Items on ItemList:
-				if (ItemList.Count != 0)
+				//Do operations based on Count of items on items:
+				if (itemss.Size() != 0)
 				{
-					Description_Text.text = Item0.description; //Default Description_Text is description of first item
-					ItemList[0].selected = true; //Is this boolean value even used?
+					Description_Text.text = itemss.get (0).description; //Default Description_Text is description of first item
 					theCanvas = inventory.transform.GetChild(6).gameObject;
 					theCanvas.SetActive(true);
 					theCanvas.transform.GetChild (12).gameObject.SetActive (true); //have first item already selected
-					for (iter = 0; iter < ItemList.Count; iter++)
+					for (iter = 0; iter < itemss.Size (); iter++)
 					{
 						theCanvas.transform.GetChild(iter).gameObject.SetActive(true); //SetActive all the deselected item
 						if (iter == 0) {
-							Item0_Selected_Text.text = Item0_Deselected_Text.text = ItemList[iter].itemName;
+							Item0_Selected_Text.text = Item0_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 1) {
-							Item1_Selected_Text.text = Item1_Deselected_Text.text = ItemList[iter].itemName;
+							Item1_Selected_Text.text = Item1_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 2) {
-							Item2_Selected_Text.text = Item2_Deselected_Text.text = ItemList[iter].itemName;
+							Item2_Selected_Text.text = Item2_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 3) {
-							Item3_Selected_Text.text = Item3_Deselected_Text.text = ItemList[iter].itemName;
+							Item3_Selected_Text.text = Item3_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 4) {
-							Item4_Selected_Text.text = Item4_Deselected_Text.text = ItemList[iter].itemName;
+							Item4_Selected_Text.text = Item4_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 5) {
-							Item5_Selected_Text.text = Item5_Deselected_Text.text = ItemList[iter].itemName;
+							Item5_Selected_Text.text = Item5_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 6) {
-							Item6_Selected_Text.text = Item6_Deselected_Text.text = ItemList[iter].itemName;
+							Item6_Selected_Text.text = Item6_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 7) {
-							Item7_Selected_Text.text = Item7_Deselected_Text.text = ItemList[iter].itemName;
+							Item7_Selected_Text.text = Item7_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 8) {
-							Item8_Selected_Text.text = Item8_Deselected_Text.text = ItemList[iter].itemName;
+							Item8_Selected_Text.text = Item8_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 9) {
-							Item9_Selected_Text.text = Item9_Deselected_Text.text = ItemList[iter].itemName;
+							Item9_Selected_Text.text = Item9_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 10) {
-							Item10_Selected_Text.text = Item10_Deselected_Text.text = ItemList[iter].itemName;
+							Item10_Selected_Text.text = Item10_Deselected_Text.text = itemss.get(iter).name;
 						}
 						if (iter == 11) {
-							Item11_Selected_Text.text = Item11_Deselected_Text.text = ItemList[iter].itemName;
+							Item11_Selected_Text.text = Item11_Deselected_Text.text = itemss.get(iter).name;
 						}
 					}
 					iter = 0; //set iter equal to the index of the first item
@@ -198,7 +197,7 @@ public class Item_Control : MonoBehaviour
 					itemUse_focus = false;
 					use_opt = 3;
 				} else {
-					//else, ItemList.count is 0, there are no items in the inventory:
+					//else, itemss.Size() is 0, there are no items in the inventory:
 					iter = -1;
 					Description_Text.text = "";
 				}
@@ -228,18 +227,16 @@ public class Item_Control : MonoBehaviour
 				{
 					if (iter > 0) 
 					{
-						//if (ItemList[iter-1].obtained)
 						theCanvas.transform.GetChild (iter+12).gameObject.SetActive (false); //deactivating current position;
 						theCanvas.transform.GetChild (iter+11).gameObject.SetActive (true); //activate position higher on list
 						iter--;
-						Description_Text.text = ItemList[iter].description;
+						Description_Text.text = itemss.get(iter).description;
 					}
 				}
 				if (itemUse_focus) 
 				{
 					if (use_opt == 5) 
 					{
-						//if (ItemList[iter-1].obtained)
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
 						use_opt = 3;
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
@@ -249,20 +246,18 @@ public class Item_Control : MonoBehaviour
 			if (Input.GetKeyUp(KeyCode.DownArrow)){
 				if (inventory_focus)
 				{
-					if (iter < ItemList.Count && iter != -1) 
+					if (iter < itemss.Size () -1 && iter != -1) 
 					{
-						//if (ItemList[iter+1].obtained)
 						theCanvas.transform.GetChild (iter+12).gameObject.SetActive (false); //deactivating current position;
 						theCanvas.transform.GetChild (iter+13).gameObject.SetActive (true); //activating position lower on list
 						iter++;
-						Description_Text.text = ItemList[iter].description;
+						Description_Text.text = itemss.get(iter).description;
 					}
 				}
 				if (itemUse_focus)
 				{
 					if (use_opt == 3 || use_opt == 4) 
 					{
-						//if (ItemList[iter-1].obtained)
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
 						use_opt = 5;
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
@@ -274,7 +269,6 @@ public class Item_Control : MonoBehaviour
 				{
 					if (use_opt == 5 || use_opt == 3) 
 					{
-						//if (ItemList[iter-1].obtained)
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
 						use_opt = 4;
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
@@ -310,18 +304,18 @@ public class Item_Control : MonoBehaviour
 					{
 						//Change Description Text to Examine Text depending on item_opt
 						theCanvas.transform.GetChild (24).gameObject.SetActive (true); //activating description text
-						if (item_opt == 0) Description_Text.text = ItemList[0].exam;
-						if (item_opt == 1) Description_Text.text = ItemList[1].exam;
-						if (item_opt == 2) Description_Text.text = ItemList[2].exam;
-						if (item_opt == 3) Description_Text.text = ItemList[3].exam;
-						if (item_opt == 4) Description_Text.text = ItemList[4].exam;
-						if (item_opt == 5) Description_Text.text = ItemList[5].exam;
-						if (item_opt == 6) Description_Text.text = ItemList[6].exam;
-						if (item_opt == 7) Description_Text.text = ItemList[7].exam;
-						if (item_opt == 8) Description_Text.text = ItemList[8].exam;
-						if (item_opt == 9) Description_Text.text = ItemList[9].exam;
-						if (item_opt == 10) Description_Text.text = ItemList[10].exam;
-						if (item_opt == 11) Description_Text.text = ItemList[11].exam;
+						if (item_opt == 0) Description_Text.text = itemss.get (0).examineText;
+						if (item_opt == 1) Description_Text.text = itemss.get (1).examineText;
+						if (item_opt == 2) Description_Text.text = itemss.get (2).examineText;
+						if (item_opt == 3) Description_Text.text = itemss.get (4).examineText;
+						if (item_opt == 4) Description_Text.text = itemss.get (5).examineText;
+						if (item_opt == 5) Description_Text.text = itemss.get (6).examineText;
+						if (item_opt == 6) Description_Text.text = itemss.get (7).examineText;
+						if (item_opt == 7) Description_Text.text = itemss.get (8).examineText;
+						if (item_opt == 8) Description_Text.text = itemss.get (9).examineText;
+						if (item_opt == 9) Description_Text.text = itemss.get (10).examineText;
+						if (item_opt == 10) Description_Text.text = itemss.get (11).examineText;
+						if (item_opt == 11) Description_Text.text = itemss.get (12).examineText;
 					}
 
 					if (use_opt == 5) 
@@ -351,125 +345,3 @@ public class Item_Control : MonoBehaviour
 	}
 }
 
-public class Item
-{
-	public string exam; //display when examined
-	public string description;
-	public string itemName;
-	public bool obtained;
-	public bool selected;
-	protected int numItems;
-	
-	public Item()
-	{
-		this.numItems = 0;
-		this.exam = "This is a base Item.";
-		this.itemName = "Base Item Name.";
-		this.description = "The Parent of all Items.";
-		this.obtained = false;
-		this.selected = false;
-	}
-	public void examine()
-	{
-	
-	}
-	public void pickup() //checks for collision with object in game universe using either collision with game player or click in boxcollision
-	{
-		
-	}
-	public virtual void display (int x, int offset){
-
-	}
-	public virtual void use(GameObject Player){}
-}
-
-class HealingItem : Item
-{
-	public HealingItem()
-	{
-		this.numItems = 0;
-		this.description = "Healing Item \nDescription.";
-		this.exam = "Heals 30% of \nyour Health \nwhen used.";
-		this.itemName = "x" + this.numItems + " Item0";
-		this.obtained = false;
-		this.selected = false;
-	}
-	public override void use(GameObject Player)
-	{
-		//Get HealthPoint Script or gameObject
-		int Health = 0;// = Player.GetComponent<HP> ();
-		if (Health < 100) {
-			if (this.numItems > 0) {
-				Health += 30;
-				this.numItems--;
-				if (Health > 100) Health = 100;
-				if (numItems == 0) this.obtained = false;
-			}
-		}
-	}
-	
-	public override void display (int x, int offset)
-	{
-		if (this.obtained) {
-			//display item in list in specified positions
-		
-			//new Vector3 ((float)x, (offset*(-.35f)), 0);
-			//if selected, do further display of item description
-			if (selected) {
-
-			}
-		}
-		
-	}
-}
-class QuestItem1 : Item
-{	
-	public QuestItem1()
-	{
-		this.numItems = 0;
-		this.description = "This is Quest \nItem 1.";
-		this.exam = "Examining Quest \nItem 1.";
-		this.itemName = "x" + this.numItems + " Item1";
-		this.obtained = false;
-		this.selected = false;
-	}
-	public override void use(GameObject Player)
-	{
-		
-	}
-}
-class QuestItem2 : Item
-{
-	public QuestItem2()
-	{
-		this.numItems = 0;
-		this.description = "This is Quest \nItem 2.";
-		this.exam = "Examining Quest \nItem 2.";
-		this.itemName = "x" + this.numItems + " Item2";
-		this.obtained = false;
-		this.selected = false;
-	}
-	public override void use(GameObject Player)
-	{
-		
-	}
-}
-class QuestItem3 : Item
-{
-	public QuestItem3()
-	{
-		this.numItems = 0;
-		this.description = "This is Quest \nItem 3.";
-		this.exam = "Examining Quest \nItem 3.";
-		this.itemName = "x" + this.numItems + " Item3";
-		this.obtained = false;
-		this.selected = false;;
-	}
-	public override void use(GameObject Player)
-	{
-		
-	}
-}
-//Attach sprite to script object (Specific item classes controlling specific sprites/gameobjects)
-//Enable/disable renderer on sprite for Inventory
-//checks for collision with object in game universe using either collision with game player or click on box
