@@ -128,7 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftLevelLoad: SpaceBar
   RightLevelLoad: 
-  player: {fileID: 0}
 --- !u!212 &21222804
 SpriteRenderer:
   m_ObjectHideFlags: 1
