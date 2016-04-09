@@ -13,6 +13,8 @@ public class Item_Control : MonoBehaviour
 {
 	public GameObject inventory;
 	public GameObject theCanvas;
+	public GameObject usePrompt;
+
 	Item Item0;
 	Item Item1;
 	Item Item2;
@@ -30,9 +32,11 @@ public class Item_Control : MonoBehaviour
 	bool exit;
 	bool inventory_focus;
 	bool itemUse_focus;
+	bool usePrompt_focus;
 	private int use_opt; //3 = use, 4 = examine, 5 = quit
 	private int item_opt; //item_opt determines which item the three options is being selected through [indices 4-7]
 	private int iter;
+	private int use_item; //added this
 	Text Item0_Deselected_Text;
 	Text Item1_Deselected_Text;
 	Text Item2_Deselected_Text;
@@ -79,6 +83,7 @@ public class Item_Control : MonoBehaviour
 		//int healingAmt, int quantity = 1)
 		inventory = GameObject.Find ("Inventory_BG");
 		theCanvas = inventory.transform.GetChild (6).gameObject; //theCanvas is the Canvas at index(6), child of Inventory_BG; do not change this variable
+		usePrompt = GameObject.Find ("Use_Prompt");
 		for (iter = 0; iter < 25; iter++) {
 			if (iter < 6) {
 				inventory.transform.GetChild (iter).gameObject.SetActive(false); //Deactivating everything under Inventory_BG
@@ -114,10 +119,12 @@ public class Item_Control : MonoBehaviour
 		Item11_Selected_Text = theCanvas.transform.GetChild (23).GetComponent<Text>();
 		Description_Text = theCanvas.transform.GetChild (24).GetComponent<Text>();
 
+		usePrompt.SetActive(false);
 		inventory.SetActive (false);
 		InventOpened = false;
 		inventory_focus = true;
 		itemUse_focus = false;
+		usePrompt_focus = false;
 	}
 	
 	// Update is called once per frame
@@ -274,6 +281,16 @@ public class Item_Control : MonoBehaviour
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
 					}
 				}
+				if (usePrompt_focus)
+				{
+					//print("No");
+					if (use_item == 1 || use_item == 0)
+					{
+						usePrompt.transform.GetChild(1).GetChild(4).gameObject.SetActive(true);
+						usePrompt.transform.GetChild(1).GetChild(3).gameObject.SetActive(false);
+						use_item = -1;
+					}
+				}
 			}
 			if (Input.GetKeyUp(KeyCode.LeftArrow)){
 				if (itemUse_focus)
@@ -283,6 +300,16 @@ public class Item_Control : MonoBehaviour
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (false); //deactivating current position;
 						use_opt = 3;
 						inventory.transform.GetChild (use_opt).gameObject.SetActive (true); //activate position higher on list
+					}
+				}
+				if (usePrompt_focus)
+				{
+					//print("Yes");
+					if (use_item == -1 || use_item == 0)
+					{
+						usePrompt.transform.GetChild(1).GetChild(4).gameObject.SetActive(false);
+						usePrompt.transform.GetChild(1).GetChild(3).gameObject.SetActive(true);
+						use_item = 1;
 					}
 				}
 			}
@@ -298,6 +325,12 @@ public class Item_Control : MonoBehaviour
 						//bring up separate textbox asking if user would like to use item with yes/no options; control with arrow keys
 						//if yes, implements the 'use' function of item 
 						//if no, return to selecting use_opt (use/examine/quit)
+						usePrompt.SetActive(true);
+						usePrompt.transform.GetChild(1).GetChild(3).gameObject.SetActive(false);
+						usePrompt.transform.GetChild(1).GetChild(4).gameObject.SetActive(true);
+						itemUse_focus = false;
+						usePrompt_focus = true;
+						use_item = -1;
 					}
 
 					if (use_opt == 4)
@@ -333,6 +366,21 @@ public class Item_Control : MonoBehaviour
 					itemUse_focus = true;
 					item_opt = iter;
 					inventory.transform.GetChild (use_opt).gameObject.SetActive (true);
+				} else if (usePrompt_focus)
+				{
+					print(use_item);
+					if (use_item == 1)
+					{
+						usePrompt.SetActive(false);
+						usePrompt_focus = false;
+						itemUse_focus = true;
+					}
+					if (use_item == -1)
+					{
+						usePrompt.SetActive(false);
+						usePrompt_focus = false;
+						itemUse_focus = true;
+					}
 				}
 			}
 		}
