@@ -722,6 +722,7 @@ GameObject:
   - 4: {fileID: 1282800706}
   - 212: {fileID: 1282800705}
   - 61: {fileID: 1282800707}
+  - 114: {fileID: 1282800708}
   m_Layer: 0
   m_Name: Mother
   m_TagString: Boss
@@ -785,6 +786,24 @@ BoxCollider2D:
   m_Offset: {x: 0.086314276, y: 0.35963732}
   serializedVersion: 2
   m_Size: {x: 5.087147, y: 8.280725}
+--- !u!114 &1282800708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282800704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 539814090}
+  dialogCSVParserObject: {fileID: 1881474074}
+  dialogue: []
+  path1: []
+  path2: []
+  nextDialog: []
+  response: 
 --- !u!1 &1577670885
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,3 +863,43 @@ Transform:
   - {fileID: 1171507279}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &1881474074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1881474076}
+  - 114: {fileID: 1881474075}
+  m_Layer: 0
+  m_Name: DialogCSVParser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1881474075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881474074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e348ac4ba891da4dbf8ea7e4e42160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: ee279df2bc434704087c7981231c43d2, type: 3}
+--- !u!4 &1881474076
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881474074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.49082017, y: 0.0929721, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
