@@ -69,8 +69,8 @@ public class Item_Control : MonoBehaviour
 	void Start () 
 	{
 		itemss = new Inventory ();
-		Item0 = new HealingItem ("Cherry.", "This is a\nCherry.", 30, "Heals 30% of \nyour Health.", 1);
-		Item1 = new QuestItem ("Sword.", "This is a\nSword.", "It has a cute\ntattoo on its\nhilt.", 2); 
+		Item0 = new HealingItem ("Cherry.", "This is a Cherry.", 30, "Heals 30% of \nyour Health.", 1);
+		Item1 = new QuestItem ("Sword.", "This is a Sword.", "It has a cute \ntattoo on its hilt.", 2); 
 		Item2 = new QuestItem ("Boob.", "It's a boob.", "Still a boob.", 1);
 		itemss.Add (Item0);
 		itemss.Add (Item1);
@@ -163,40 +163,40 @@ public class Item_Control : MonoBehaviour
 					{
 						theCanvas.transform.GetChild(iter).gameObject.SetActive(true); //SetActive all the deselected item
 						if (iter == 0) {
-							Item0_Selected_Text.text = Item0_Deselected_Text.text = itemss.get(iter).name;
+							Item0_Selected_Text.text = Item0_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 1) {
-							Item1_Selected_Text.text = Item1_Deselected_Text.text = itemss.get(iter).name;
+							Item1_Selected_Text.text = Item1_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 2) {
-							Item2_Selected_Text.text = Item2_Deselected_Text.text = itemss.get(iter).name;
+							Item2_Selected_Text.text = Item2_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 3) {
-							Item3_Selected_Text.text = Item3_Deselected_Text.text = itemss.get(iter).name;
+							Item3_Selected_Text.text = Item3_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 4) {
-							Item4_Selected_Text.text = Item4_Deselected_Text.text = itemss.get(iter).name;
+							Item4_Selected_Text.text = Item4_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 5) {
-							Item5_Selected_Text.text = Item5_Deselected_Text.text = itemss.get(iter).name;
+							Item5_Selected_Text.text = Item5_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 6) {
-							Item6_Selected_Text.text = Item6_Deselected_Text.text = itemss.get(iter).name;
+							Item6_Selected_Text.text = Item6_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 7) {
-							Item7_Selected_Text.text = Item7_Deselected_Text.text = itemss.get(iter).name;
+							Item7_Selected_Text.text = Item7_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 8) {
-							Item8_Selected_Text.text = Item8_Deselected_Text.text = itemss.get(iter).name;
+							Item8_Selected_Text.text = Item8_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 9) {
-							Item9_Selected_Text.text = Item9_Deselected_Text.text = itemss.get(iter).name;
+							Item9_Selected_Text.text = Item9_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 10) {
-							Item10_Selected_Text.text = Item10_Deselected_Text.text = itemss.get(iter).name;
+							Item10_Selected_Text.text = Item10_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 						if (iter == 11) {
-							Item11_Selected_Text.text = Item11_Deselected_Text.text = itemss.get(iter).name;
+							Item11_Selected_Text.text = Item11_Deselected_Text.text = itemss.get(iter).ToString ();
 						}
 					}
 					iter = 0; //set iter equal to the index of the first item

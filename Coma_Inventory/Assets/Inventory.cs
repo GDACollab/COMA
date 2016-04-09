@@ -232,7 +232,7 @@ public abstract class Item : System.IComparable<Item>
    */
 	public override string ToString()
 	{
-		return name + " x" + quantity;
+		return name + "x" + quantity;
 	}
 }
 
