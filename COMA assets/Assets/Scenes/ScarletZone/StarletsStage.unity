@@ -194,6 +194,7 @@ MonoBehaviour:
   path1: []
   path2: []
   nextDialog: []
+  response: 
 --- !u!1 &829862244
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +315,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1712841591}
+    - target: {fileID: 11436888, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 2144620829}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
   m_IsPrefabParent: 0
@@ -695,3 +700,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e8c98f0f8dd1ef4d99e55d51bed29a0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2144620829 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 169980, guid: 3e8c98f0f8dd1ef4d99e55d51bed29a0, type: 2}
+  m_PrefabInternal: {fileID: 2144620828}

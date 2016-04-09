@@ -10,6 +10,7 @@ TagManager:
   - Pillar
   - Exit
   - NPC
+  - Interactable
   layers:
   - Default
   - TransparentFX

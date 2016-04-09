@@ -1,0 +1,22 @@
+Identifier,ACTORS,CUE ,CONTEXT,Conversation Path Chain,Choice Type,GameObject Interacted With,INFLECTION,LOCATION,AREA,EFFECT
+0,Blue ,"“I’ve never met your daughter, but something tells me she’s not blue. Do you remember how you got here? Do you remember anything?""",Blue responds to Mothers confusion,2,,Mother,,Greenhouse,,
+1,Mother,"“My darling daughter, you’ve come back to me...”",When Blue enters the Greenhouse Mother begins talking to her.,0,,Blue,,Greenhouse,,
+2,Mother,"""I don't remember teaching you to interrupt.% My little angel, you just got home. Your absence was already such a strain on my nerves... you wouldn’t want to hurt your poor mother anymore, would you? What kind of terrible child would do that?% You’ve missed so many lessons in your absence.  Besides, you came just in time for your piano lesson. Play, my seraph! Show me your perfection!”  ",Mother responds to Blue's interruption,,,Blue,,Greenhouse,,Initiate Mother battle
+3,Mother,“Is...is this what you really think of me?... When did my little angel become such a monster?,<Evil Path/ Terrible finish> If Blue is forced to kill Mother as she dies.,,,Blue,,Greenhouse,,<Evil Path>
+4,Mother,"“That doesn’t make any sense. My daughter is just awful at the piano! I guess you really are not my daughter….% Pity, I thought for once we could be the perfect mother-daughter team. Though, that’s quite a ridiculous thought, it’s probably too much for a girl her age.% You’re out here worried about the state of the world, I couldn’t grasp what she has to worry about. I’ll let you slip by darling, I have my own thinking to do.”",<Good/True Path> After either a Good or True battle.,,,Blue,,Greenhouse,,
+5,Mother ,"“You kept up quite well this time, how peculiar…”",If Blue does well in the battle,,,Blue,,Greenhouse,,<Good Path>
+6,Mother ,"“Oh, darling, you’ve played so beautifully…”",If Blue Perfects the encounter,,,Blue,,Greenhouse,,<True Path>
+7,Balloon Child ,“That lady messed with our heads…”,1st approach,,,Blue,,Home,,
+8,Balloon Child ,“Mama’s gonna get mad if you keep her waiting any longer…”,2nd approach,,,Blue,,Home,,
+9,Persimmon,"“Are you home, miss? She’s been worried sick looking for you.”",1st approach,,,Blue,,Home,,
+10,Persimmon,“The woman who came to be in charge of this place has been looking for her daughter for a long time now.”,2nd approach,,,Blue,,Home,,
+11,Blue ,“The doll head opens its eyes and looks at me. I jump and nearly drop the head.”,Activate doll head,16,Constant,Head,,Toybox,,Dolly head now in inventory
+12,Blue ,“Well. Still not the weirdest thing I’ve seen all day.”,Activate Dolly without the head in inventory ,,,Dolly,,Toybox,,
+13,Blue ,“So I guess you can communicate.”,Blue decides to help Dolly ,18,,System,,Toybox,,Quest 1 accept
+14,Blue ,“I am really not feeling this living doll thing.”,Blue decides to not help Dolly,19,,System,,Toybox,,Quest 1 deny
+15,Blue ,"""Here's your head back. You should probably dust it off first.""",After Blue returns with Dolly head. Pauses to let Dolly screw head back on.,,,Dolly,,Toybox,,Quest 1 complete 
+16,Dolly,"“You know, I thought being a disembodied head would be a nice change of pace. It isn’t. I guess I should thank you for bringing my head back. It’s nicer to not worry about being a living kickball.”",After finishing screwing on head,,,Blue,,Toybox,,Healing Item now in inventory
+17,System,"""The doll, seeming to notice your presence, gestures vaguely to the void above its shoulders""",Activate Dolly without the head in inventory ,12,Constant,Blue,,Toybox,,
+18,System,"""Dolly gives you a tumbs up. Cute.""",Blue decides to help Dolly ,11,Constant,Blue,,Toybox,,
+19,System,"""She gestures to her lack of a head adamantly, seeming to be disappointed with you.""",Blue decides to not help Dolly,,,Blue,,Toybox,,
+20,System,"""""",1st approach,13|14,Quest,,,,,

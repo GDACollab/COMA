@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &101772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 427346}
-  - 61: {fileID: 6172818}
-  - 114: {fileID: 11437708}
-  m_Layer: 0
-  m_Name: GoBack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &128472
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,39 +13,6 @@ GameObject:
   m_Layer: 0
   m_Name: BackgroundToybox
   m_TagString: Background
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &137312
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 483378}
-  - 61: {fileID: 6139042}
-  - 114: {fileID: 11454572}
-  m_Layer: 0
-  m_Name: Scraproom1Door
-  m_TagString: Exit
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &138430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 421800}
-  - 61: {fileID: 6170766}
-  m_Layer: 0
-  m_Name: BackGroundBlockCeiling (1)
-  m_TagString: Boundry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,23 +33,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &181140
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 473088}
-  - 61: {fileID: 6131254}
-  - 114: {fileID: 11466080}
-  m_Layer: 0
-  m_Name: Scraproom2Door
-  m_TagString: Exit
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &183352
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,30 +49,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &421800
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138430}
-  m_LocalRotation: {x: 0, y: 0, z: -0.15233184, w: 0.9883294}
-  m_LocalPosition: {x: 0.419, y: 0.247, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 429544}
-  m_RootOrder: 1
---- !u!4 &427346
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 429544}
-  m_RootOrder: 2
 --- !u!4 &429544
 Transform:
   m_ObjectHideFlags: 1
@@ -148,28 +57,12 @@ Transform:
   m_GameObject: {fileID: 128472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05, y: 0.04, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.32432312, y: 0.3243231, z: 0.3243231}
   m_Children:
   - {fileID: 491564}
-  - {fileID: 421800}
-  - {fileID: 427346}
-  - {fileID: 483378}
-  - {fileID: 473088}
   - {fileID: 478916}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &473088
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.44, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
-  m_Father: {fileID: 429544}
-  m_RootOrder: 4
 --- !u!4 &478916
 Transform:
   m_ObjectHideFlags: 1
@@ -177,63 +70,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.55, z: 0}
+  m_LocalPosition: {x: 0, y: -4.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 429544}
-  m_RootOrder: 5
---- !u!4 &483378
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137312}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
-  m_Father: {fileID: 429544}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!4 &491564
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183352}
-  m_LocalRotation: {x: 0, y: 0, z: -0.012337719, w: 0.99992394}
-  m_LocalPosition: {x: -0.08, y: -0.75, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.08, y: -0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 429544}
   m_RootOrder: 0
---- !u!61 &6131254
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181140}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1.1, y: 0.3}
---- !u!61 &6139042
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137312}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.12060034}
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.4587993}
 --- !u!61 &6147322
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -245,9 +98,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -7.2, y: 3.4}
+  m_Offset: {x: -0.076167196, y: 2.1951144}
   serializedVersion: 2
-  m_Size: {x: 13, y: 0.3455814}
+  m_Size: {x: 14.678464, y: 4.735806}
 --- !u!61 &6156810
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -259,61 +112,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.05}
+  m_Offset: {x: -0.015263802, y: 0.049999714}
   serializedVersion: 2
-  m_Size: {x: 13, y: 1}
---- !u!61 &6170766
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138430}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 0.73, y: 0.44}
---- !u!61 &6172818
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101772}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -4.3671365, y: 0.92063904}
-  serializedVersion: 2
-  m_Size: {x: 0.62230206, y: 2.841278}
---- !u!114 &11437708
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0cb8c1dd6bd114e99f80406bfa9132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelLoad: Toybox
---- !u!114 &11454572
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0cb8c1dd6bd114e99f80406bfa9132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelLoad: Scraproom1
+  m_Size: {x: 14.678744, y: 1}
 --- !u!114 &11460716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,19 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftLevelLoad: Home
   RightLevelLoad: Greenhouse
-  player: {fileID: 0}
---- !u!114 &11466080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0cb8c1dd6bd114e99f80406bfa9132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelLoad: Scraproom2
 --- !u!212 &21297662
 SpriteRenderer:
   m_ObjectHideFlags: 1
