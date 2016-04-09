@@ -17,6 +17,7 @@ public class ReadSpreadSheets
 		}*/
 
 		//Identifier,ACTOR,CUE,CONTEXT,Conversation Path Chain,Choice Type,GameObject Interacted With,INFLECTION,LOCATION,AREA,EFFECT
+		int commaPair = 0;
 		Row row = new Row ();
 		for (int i = 0, j = 0; i < csvFile.text.Length ; i++) {
 			switch(j){
@@ -35,14 +36,14 @@ public class ReadSpreadSheets
 					}
 					else row.ACTOR += csvFile.text [i];
 					break;
-				case 2:
-					string temp = row.CUE + "";
-					if ((temp.EndsWith("\",") && temp[0] == '"') || (temp.EndsWith(",") && temp[0] != '"') || temp.Contains("CUE,")) {
-							row.CUE = row.CUE.Remove (row.CUE.Length - 1);
-							row.CUE = row.CUE.Trim ();
-							j++;
-							i--;
-					} else{
+			case 2:
+				string temp = row.CUE + "";
+				if ((temp.EndsWith("\",") && temp[0] == '"') || (temp.EndsWith(",") && temp[0] != '"') || temp.Contains("CUE,")) {
+						row.CUE = row.CUE.Remove (row.CUE.Length - 1);
+						row.CUE = row.CUE.Trim ();
+						j++;
+						i--;
+					} else {
 						row.CUE += csvFile.text [i];
 					}
 					break;
@@ -106,6 +107,7 @@ public class ReadSpreadSheets
 				row.EFFECT = row.EFFECT.Trim ();
 				parsedRows.Add(row);
 				row = new Row ();
+				commaPair = 0;
 				j = 0;
 			}
 		}

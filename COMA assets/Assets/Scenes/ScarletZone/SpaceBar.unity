@@ -402,7 +402,7 @@ GameObject:
   - 114: {fileID: 955974880}
   m_Layer: 0
   m_Name: Table
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -779,7 +779,7 @@ GameObject:
   - 114: {fileID: 1776385815}
   m_Layer: 0
   m_Name: Bar
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -124,9 +124,9 @@ public class GatherDiologs : MonoBehaviour
 				if (bossDiologs [i].LOCATION.Equals (Application.loadedLevelName)) {
 					if (bossDiologs [i].CONTEXT.Contains ("Blue enters") && boss.GetComponent<makeText> ().dialogue.Count < 1) {
 						boss.GetComponent<makeText> ().dialogue.Add (bossDiologs [i].CUE);
-						boss.GetComponent<makeText> ().dialogue.Add ("BATTLE");
+						boss.GetComponent<makeText> ().dialogue.Add ("END");
 						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
-						dialogsInOrder [boss].Add ("BATTLE");
+						dialogsInOrder [boss].Add ("END");
 					} else if (bossDiologs [i].CONTEXT.Contains ("<Good/True Path>")) {
 						boss.GetComponent<makeText> ().path1.Add (bossDiologs [i].CUE);
 						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
@@ -134,11 +134,8 @@ public class GatherDiologs : MonoBehaviour
 						boss.GetComponent<makeText> ().path2.Add (bossDiologs [i].CUE);
 						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
 					}
-					else if(boss.GetComponent<makeText> ().nextDialog.Count < 1){
-						boss.GetComponent<makeText> ().nextDialog.Add (bossDiologs [i].CUE);
-						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
-					}
 					else {
+						boss.GetComponent<makeText> ().nextDialog.Add (bossDiologs [i].CUE);
 						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
 					}
 				}
@@ -324,6 +321,3 @@ public class GatherDiologs : MonoBehaviour
 
 //still need to setup for a possible three path choice system of dialog
 //also need to do next diolog inserts once one set has been gone through
-//have it possible for conitnues no questions or aceptance for blues dialog
-//make it so extra dialog for bosses is not added to the chat tell after battle
-//make it possible so two people can talk at once
