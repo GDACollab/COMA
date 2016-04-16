@@ -16,27 +16,29 @@ using System.Collections.Generic;
 
 //current issue if you are collising with more then one npc then the diolog box will not open
 
-public class makeText : MonoBehaviour {
+public class makeText : MonoBehaviour
+{
 
 	new GameObject textObject;
 	new GameObject choiceObject;
 	new GameObject choiceObject2;
 	public GameObject player;
+	//public Inventory inventory;
 	public GameObject dialogCSVParserObject;
 	Text choice1;
 	Text choice2;
 	Image ChBG;
 	Text words;
 	Image BG;
-	public List<string> dialogue = new List<string>();
+	public List<string> dialogue = new List<string> ();
 	public List<string> path1 = new List<string> ();
 	public List<string> path2 = new List<string> ();
-	public List<string> nextDialog = new List<string>();
+	public List<string> nextDialog = new List<string> ();
 	public string response = string.Empty;
 	List<string> storage = new List<string> ();
-	/*public List<string> waiting = new List<string> ();
+	//public List<string> waiting = new List<string> ();
 	public List<string> thanks = new List<string> ();
-	static int quest = 0;*/
+	static int quest = 0;
 	static int i = 0;
 	static int j = 0;
 
@@ -44,7 +46,8 @@ public class makeText : MonoBehaviour {
 	private bool inConversation = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		storage = dialogue;
 		textObject = GameObject.Find ("Text");
 		choiceObject = GameObject.Find ("Ctext1");
@@ -63,14 +66,16 @@ public class makeText : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (nearCharacter) {
+	void Update ()
+	{
+		if (nearCharacter && dialogue.Count > 0) {
 			if (choice1.enabled == false) {
 				if (words.enabled == true) {
 					words.text = dialogue [i];
 				}
 				if (Input.GetKeyDown (KeyCode.Space) && words.enabled == true) {
-					if(i < dialogue.Count) i++;
+					if (i < dialogue.Count)
+						i++;
 
 					if (i > dialogue.Count - 1) {
 						words.enabled = false;
@@ -93,10 +98,16 @@ public class makeText : MonoBehaviour {
 							ChBG.enabled = true;
 							choice1.text = response;
 						}
-						/*if (dialogue[i].CompareTo("QUEST") == 0){
-						  this.quest = 1;
-						  dialogue = waiting;
-						  }*/
+						if (dialogue [i].CompareTo ("QUEST") == 0) {
+							quest = 1;
+							dialogue.Remove ("QUEST");
+							i = 0;
+							words.enabled = false;
+							BG.enabled = false;
+							inConversation = false;
+							player.GetComponent<PlayerMovement> ().inDialog = false;
+							//dialogue = waiting;
+						}
 						if (dialogue [i].CompareTo ("RESET") == 0) {
 							dialogue = storage;
 							i = 0;
@@ -126,11 +137,11 @@ public class makeText : MonoBehaviour {
 					BG.enabled = true;
 					player.GetComponent<PlayerMovement> ().inDialog = true;
 					i = 0;
-					/*if (this.quest == 1 && inventory.questItem.obtained == true){
-					inventory.questItem.obtained = false;
-					this.quest = 2;
-					dialogue = thanks;
-				}*/
+					if (quest == 1/* && inventory.questItem.obtained == true*/) {
+						//inventory.questItem.obtained = false;
+						quest = 2;
+						dialogue = thanks;
+					}
 				}
 			} else {
 				if (j == 0) {
@@ -151,10 +162,9 @@ public class makeText : MonoBehaviour {
 								dialogue = path1;
 							else
 								dialogue = nextDialog;
-						}  else
+						} else
 							dialogue = path2;
-					}
-					else {
+					} else {
 						dialogue = nextDialog;
 					}
 					i = 0;
@@ -165,7 +175,7 @@ public class makeText : MonoBehaviour {
 			}
 		}
 
-		//this is for each characters dialogs
+		//this is for each characters dialogs meant so that we can have the second set of dialogs start and stay
 		if (dialogCSVParserObject.GetComponent<GatherDiologs> ().dialogsInOrder.ContainsKey (gameObject)) {
 			List<string> characterDialog = dialogCSVParserObject.GetComponent<GatherDiologs> ().dialogsInOrder [gameObject];
 
@@ -188,15 +198,25 @@ public class makeText : MonoBehaviour {
 				path1 [path1.Count - 1] = "RESET";
 				path2 [path2.Count - 1] = "RESET";
 			}
+
+			if (thanks.Equals (dialogue)) {
+				for (int i = 0; i < characterDialog.Count; i++) {
+					if (!characterDialog [i].Equals ("END")) {
+						Debug.Log (characterDialog [i]); //find in the dialog list the current main dialog then from their find where the next CHOICE text is and set that dialog
+					}
+				}
+			}
 		}
 	}
 
-	public void OnTriggerEnter2D(Collider2D obj){
+	public void OnTriggerEnter2D (Collider2D obj)
+	{
 		if (obj.tag.Equals ("Player") && obj.isTrigger)
 			nearCharacter = true;
 	}
 
-	public void OnTriggerExit2D(Collider2D obj){
+	public void OnTriggerExit2D (Collider2D obj)
+	{
 		if (obj.tag.Equals ("Player") && obj.isTrigger) {
 			nearCharacter = false;
 			obj.GetComponent<PlayerMovement> ().inDialog = false;

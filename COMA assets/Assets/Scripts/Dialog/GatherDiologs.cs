@@ -56,12 +56,15 @@ public class GatherDiologs : MonoBehaviour
 						dialog.Key.GetComponent<makeText> ().dialogue.Add (dialog.Value [i].CUE);
 						ChoicePath (dialog, player, listOfCharacterDialogs, newPathNums, i, true);
 
-						dialog.Value.RemoveAt (i);
+						if (dialog.Value.Count > i && dialog.Value [i] != null)
+							dialog.Value.RemoveAt (i);
 						firstFound = true;
 						i = -1;
 					} else if (firstFound) {
 						//search string for approach if this is found then just append second
 						//if not found then check choice_type
+						if (dialog.Value [i].Choice_Type.Equals ("Quest"))
+							dialog.Key.GetComponent<makeText> ().thanks.Add (dialog.Value [i].CUE);
 						//check also if value -1 if so then end checking
 						//remove each dialog once added to the dialodsInOrder dict to reduce unneccessary searching again
 						if (!dialogsInOrder.ContainsKey (dialog.Key)) {
@@ -94,15 +97,13 @@ public class GatherDiologs : MonoBehaviour
 						} else {
 							if (i > dialog.Value.Count)
 								i = -1;
-						}/*else if (dialog.Value.Count > i){
-							if (!dialogsInOrder.ContainsKey (dialog.Key)) {
-								dialogsInOrder.Add (dialog.Key, new List<string> (){ dialog.Value [i].CUE });
-							} else {
-								dialogsInOrder [dialog.Key].Add (dialog.Value [i].CUE);
-							}
-							dialog.Value.RemoveAt (i);
-							i = -1;
-						}*/
+						}
+					} else if (!firstFound && i + 1 == dialog.Value.Count && dialog.Key.name != "Blue") {
+						if(!dialogsInOrder.ContainsKey(dialog.Key)) dialogsInOrder.Add (dialog.Key, new List<string> {dialog.Value [i].CUE});
+						dialog.Key.GetComponent<makeText> ().dialogue.Add (dialog.Value [i].CUE);
+						dialog.Value.RemoveAt (i);
+						firstFound = true;
+						i = -1;
 					}
 				}
 			}
@@ -117,40 +118,48 @@ public class GatherDiologs : MonoBehaviour
 
 		//boss dialog
 		if(isBoss){
-			List<Row> bossDiologs = read.FindAll_ACTOR (boss.name);
-			if(!dialogsInOrder.ContainsKey(boss)) dialogsInOrder.Add(boss, new List<string>());
-
-			for (int i = 0; i < bossDiologs.Count; i++) {
-				if (bossDiologs [i].LOCATION.Equals (Application.loadedLevelName)) {
-					if (bossDiologs [i].CONTEXT.Contains ("Blue enters") && boss.GetComponent<makeText> ().dialogue.Count < 1) {
-						boss.GetComponent<makeText> ().dialogue.Add (bossDiologs [i].CUE);
-						boss.GetComponent<makeText> ().dialogue.Add ("END");
-						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
-						dialogsInOrder [boss].Add ("END");
-					} else if (bossDiologs [i].CONTEXT.Contains ("<Good/True Path>")) {
-						boss.GetComponent<makeText> ().path1.Add (bossDiologs [i].CUE);
-						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
-					}else if (bossDiologs [i].CONTEXT.Contains ("<Evil Path/ Terrible finish>")) {
-						boss.GetComponent<makeText> ().path2.Add (bossDiologs [i].CUE);
-						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
-					}
-					else {
-						boss.GetComponent<makeText> ().nextDialog.Add (bossDiologs [i].CUE);
-						dialogsInOrder [boss].Add (bossDiologs [i].CUE);
-					}
-				}
-			}
-
-			boss.GetComponent<makeText> ().nextDialog.Add ("BATTLE");
-			dialogsInOrder [boss].Add ("BATTLE");
-			dialogsInOrder [boss].Add ("END");
+			BossCheck (read, boss);
 		}
 
 		//after getting all the npc diologs get blues remaining diologs
 		//these are already set under blues diolog just need to set them to the correct objects
+		InteractablesCheck(read, player, boss);
+	}
+
+	private void BossCheck(ReadSpreadSheets read, GameObject boss){
+		List<Row> bossDiologs = read.FindAll_ACTOR (boss.name);
+		if(!dialogsInOrder.ContainsKey(boss)) dialogsInOrder.Add(boss, new List<string>());
+
+		for (int i = 0; i < bossDiologs.Count; i++) {
+			if (bossDiologs [i].LOCATION.Equals (Application.loadedLevelName)) {
+				if (bossDiologs [i].CONTEXT.Contains ("Blue enters") && boss.GetComponent<makeText> ().dialogue.Count < 1) {
+					boss.GetComponent<makeText> ().dialogue.Add (bossDiologs [i].CUE);
+					boss.GetComponent<makeText> ().dialogue.Add ("END");
+					dialogsInOrder [boss].Add (bossDiologs [i].CUE);
+					dialogsInOrder [boss].Add ("END");
+				} else if (bossDiologs [i].CONTEXT.Contains ("<Good/True Path>")) {
+					boss.GetComponent<makeText> ().path1.Add (bossDiologs [i].CUE);
+					dialogsInOrder [boss].Add (bossDiologs [i].CUE);
+				}else if (bossDiologs [i].CONTEXT.Contains ("<Evil Path/ Terrible finish>")) {
+					boss.GetComponent<makeText> ().path2.Add (bossDiologs [i].CUE);
+					dialogsInOrder [boss].Add (bossDiologs [i].CUE);
+				}
+				else {
+					boss.GetComponent<makeText> ().nextDialog.Add (bossDiologs [i].CUE);
+					dialogsInOrder [boss].Add (bossDiologs [i].CUE);
+				}
+			}
+		}
+
+		boss.GetComponent<makeText> ().nextDialog.Add ("BATTLE");
+		dialogsInOrder [boss].Add ("BATTLE");
+		dialogsInOrder [boss].Add ("END");
+	}
+
+	private void InteractablesCheck(ReadSpreadSheets read, GameObject player, GameObject boss){
 		List<Row> playerDiologs = read.FindAll_ACTOR (player.name);
 		if(!dialogsInOrder.ContainsKey(player)) dialogsInOrder.Add(player, new List<string>());
-		
+
 		for (int i = 0; i < playerDiologs.Count; i++) {
 			if (playerDiologs [i].LOCATION.Equals (Application.loadedLevelName)) {
 				GameObject tempG = GameObject.Find (playerDiologs [i].GameObject_Interacted_With);
@@ -217,94 +226,24 @@ public class GatherDiologs : MonoBehaviour
 
 			if (pathNum1 != -1) {
 				dialogsInOrder [dialog.Key].Add ("CHOICE");
-				if(useDiolog) dialog.Key.GetComponent<makeText> ().dialogue.Add ("CHOICE");
+				if (useDiolog)
+					dialog.Key.GetComponent<makeText> ().dialogue.Add ("CHOICE");
 
-				GameObject tempG = GameObject.Find(dialog.Value [i].GameObject_Interacted_With);
+				GameObject tempG = GameObject.Find (dialog.Value [i].GameObject_Interacted_With);
 
 				//issue if the conversations are not in order then the pathnum finder will not work how to check value with out known index value?
 				//possibly create a functon in readspreadsheet that will allow this special access find?
+
 				//this is for a quest
 				if (listOfCharacterDialogs.ContainsKey (tempG) && listOfCharacterDialogs [tempG].Count > pathNum1 && pathNum1 != -1 && listOfCharacterDialogs [tempG].Count > pathNum2 && pathNum2 != -1) {
-					//insert the path1 diolog choice
-					Row path1Diolog = listOfCharacterDialogs [tempG] [pathNum1];
-					if (useDiolog)
-						dialog.Key.GetComponent<makeText> ().dialogue.Add (path1Diolog.CUE);
-					dialogsInOrder [dialog.Key].Add (path1Diolog.CUE);
-
-					//insert the path2 diolog choice
-					Row path2Diolog = listOfCharacterDialogs [tempG] [pathNum2];
-					if (useDiolog)
-						dialog.Key.GetComponent<makeText> ().dialogue.Add (path2Diolog.CUE);
-					dialogsInOrder [dialog.Key].Add (path2Diolog.CUE);
-					if (dialog.Key.name == "Bambox")
-						Debug.Log (dialog.Value [i].CUE);
-					//get next diologs
-					if (int.TryParse (path1Diolog.Conversation_Path_Chain, out pathNum1)) {
-						pathNum1 = int.Parse (path1Diolog.Conversation_Path_Chain);
-						if (pathNum1 != -1)
-							pathNum1 = newPathNums [pathNum1];
-						listOfCharacterDialogs [tempG].Remove (path1Diolog);
-					}
-
-					if (int.TryParse (path2Diolog.Conversation_Path_Chain, out pathNum2)) {
-						pathNum2 = int.Parse (path2Diolog.Conversation_Path_Chain);
-						if (pathNum2 != -1)
-							pathNum2 = newPathNums [pathNum2];
-						listOfCharacterDialogs [tempG].Remove (path2Diolog);
-					}
-
-					//insert to path1 the diolog that follows this choice
-					if (dialog.Value.Count > pathNum1 && pathNum1 != -1) {
-						if (useDiolog)
-							dialog.Key.GetComponent<makeText> ().path1.Add (dialog.Value [pathNum1].CUE);
-						dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
-						dialog.Value.RemoveAt (pathNum1);
-						pathNum2--;
-					}
-
-					//insert to path2 the diolog that follows this choice
-					if (dialog.Value.Count > pathNum2 && pathNum2 != -1) {
-						if (useDiolog)
-							dialog.Key.GetComponent<makeText> ().path2.Add (dialog.Value [pathNum2].CUE);
-						if (useDiolog)
-							dialog.Key.GetComponent<makeText> ().path2.Add ("RESET");
-						dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum2].CUE);
-						dialogsInOrder [dialog.Key].Add ("RESET");
-						dialog.Value.RemoveAt (pathNum2);
-					}
+					QuestSetter (dialog, player, tempG, listOfCharacterDialogs, newPathNums, pathNum1, pathNum2, i, useDiolog);
 				}
 				//this is for a conversation
 				else if (listOfCharacterDialogs [dialog.Key].Count > pathNum1 && pathNum1 != -1) {
-					//add basic diolog for generic characters
-					if (useDiolog)
-						dialog.Key.GetComponent<makeText> ().dialogue.Add (QUESTION);
-					dialogsInOrder [dialog.Key].Add (QUESTION);
-					if (useDiolog)
-						dialog.Key.GetComponent<makeText> ().dialogue.Add (WALK_AWAY);
-					dialogsInOrder [dialog.Key].Add (WALK_AWAY);
-
-					Row path1Diolog = listOfCharacterDialogs [dialog.Key] [pathNum1];
-
-					if (dialog.Value.Count > pathNum1 && pathNum1 != -1) {
-						//question
-						if (useDiolog)
-							dialog.Key.GetComponent<makeText> ().path1.Add (dialog.Value [pathNum1].CUE);
-						if (useDiolog)
-							dialog.Key.GetComponent<makeText> ().path1.Add ("SECOND");
-						dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
-						dialogsInOrder [dialog.Key].Add ("SECOND");
-						dialog.Value.RemoveAt (pathNum1);
-
-						//walk away
-						if (useDiolog)
-							dialog.Key.GetComponent<makeText> ().path2.Add ("Bye!");
-						if (useDiolog)
-							dialog.Key.GetComponent<makeText> ().path2.Add ("SECOND");
-						dialogsInOrder [dialog.Key].Add ("Bye");
-						dialogsInOrder [dialog.Key].Add ("SECOND");
-					}
-				} else if(pathNum1 != -1){
-					//add basic diolog for generic characters
+					ConversationSetter (dialog, player, tempG, listOfCharacterDialogs, newPathNums, pathNum1, pathNum2, i, useDiolog);
+				} 
+				//add basic text choice diolog for generic characters
+				else if (pathNum1 != -1) {
 					if (useDiolog)
 						dialog.Key.GetComponent<makeText> ().dialogue.Add (QUESTION);
 					dialogsInOrder [dialog.Key].Add (QUESTION);
@@ -315,6 +254,93 @@ public class GatherDiologs : MonoBehaviour
 					//dialogsInOrder [dialog.Key].Add ("SAME");
 				}
 			}
+		}
+	}
+
+	private void QuestSetter(KeyValuePair<GameObject, List<Row>> dialog, GameObject player, GameObject tempG, Dictionary<GameObject, List<Row>> listOfCharacterDialogs, int[] newPathNums, int pathNum1, int pathNum2, int i, bool useDiolog){
+		//insert the path1 diolog choice
+		Row path1Diolog = listOfCharacterDialogs [tempG] [pathNum1];
+		if (useDiolog)
+			dialog.Key.GetComponent<makeText> ().dialogue.Add (path1Diolog.CUE);
+		dialogsInOrder [dialog.Key].Add (path1Diolog.CUE);
+
+		//insert the path2 diolog choice
+		Row path2Diolog = listOfCharacterDialogs [tempG] [pathNum2];
+		if (useDiolog)
+			dialog.Key.GetComponent<makeText> ().dialogue.Add (path2Diolog.CUE);
+		dialogsInOrder [dialog.Key].Add (path2Diolog.CUE);
+
+		//get next diologs
+		if (int.TryParse (path1Diolog.Conversation_Path_Chain, out pathNum1)) {
+			pathNum1 = int.Parse (path1Diolog.Conversation_Path_Chain);
+			if (pathNum1 != -1)
+				pathNum1 = newPathNums [pathNum1];
+			listOfCharacterDialogs [tempG].Remove (path1Diolog);
+		}
+
+		if (int.TryParse (path2Diolog.Conversation_Path_Chain, out pathNum2)) {
+			pathNum2 = int.Parse (path2Diolog.Conversation_Path_Chain);
+			if (pathNum2 != -1)
+				pathNum2 = newPathNums [pathNum2];
+			listOfCharacterDialogs [tempG].Remove (path2Diolog);
+		}
+
+		//insert to path1 the diolog that follows this choice
+		if (dialog.Value.Count > pathNum1 && pathNum1 != -1) {
+			if (useDiolog) {
+				dialog.Key.GetComponent<makeText> ().path1.Add (dialog.Value [pathNum1].CUE);
+				dialog.Key.GetComponent<makeText> ().path1.Add ("QUEST");
+			}
+
+			dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
+			dialogsInOrder [dialog.Key].Add ("QUEST");
+			dialog.Value.RemoveAt (pathNum1);
+
+			pathNum2--;
+		}
+
+		//insert to path2 the diolog that follows this choice
+		if (dialog.Value.Count > pathNum2 && pathNum2 != -1) {
+			if (useDiolog)
+				dialog.Key.GetComponent<makeText> ().path2.Add (dialog.Value [pathNum2].CUE);
+			if (useDiolog)
+				dialog.Key.GetComponent<makeText> ().path2.Add ("RESET");
+			if (dialog.Key.name == "System")
+				Debug.Log (dialog.Value [pathNum2].CUE);
+			dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum2].CUE);
+			dialogsInOrder [dialog.Key].Add ("RESET");
+			dialog.Value.RemoveAt (pathNum2);
+		}
+	}
+
+	private void ConversationSetter(KeyValuePair<GameObject, List<Row>> dialog, GameObject player, GameObject tempG, Dictionary<GameObject, List<Row>> listOfCharacterDialogs, int[] newPathNums, int pathNum1, int pathNum2, int i, bool useDiolog){
+		//add basic diolog for generic characters
+		if (useDiolog)
+			dialog.Key.GetComponent<makeText> ().dialogue.Add (QUESTION);
+		dialogsInOrder [dialog.Key].Add (QUESTION);
+		if (useDiolog)
+			dialog.Key.GetComponent<makeText> ().dialogue.Add (WALK_AWAY);
+		dialogsInOrder [dialog.Key].Add (WALK_AWAY);
+
+		Row path1Diolog = listOfCharacterDialogs [dialog.Key] [pathNum1];
+
+		if (dialog.Value.Count > pathNum1 && pathNum1 != -1) {
+			//question
+			if (useDiolog)
+				dialog.Key.GetComponent<makeText> ().path1.Add (dialog.Value [pathNum1].CUE);
+			if (useDiolog)
+				dialog.Key.GetComponent<makeText> ().path1.Add ("SECOND");
+			dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
+			dialogsInOrder [dialog.Key].Add ("SECOND");
+			dialog.Value.RemoveAt (pathNum1);
+
+			//walk away
+			if (useDiolog)
+				dialog.Key.GetComponent<makeText> ().path2.Add ("Bye!");
+			if (useDiolog)
+				dialog.Key.GetComponent<makeText> ().path2.Add ("SECOND");
+			dialogsInOrder [dialog.Key].Add ("Bye");
+			dialogsInOrder [dialog.Key].Add ("SECOND");
 		}
 	}
 }
