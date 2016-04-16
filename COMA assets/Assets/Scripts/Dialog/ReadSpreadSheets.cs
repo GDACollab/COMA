@@ -126,9 +126,11 @@ public class ReadSpreadSheets
 
 	public List<Row> FindAll_ACTOR(string name){
 		List<Row> actorsRows = new List<Row> ();
+
 		for(int i = 0; i < parsedRows.Count; i++){
-			if (parsedRows [i].ACTOR.Equals (name))
+			if (parsedRows [i].ACTOR.Equals (name)) {
 				actorsRows.Add (parsedRows [i]);
+			}
 		}
 
 		return actorsRows;
