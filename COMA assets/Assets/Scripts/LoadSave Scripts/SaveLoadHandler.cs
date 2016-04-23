@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
@@ -7,19 +8,30 @@ using System.IO;
 public class SaveLoadHandler : MonoBehaviour {
 
 	public Font pixel;
+	public static SaveLoadHandler slHandler;
+	public static int SaveSlotNumber = 0;
+	private PlayerSaveData playerData;
 
-	private string currLevel = "SaveStuff";
-	public float fullHealth;
+	private string currLevel = "saveTestScene";
+	private List<string> itemNames;
+	private List<int> itemNums;
 
 	private const int MAX_SLOTS = 5;
 
 	void Start() {
+		if (slHandler == null) {
+			slHandler = this;
+			playerData = new PlayerSaveData();
+		}
+		else if (slHandler != this) {
+			Destroy (gameObject);
+		}
 		for(int i = 0; i < MAX_SLOTS; ++i) {
 			String newFileName = Application.persistentDataPath + "/ComaPlayerData" + i.ToString() + ".dat";
 			if(!File.Exists(newFileName))
 			   File.Create(newFileName);
 		}
-		Save (0);
+		Load (SaveSlotNumber);
 	}
 
 	void OnGUI ()
@@ -28,10 +40,16 @@ public class SaveLoadHandler : MonoBehaviour {
 		pixelStyle.font = pixel;
 
 		if(GUI.Button(new Rect(300, 20, 200, 30), "Save Slot 0", pixelStyle))
-			Save (0);
+			Save (SaveSlotNumber);
 
 		if(GUI.Button(new Rect(300, 60, 200, 30), "Load Slot 0", pixelStyle))
-			Load (0);
+			Load (SaveSlotNumber);
+
+		if (GUI.Button (new Rect (300, 100, 200, 30), "Add Corn", pixelStyle))
+			itemNums [0] += 1;
+
+		if (GUI.Button (new Rect (300, 140, 200, 30), "Reload Level", pixelStyle))
+			LoadLevel ();
 	}
 
 	public void Load(int num)
@@ -46,11 +64,7 @@ public class SaveLoadHandler : MonoBehaviour {
 				PlayerSaveData data = (PlayerSaveData)bf.Deserialize (file);
 				file.Close ();
 
-				currLevel = data.level;
-				Application.LoadLevel(currLevel);
-
-				GameObject.FindGameObjectWithTag("Player").transform.localPosition = 
-					new Vector3(PlayerPrefs.GetFloat("objectX"),PlayerPrefs.GetFloat("objectY"));
+				playerData = data;
 			}
 		}
 	}
@@ -68,14 +82,21 @@ public class SaveLoadHandler : MonoBehaviour {
 			else {
 				file = File.Open (fileName, FileMode.Open);
 			}
-			
-			PlayerSaveData data = new PlayerSaveData ();
-			data.level = currLevel;
-			PlayerPrefs.SetFloat("objectX", GameObject.FindGameObjectWithTag("Player").transform.localPosition.x);
-			PlayerPrefs.SetFloat("objectY", GameObject.FindGameObjectWithTag("Player").transform.localPosition.y);
-			
-			bf.Serialize (file, data);
+
+			bf.Serialize (file, playerData);
 			file.Close ();
+		}
+	}
+
+	public void LoadLevel() {
+		Application.LoadLevel (currLevel);
+	}
+
+	public void SetSlotNum(int num) {
+		if (num < 0 || num > MAX_SLOTS) {
+			print ("slot number does not exist");
+		} else {
+			SaveSlotNumber = num;
 		}
 	}
 

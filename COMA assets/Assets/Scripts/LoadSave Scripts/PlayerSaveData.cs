@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
@@ -8,5 +9,7 @@ using System.IO;
 class PlayerSaveData {
 
 	public string level;
+	public List<string> itemNames;
+	public List<int> itemNums;
 
 }
