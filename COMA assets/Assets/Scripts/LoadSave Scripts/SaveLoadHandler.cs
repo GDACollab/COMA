@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -65,8 +66,8 @@ public class SaveLoadHandler : MonoBehaviour {
 				PlayerSaveData data = (PlayerSaveData)bf.Deserialize (file);
 				file.Close ();
 
-				currLevel = data.level;
-				itemNames = data.itemNames;
+				slHandler.currLevel = data.level;
+				slHandler.itemNames = data.itemNames;
 				data.setPrefs();
 				print (data.itemNums[0]);
 			}
@@ -84,8 +85,8 @@ public class SaveLoadHandler : MonoBehaviour {
 			file = File.Open (fileName, FileMode.Open);
 
 			PlayerSaveData data = new PlayerSaveData();
-			data.level = currLevel;
-			data.itemNames = itemNames;
+			data.level = slHandler.currLevel;
+			data.itemNames = slHandler.itemNames;
 			data.getPrefs();
 			bf.Serialize (file, data);
 			file.Close ();
@@ -93,7 +94,7 @@ public class SaveLoadHandler : MonoBehaviour {
 	}
 
 	private void LoadLevel() {
-		Application.LoadLevel (currLevel);
+		SceneManager.LoadScene ("saveTestScene");
 	}
 
 	public int addItem(string name, int num) {
@@ -112,7 +113,6 @@ public class SaveLoadHandler : MonoBehaviour {
 	private void clearAllData() {
 		for (int i = 0; i < MAX_SLOTS; ++i) {
 			String newFileName = Application.persistentDataPath + "/ComaPlayerData" + i.ToString () + ".dat";
-			FileStream file;
 			File.Delete(newFileName);
 			File.Create (newFileName);
 		}
