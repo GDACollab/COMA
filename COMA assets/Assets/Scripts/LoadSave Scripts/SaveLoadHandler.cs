@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -10,18 +11,17 @@ public class SaveLoadHandler : MonoBehaviour {
 	public Font pixel;
 	public static SaveLoadHandler slHandler;
 	public static int SaveSlotNumber = 0;
-	private PlayerSaveData playerData;
+	private List<string> itemNames = new List<string> ();
 
 	private string currLevel = "saveTestScene";
-	private List<string> itemNames;
-	private List<int> itemNums;
 
 	private const int MAX_SLOTS = 5;
 
 	void Start() {
 		if (slHandler == null) {
 			slHandler = this;
-			playerData = new PlayerSaveData();
+			PlayerPrefs.SetInt("corn",0);
+			itemNames.Add("corn");
 		}
 		else if (slHandler != this) {
 			Destroy (gameObject);
@@ -31,7 +31,6 @@ public class SaveLoadHandler : MonoBehaviour {
 			if(!File.Exists(newFileName))
 			   File.Create(newFileName);
 		}
-		Load (SaveSlotNumber);
 	}
 
 	void OnGUI ()
@@ -46,13 +45,16 @@ public class SaveLoadHandler : MonoBehaviour {
 			Load (SaveSlotNumber);
 
 		if (GUI.Button (new Rect (300, 100, 200, 30), "Add Corn", pixelStyle))
-			itemNums [0] += 1;
+			addItem ("corn", 1);
 
 		if (GUI.Button (new Rect (300, 140, 200, 30), "Reload Level", pixelStyle))
 			LoadLevel ();
+
+		if (GUI.Button (new Rect (0, 140, 200, 30), "Clear All Save Data", pixelStyle))
+			clearAllData ();
 	}
 
-	public void Load(int num)
+	public static void Load(int num)
 	{
 		if (num > MAX_SLOTS || num < 0)
 			print ("Load file number not in range");
@@ -64,12 +66,15 @@ public class SaveLoadHandler : MonoBehaviour {
 				PlayerSaveData data = (PlayerSaveData)bf.Deserialize (file);
 				file.Close ();
 
-				playerData = data;
+				slHandler.currLevel = data.level;
+				slHandler.itemNames = data.itemNames;
+				data.setPrefs();
+				print (data.itemNums[0]);
 			}
 		}
 	}
 
-	public void Save(int num)
+	public static void Save(int num)
 	{
 		if (num > MAX_SLOTS || num < 0)
 			print ("Save file number not in range");
@@ -77,26 +82,39 @@ public class SaveLoadHandler : MonoBehaviour {
 			String fileName = Application.persistentDataPath + "/ComaPlayerData" + num.ToString () + ".dat";
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file;
-			if (!File.Exists (fileName))
-				file = File.Create (fileName);
-			else {
-				file = File.Open (fileName, FileMode.Open);
-			}
+			file = File.Open (fileName, FileMode.Open);
 
-			bf.Serialize (file, playerData);
+			PlayerSaveData data = new PlayerSaveData();
+			data.level = slHandler.currLevel;
+			data.itemNames = slHandler.itemNames;
+			data.getPrefs();
+			bf.Serialize (file, data);
 			file.Close ();
 		}
 	}
 
-	public void LoadLevel() {
-		Application.LoadLevel (currLevel);
+	private void LoadLevel() {
+		SceneManager.LoadScene ("saveTestScene");
 	}
 
-	public void SetSlotNum(int num) {
+	public int addItem(string name, int num) {
+		PlayerPrefs.SetInt (name, PlayerPrefs.GetInt (name) + num);
+		return PlayerPrefs.GetInt (name);
+	}
+
+	private void SetSlotNum(int num) {
 		if (num < 0 || num > MAX_SLOTS) {
 			print ("slot number does not exist");
 		} else {
 			SaveSlotNumber = num;
+		}
+	}
+
+	private void clearAllData() {
+		for (int i = 0; i < MAX_SLOTS; ++i) {
+			String newFileName = Application.persistentDataPath + "/ComaPlayerData" + i.ToString () + ".dat";
+			File.Delete(newFileName);
+			File.Create (newFileName);
 		}
 	}
 

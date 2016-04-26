@@ -12,4 +12,16 @@ class PlayerSaveData {
 	public List<string> itemNames;
 	public List<int> itemNums;
 
+	public void setPrefs() {
+		for(int i = 0; i < itemNames.Count; ++i) {
+			PlayerPrefs.SetInt(itemNames[i], itemNums[i]);
+		}
+	}
+
+	public void getPrefs() {
+		itemNums = new List<int> ();
+		for (int i = 0; i < itemNames.Count; ++i) {
+			itemNums.Add(PlayerPrefs.GetInt (itemNames [i]));
+		}
+	}
 }
