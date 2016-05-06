@@ -85,6 +85,7 @@ GameObject:
   - 61: {fileID: 6185058}
   - 114: {fileID: 11418434}
   - 114: {fileID: 11463520}
+  - 114: {fileID: 11440032}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Player
@@ -150,8 +151,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.76, y: 0.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.79, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 22465076}
   m_Father: {fileID: 0}
@@ -196,9 +197,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.3822998}
+  m_Offset: {x: 0, y: -0.5336242}
   serializedVersion: 2
-  m_Size: {x: 0.76, y: 0.6754005}
+  m_Size: {x: 0.76, y: 0.37275195}
 --- !u!61 &6185058
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -399,6 +400,17 @@ MonoBehaviour:
   hitRightWall: 0
   shaded: 0
   inDialog: 0
+--- !u!114 &11440032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce743df77d889464baa0bad6a659c195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11458952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -569,6 +581,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10000
   m_TargetDisplay: 0
@@ -580,14 +593,14 @@ RectTransform:
   m_GameObject: {fileID: 196210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 22466924}
   m_Father: {fileID: 22465076}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12, y: -189}
+  m_AnchoredPosition: {x: -85, y: -209}
   m_SizeDelta: {x: -283, y: -418}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22445386
@@ -606,7 +619,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 299, y: 346}
+  m_AnchoredPosition: {x: 349, y: 332}
   m_SizeDelta: {x: -422, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22463120

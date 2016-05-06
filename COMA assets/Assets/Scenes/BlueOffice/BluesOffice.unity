@@ -180,6 +180,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &333127205
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -274,6 +275,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &414672835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -383,42 +385,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 170878, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 431442, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 431442, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 22412310, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -115
-      objectReference: {fileID: 0}
-    - target: {fileID: 22412310, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -239
-      objectReference: {fileID: 0}
-    - target: {fileID: 22412310, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -512
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445386, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 279
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445386, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: -493
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445386, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 317
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
   m_IsPrefabParent: 0
@@ -463,6 +429,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &882552862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -472,11 +439,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.093680725, y: -0.031226167}
+  m_Offset: {x: 0.1437072, y: -0.031226167}
   serializedVersion: 2
-  m_Size: {x: 1.2420835, y: 1.52699}
+  m_Size: {x: 1.3421363, y: 1.52699}
 --- !u!212 &882552863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -556,6 +523,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &935580352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -565,7 +533,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -737,6 +705,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6177250, guid: 9728b82dd7cd9c74d90db19948dfd8ef, type: 2}
+      propertyPath: m_Offset.y
+      value: 3.8409696
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177250, guid: 9728b82dd7cd9c74d90db19948dfd8ef, type: 2}
+      propertyPath: m_Size.y
+      value: 1.3739473
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9728b82dd7cd9c74d90db19948dfd8ef, type: 2}
   m_IsPrefabParent: 0
@@ -777,6 +753,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &1353630908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -786,11 +763,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.21253966, y: 0.0326981}
+  m_Offset: {x: -0.26256615, y: 0.09523125}
   serializedVersion: 2
-  m_Size: {x: 0.9050776, y: 0.806981}
+  m_Size: {x: 1.0051303, y: 0.68191475}
 --- !u!212 &1353630909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -870,6 +847,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &1488404657
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -963,6 +941,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &1563480699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1056,6 +1035,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &1591944045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1149,6 +1129,7 @@ MonoBehaviour:
   nextDialog: []
   response: 
   thanks: []
+  useThisConversation: 0
 --- !u!61 &1625554596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1158,7 +1139,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: -0.31063417, y: -0.37602976}
   serializedVersion: 2

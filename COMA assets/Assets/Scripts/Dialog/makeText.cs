@@ -44,6 +44,7 @@ public class makeText : MonoBehaviour
 
 	private bool nearCharacter = false;
 	private bool inConversation = false;
+	public bool useThisConversation = false;
 
 	// Use this for initialization
 	void Start ()
@@ -68,7 +69,7 @@ public class makeText : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (nearCharacter && dialogue.Count > 0) {
+		if (nearCharacter && dialogue.Count > 0 && useThisConversation) {
 			if (choice1.enabled == false) {
 				if (words.enabled == true) {
 					words.text = dialogue [i];
@@ -171,6 +172,7 @@ public class makeText : MonoBehaviour
 					choice1.enabled = false;
 					choice2.enabled = false;
 					ChBG.enabled = false;
+					//useThisConversation = false;
 				}
 			}
 		}
