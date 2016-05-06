@@ -121,6 +121,8 @@ MonoBehaviour:
   path2: []
   nextDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!212 &94979152
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -248,6 +250,14 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -231
       objectReference: {fileID: 0}
+    - target: {fileID: 22445386, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 310
+      objectReference: {fileID: 0}
+    - target: {fileID: 22445386, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 337
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
   m_IsPrefabParent: 0
@@ -347,6 +357,8 @@ MonoBehaviour:
   path2: []
   nextDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!1001 &1327513397
 Prefab:
   m_ObjectHideFlags: 0
@@ -443,6 +455,18 @@ Prefab:
     - target: {fileID: 493410, guid: 980f3c7bffe7fa743bcc9cc1472cf8e6, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113408, guid: 980f3c7bffe7fa743bcc9cc1472cf8e6, type: 2}
+      propertyPath: m_Offset.x
+      value: 0.07436359
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113408, guid: 980f3c7bffe7fa743bcc9cc1472cf8e6, type: 2}
+      propertyPath: m_Offset.y
+      value: 1.1520314
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113408, guid: 980f3c7bffe7fa743bcc9cc1472cf8e6, type: 2}
+      propertyPath: m_Size.y
+      value: 2.3107398
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 980f3c7bffe7fa743bcc9cc1472cf8e6, type: 2}
