@@ -1,0 +1,9 @@
+Set choice_type to either Conversation, Quest or Continue
+
+Conversation will give a simple choice dialog for blue (Question vs Walk Away)
+
+Quest will use Conversation Path Chain to send that dialog to blues correspanding
+	dialog responses (there can be one or two path options)
+
+Continue also uses Conversation Path Chain but only takes one dialog path value and
+	for the final dialog 

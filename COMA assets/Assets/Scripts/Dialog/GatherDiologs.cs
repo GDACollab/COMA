@@ -225,9 +225,11 @@ public class GatherDiologs : MonoBehaviour
 			}
 
 			if (pathNum1 != -1) {
-				dialogsInOrder [dialog.Key].Add ("CHOICE");
-				if (useDiolog)
-					dialog.Key.GetComponent<makeText> ().dialogue.Add ("CHOICE");
+				if(dialog.Value[i].Choice_Type.Equals("Quest") || dialog.Value[i].Choice_Type.Equals("Conversation")){
+					dialogsInOrder [dialog.Key].Add ("CHOICE");
+					if (useDiolog)
+						dialog.Key.GetComponent<makeText> ().dialogue.Add ("CHOICE");
+				}
 
 				GameObject tempG = GameObject.Find (dialog.Value [i].GameObject_Interacted_With);
 
@@ -244,15 +246,16 @@ public class GatherDiologs : MonoBehaviour
 				} 
 				//add basic text choice diolog for generic characters
 				else if (pathNum1 != -1) {
-					if (useDiolog)
-						dialog.Key.GetComponent<makeText> ().dialogue.Add (QUESTION);
-					dialogsInOrder [dialog.Key].Add (QUESTION);
-					if (useDiolog)
-						dialog.Key.GetComponent<makeText> ().dialogue.Add (WALK_AWAY);
-					dialogsInOrder [dialog.Key].Add (WALK_AWAY);
-
+						if (useDiolog)
+							dialog.Key.GetComponent<makeText> ().dialogue.Add (QUESTION);
+						dialogsInOrder [dialog.Key].Add (QUESTION);
+						if (useDiolog)
+							dialog.Key.GetComponent<makeText> ().dialogue.Add (WALK_AWAY);
+						dialogsInOrder [dialog.Key].Add (WALK_AWAY);
+					
 					//dialogsInOrder [dialog.Key].Add ("SAME");
 				}
+
 			}
 		}
 	}
@@ -315,32 +318,50 @@ public class GatherDiologs : MonoBehaviour
 
 	private void ConversationSetter(KeyValuePair<GameObject, List<Row>> dialog, GameObject player, GameObject tempG, Dictionary<GameObject, List<Row>> listOfCharacterDialogs, int[] newPathNums, int pathNum1, int pathNum2, int i, bool useDiolog){
 		//add basic diolog for generic characters
-		if (useDiolog)
-			dialog.Key.GetComponent<makeText> ().dialogue.Add (QUESTION);
-		dialogsInOrder [dialog.Key].Add (QUESTION);
-		if (useDiolog)
-			dialog.Key.GetComponent<makeText> ().dialogue.Add (WALK_AWAY);
-		dialogsInOrder [dialog.Key].Add (WALK_AWAY);
-
-		Row path1Diolog = listOfCharacterDialogs [dialog.Key] [pathNum1];
-
-		if (dialog.Value.Count > pathNum1 && pathNum1 != -1) {
-			//question
+		if (dialog.Value [pathNum1].GameObject_Interacted_With.Equals ("Blue") && !dialog.Value[i].Choice_Type.Equals("Continue")) {
 			if (useDiolog)
-				dialog.Key.GetComponent<makeText> ().path1.Add (dialog.Value [pathNum1].CUE);
+				dialog.Key.GetComponent<makeText> ().dialogue.Add (QUESTION);
+			dialogsInOrder [dialog.Key].Add (QUESTION);
 			if (useDiolog)
-				dialog.Key.GetComponent<makeText> ().path1.Add ("SECOND");
+				dialog.Key.GetComponent<makeText> ().dialogue.Add (WALK_AWAY);
+			dialogsInOrder [dialog.Key].Add (WALK_AWAY);
+
+			Row path1Diolog = listOfCharacterDialogs [dialog.Key] [pathNum1];
+
+			if (dialog.Value.Count > pathNum1 && pathNum1 != -1) {
+				//question
+				if (useDiolog)
+					dialog.Key.GetComponent<makeText> ().path1.Add (dialog.Value [pathNum1].CUE);
+				if (useDiolog)
+					dialog.Key.GetComponent<makeText> ().path1.Add ("SECOND");
+				dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
+				dialogsInOrder [dialog.Key].Add ("SECOND");
+				dialog.Value.RemoveAt (pathNum1);
+
+				//walk away
+				if (useDiolog)
+					dialog.Key.GetComponent<makeText> ().path2.Add ("Bye!");
+				if (useDiolog)
+					//dialog.Key.GetComponent<makeText> ().path2.Add ("SECOND");
+				dialogsInOrder [dialog.Key].Add ("Bye");
+				dialogsInOrder [dialog.Key].Add ("SECOND");
+			}
+		} else if(dialog.Value[pathNum1].Choice_Type.Equals("Continue")){
+			if (useDiolog) {
+				dialog.Key.GetComponent<makeText> ().dialogue.Add ("CONVERSATION");
+				dialogsInOrder [dialog.Key].Add ("CONVERSATION");
+			}
+			Debug.Log (dialog.Value [pathNum1]);
+			dialog.Key.GetComponent<makeText> ().extraDialog.Add (dialog.Value [pathNum1].CUE);
 			dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
-			dialogsInOrder [dialog.Key].Add ("SECOND");
-			dialog.Value.RemoveAt (pathNum1);
 
-			//walk away
-			if (useDiolog)
-				dialog.Key.GetComponent<makeText> ().path2.Add ("Bye!");
-			if (useDiolog)
-				dialog.Key.GetComponent<makeText> ().path2.Add ("SECOND");
-			dialogsInOrder [dialog.Key].Add ("Bye");
-			dialogsInOrder [dialog.Key].Add ("SECOND");
+			if (dialog.Value [pathNum1].Choice_Type.Equals("END")) {
+				dialog.Key.GetComponent<makeText> ().extraDialog.Add ("SECOND");
+				dialogsInOrder [dialog.Key].Add ("SECOND");
+			}
+
+			if (dialog.Value.Count > pathNum1 && dialog.Value [pathNum1] != null)
+				dialog.Value.RemoveAt (pathNum1);
 		}
 	}
 }

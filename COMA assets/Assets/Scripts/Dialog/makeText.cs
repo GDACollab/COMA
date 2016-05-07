@@ -19,9 +19,9 @@ using System.Collections.Generic;
 public class makeText : MonoBehaviour
 {
 
-	new GameObject textObject;
-	new GameObject choiceObject;
-	new GameObject choiceObject2;
+	public GameObject textObject;
+	private GameObject choiceObject;
+	private GameObject choiceObject2;
 	public GameObject player;
 	//public Inventory inventory;
 	public GameObject dialogCSVParserObject;
@@ -34,6 +34,7 @@ public class makeText : MonoBehaviour
 	public List<string> path1 = new List<string> ();
 	public List<string> path2 = new List<string> ();
 	public List<string> nextDialog = new List<string> ();
+	public List<string> extraDialog = new List<string> ();
 	public string response = string.Empty;
 	List<string> storage = new List<string> ();
 	//public List<string> waiting = new List<string> ();
@@ -50,9 +51,8 @@ public class makeText : MonoBehaviour
 	void Start ()
 	{
 		storage = dialogue;
-		textObject = GameObject.Find ("Text");
-		choiceObject = GameObject.Find ("Ctext1");
-		choiceObject2 = GameObject.Find ("Ctext2");
+		choiceObject = textObject.transform.GetChild(0).FindChild ("Ctext1").gameObject;
+		choiceObject2 = textObject.transform.GetChild(0).FindChild ("Ctext2").gameObject;
 		words = textObject.GetComponent<Text> ();
 		BG = textObject.GetComponentInParent<Image> ();
 		choice1 = choiceObject.GetComponent<Text> ();
@@ -63,7 +63,6 @@ public class makeText : MonoBehaviour
 		choice1.enabled = false;
 		choice2.enabled = false;
 		ChBG.enabled = false;
-
 	}
 	
 	// Update is called once per frame
@@ -98,6 +97,10 @@ public class makeText : MonoBehaviour
 							choice1.enabled = true;
 							ChBG.enabled = true;
 							choice1.text = response;
+						}
+						if (dialogue [i].CompareTo ("CONVERSATION") == 0) {
+							dialogue = extraDialog;
+							i = 0;
 						}
 						if (dialogue [i].CompareTo ("QUEST") == 0) {
 							quest = 1;
