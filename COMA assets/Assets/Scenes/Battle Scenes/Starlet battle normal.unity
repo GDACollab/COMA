@@ -2232,7 +2232,7 @@ MonoBehaviour:
   dirty: 0
   colors: []
   triggers:
-  - audioPos: 0.8
+  - audioPos: 0.82
     methodName: Play
   - audioPos: 0.031
     methodName: MakerD
