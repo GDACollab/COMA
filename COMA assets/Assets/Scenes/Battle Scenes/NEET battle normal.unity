@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &34140720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -258,8 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifebarRect:
     serializedVersion: 2
-    x: 90
-    y: 275
+    x: 140
+    y: 502
     width: 0
     height: 0
   lifebar: {fileID: 2800000, guid: 0795b0cd0e98c474dbc672a854f413a6, type: 3}
@@ -475,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &450811806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -851,6 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &756530600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1192,6 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &995545729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1480,6 +1484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &1125104895
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1886,6 +1891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &1351321654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2258,6 +2264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &1748597666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2399,6 +2406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greyNote: {fileID: 21300000, guid: 2f0728512f6fbe1469930ceab2b2b2c0, type: 3}
+  glow: {fileID: 0}
 --- !u!61 &1847698067
 BoxCollider2D:
   m_ObjectHideFlags: 0

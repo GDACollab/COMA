@@ -1386,9 +1386,9 @@ MonoBehaviour:
     methodName: DubFK
   - audioPos: 0.52940625
     methodName: MakerK
-  - audioPos: 0.88234375
+  - audioPos: 0.88234377
     methodName: MakerK
-  - audioPos: 1.0
+  - audioPos: 1
     methodName: Play
   - audioPos: 1.41175
     methodName: DubSK
@@ -1402,9 +1402,9 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 4.23525
     methodName: MakerD
-  - audioPos: 4.76465625
+  - audioPos: 4.764656
     methodName: MakerD
-  - audioPos: 5.11759375
+  - audioPos: 5.117594
     methodName: MakerD
   - audioPos: 5.647
     methodName: MakerF
@@ -1412,51 +1412,51 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 7.05875
     methodName: MakerF
-  - audioPos: 7.4116875
+  - audioPos: 7.4116874
     methodName: MakerS
   - audioPos: 8.4705
     methodName: DubDL
-  - audioPos: 8.8234375
+  - audioPos: 8.823438
     methodName: MakerL
   - audioPos: 9.176375
     methodName: DubDL
   - audioPos: 9.88225
     methodName: MakerS
-  - audioPos: 10.05871875
+  - audioPos: 10.058719
     methodName: MakerK
-  - audioPos: 10.41165625
+  - audioPos: 10.411656
     methodName: MakerJ
   - audioPos: 10.588125
     methodName: MakerF
-  - audioPos: 10.76459375
+  - audioPos: 10.764594
     methodName: MakerK
   - audioPos: 11.294
     methodName: DubDL
-  - audioPos: 11.6469375
+  - audioPos: 11.646937
     methodName: DubDL
   - audioPos: 11.999875
     methodName: DubDL
-  - audioPos: 12.3528125
+  - audioPos: 12.352813
     methodName: MakerC
   - audioPos: 12.70575
     methodName: DubSK
   - audioPos: 13.411625
     methodName: DubDL
-  - audioPos: 13.7645625
+  - audioPos: 13.764563
     methodName: MakerF
   - audioPos: 14.1175
     methodName: DubDJ
-  - audioPos: 14.4704375
+  - audioPos: 14.470437
     methodName: MakerA
-  - audioPos: 14.64690625
+  - audioPos: 14.646906
     methodName: MakerJ
   - audioPos: 14.823375
     methodName: MakerD
   - audioPos: 15.52925
     methodName: DubFK
-  - audioPos: 15.8821875
+  - audioPos: 15.882188
     methodName: MakerS
-  - audioPos: 16.05865625
+  - audioPos: 16.058657
     methodName: MakerK
   - audioPos: 16.235125
     methodName: MakerF
@@ -1472,11 +1472,11 @@ MonoBehaviour:
     methodName: MakerS
   - audioPos: 21.17625
     methodName: MakerS
-  - audioPos: 21.882125
+  - audioPos: 21.882126
     methodName: MakerS
-  - audioPos: 22.2350625
+  - audioPos: 22.235062
     methodName: DubDK
-  - audioPos: 22.41153125
+  - audioPos: 22.411531
     methodName: MakerL
   - audioPos: 22.588
     methodName: DubFK
@@ -1484,15 +1484,15 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 23.99975
     methodName: MakerF
-  - audioPos: 24.705625
+  - audioPos: 24.705626
     methodName: MakerF
-  - audioPos: 25.0585625
+  - audioPos: 25.058563
     methodName: DubDJ
   - audioPos: 25.4115
     methodName: DubDK
-  - audioPos: 26.117375
+  - audioPos: 26.117374
     methodName: MakerL
-  - audioPos: 26.64678125
+  - audioPos: 26.646782
     methodName: MakerL
   - audioPos: 26.82325
     methodName: DubDL
@@ -1506,49 +1506,49 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 31.0585
     methodName: MakerD
-  - audioPos: 31.764375
+  - audioPos: 31.764376
     methodName: MakerD
-  - audioPos: 32.64671875
+  - audioPos: 32.646717
     methodName: MakerS
-  - audioPos: 32.99965625
+  - audioPos: 32.999657
     methodName: MakerA
-  - audioPos: 33.35259375
+  - audioPos: 33.352592
     methodName: MakerS
   - audioPos: 33.882
     methodName: MakerD
   - audioPos: 34.587875
     methodName: MakerD
-  - audioPos: 34.9408125
+  - audioPos: 34.94081
     methodName: MakerF
   - audioPos: 35.29375
     methodName: MakerD
-  - audioPos: 35.999625
+  - audioPos: 35.999626
     methodName: MakerS
   - audioPos: 36.7055
     methodName: MakerL
-  - audioPos: 37.411375
+  - audioPos: 37.411373
     methodName: MakerL
   - audioPos: 38.11725
     methodName: MakerC
-  - audioPos: 38.4701875
+  - audioPos: 38.47019
     methodName: MakerL
-  - audioPos: 38.823125
+  - audioPos: 38.823124
     methodName: MakerC
   - audioPos: 40.234875
     methodName: MakerC
   - audioPos: 40.94075
     methodName: MakerK
-  - audioPos: 41.646625
+  - audioPos: 41.646626
     methodName: MakerL
   - audioPos: 42.3525
     methodName: MakerL
-  - audioPos: 43.058375
+  - audioPos: 43.058376
     methodName: MakerL
   - audioPos: 43.76425
     methodName: MakerL
   - audioPos: 45.176
     methodName: MakerC
-  - audioPos: 45.881875
+  - audioPos: 45.881874
     methodName: MakerJ
 --- !u!82 &1160303306
 AudioSource:
@@ -2400,8 +2400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifebarRect:
     serializedVersion: 2
-    x: 90
-    y: 275
+    x: 140
+    y: 502
     width: 0
     height: 0
   lifebar: {fileID: 2800000, guid: 0cd18a0682ee6504098563d1aab34ab4, type: 3}

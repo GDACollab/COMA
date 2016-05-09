@@ -9,7 +9,7 @@ public class life : MonoBehaviour {
 	//public Texture2D lifebarBG;
 	//private Health heart;
 	//public GameObject PlayerData;
-	private float width = 300f;
+	private float width = 700f;
 	public static life instance;
 
 	// Use this for initialization
@@ -25,7 +25,7 @@ public class life : MonoBehaviour {
 	}
 	void OnGUI(){
 		instance.lifebarRect.width = width * (Health.hp / 100);
-		instance.lifebarRect.height = 10;
+		instance.lifebarRect.height = 20;
 		//instance.lifebarBGRect.width = width;
 		//instance.lifebarBGRect.height = 10;
 		//GUI.DrawTexture (lifebarBGRect, lifebarBG);
