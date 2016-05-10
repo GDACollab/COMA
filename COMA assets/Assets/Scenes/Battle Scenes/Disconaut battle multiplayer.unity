@@ -1762,17 +1762,17 @@ MonoBehaviour:
     methodName: DubDC
   - audioPos: 0.5
     methodName: MakerK
-  - audioPos: 1
+  - audioPos: 1.0
     methodName: Play
   - audioPos: 1.031
     methodName: DubSL
   - audioPos: 1.5
     methodName: MakerJ
-  - audioPos: 2
+  - audioPos: 2.0
     methodName: MakerA
   - audioPos: 2.5
     methodName: MakerA
-  - audioPos: 3
+  - audioPos: 3.0
     methodName: MakerS
   - audioPos: 3.5
     methodName: MakerD
@@ -1780,11 +1780,11 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 4.75
     methodName: MakerF
-  - audioPos: 5
+  - audioPos: 5.0
     methodName: MakerD
   - audioPos: 5.5
     methodName: MakerA
-  - audioPos: 6
+  - audioPos: 6.0
     methodName: MakerJ
   - audioPos: 6.25
     methodName: MakerJ
@@ -1794,19 +1794,19 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 7.75
     methodName: MakerL
-  - audioPos: 8
+  - audioPos: 8.0
     methodName: MakerC
   - audioPos: 8.5
     methodName: MakerL
-  - audioPos: 9
+  - audioPos: 9.0
     methodName: MakerK
   - audioPos: 9.5
     methodName: MakerJ
-  - audioPos: 10
+  - audioPos: 10.0
     methodName: MakerA
   - audioPos: 10.75
     methodName: DubAJ
-  - audioPos: 11
+  - audioPos: 11.0
     methodName: MakerK
   - audioPos: 11.5
     methodName: DubAL
@@ -1816,21 +1816,21 @@ MonoBehaviour:
     methodName: MakerC
   - audioPos: 13.5
     methodName: MakerC
-  - audioPos: 14
+  - audioPos: 14.0
     methodName: MakerS
   - audioPos: 14.5
     methodName: MakerS
-  - audioPos: 15
+  - audioPos: 15.0
     methodName: DubAL
   - audioPos: 15.25
     methodName: MakerS
   - audioPos: 15.75
     methodName: MakerK
-  - audioPos: 16
+  - audioPos: 16.0
     methodName: MakerA
   - audioPos: 16.25
     methodName: MakerS
-  - audioPos: 17
+  - audioPos: 17.0
     methodName: MakerK
   - audioPos: 17.25
     methodName: MakerF
@@ -1838,63 +1838,63 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 17.75
     methodName: MakerD
-  - audioPos: 18
+  - audioPos: 18.0
     methodName: DubSL
   - audioPos: 18.5
     methodName: MakerD
-  - audioPos: 19
+  - audioPos: 19.0
     methodName: MakerF
   - audioPos: 19.5
     methodName: MakerS
-  - audioPos: 20
+  - audioPos: 20.0
     methodName: DubAK
   - audioPos: 20.5
     methodName: MakerS
-  - audioPos: 21
+  - audioPos: 21.0
     methodName: MakerD
   - audioPos: 21.5
     methodName: MakerF
-  - audioPos: 22
+  - audioPos: 22.0
     methodName: DubAJ
   - audioPos: 22.75
     methodName: MakerA
   - audioPos: 23.5
     methodName: MakerA
-  - audioPos: 24
+  - audioPos: 24.0
     methodName: DubAJ
   - audioPos: 24.75
     methodName: MakerA
   - audioPos: 25.5
     methodName: MakerA
-  - audioPos: 26
+  - audioPos: 26.0
     methodName: DubDJ
   - audioPos: 26.5
     methodName: MakerK
-  - audioPos: 27
+  - audioPos: 27.0
     methodName: MakerL
   - audioPos: 27.5
     methodName: MakerC
-  - audioPos: 28
+  - audioPos: 28.0
     methodName: DubFK
   - audioPos: 28.5
     methodName: MakerL
-  - audioPos: 29
+  - audioPos: 29.0
     methodName: DubFK
   - audioPos: 29.5
     methodName: DubDJ
-  - audioPos: 30
+  - audioPos: 30.0
     methodName: DubAJ
   - audioPos: 30.75
     methodName: MakerJ
   - audioPos: 31.5
     methodName: MakerJ
-  - audioPos: 32
+  - audioPos: 32.0
     methodName: DubSK
   - audioPos: 32.75
     methodName: MakerK
   - audioPos: 33.5
     methodName: MakerK
-  - audioPos: 34
+  - audioPos: 34.0
     methodName: MakerL
   - audioPos: 34.75
     methodName: MakerL
@@ -1902,7 +1902,7 @@ MonoBehaviour:
     methodName: MakerL
   - audioPos: 35.5
     methodName: MakerL
-  - audioPos: 36
+  - audioPos: 36.0
     methodName: MakerD
   - audioPos: 36.75
     methodName: MakerD
@@ -1910,31 +1910,31 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 37.5
     methodName: MakerD
-  - audioPos: 38
+  - audioPos: 38.0
     methodName: MakerA
   - audioPos: 38.5
     methodName: MakerS
-  - audioPos: 39
+  - audioPos: 39.0
     methodName: MakerD
   - audioPos: 39.5
     methodName: MakerF
-  - audioPos: 40
+  - audioPos: 40.0
     methodName: MakerJ
   - audioPos: 40.5
     methodName: MakerK
-  - audioPos: 41
+  - audioPos: 41.0
     methodName: MakerL
   - audioPos: 41.5
     methodName: MakerC
-  - audioPos: 42
+  - audioPos: 42.0
     methodName: DubDC
   - audioPos: 42.5
     methodName: MakerK
-  - audioPos: 43
+  - audioPos: 43.0
     methodName: DubSL
   - audioPos: 43.5
     methodName: MakerJ
-  - audioPos: 44
+  - audioPos: 44.0
     methodName: DubAJ
 --- !u!82 &1409466854
 AudioSource:
