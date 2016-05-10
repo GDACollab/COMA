@@ -894,8 +894,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifebarRect:
     serializedVersion: 2
-    x: 90
-    y: 275
+    x: 140
+    y: 502
     width: 0
     height: 0
   lifebar: {fileID: 2800000, guid: d9fe228181eeaba4aacff782c919a2f9, type: 3}
@@ -1644,11 +1644,11 @@ MonoBehaviour:
   triggers:
   - audioPos: 1.0
     methodName: Play
-  - audioPos: 0.01
+  - audioPos: 0.031
     methodName: MakerD
   - audioPos: 0.5
     methodName: MakerS
-  - audioPos: 1.021
+  - audioPos: 1.031
     methodName: MakerD
   - audioPos: 1.25
     methodName: MakerS
@@ -1868,8 +1868,6 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 54.0
     methodName: MakerL
-  - audioPos: 54.25
-    methodName: MakerK
   - audioPos: 54.5
     methodName: MakerJ
   - audioPos: 55.0
@@ -2054,35 +2052,19 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 100.0
     methodName: MakerK
-  - audioPos: 100.25
-    methodName: MakerK
   - audioPos: 100.5
-    methodName: MakerK
-  - audioPos: 100.75
     methodName: MakerK
   - audioPos: 101.0
     methodName: MakerJ
-  - audioPos: 101.25
-    methodName: MakerJ
   - audioPos: 101.5
-    methodName: MakerJ
-  - audioPos: 101.75
     methodName: MakerJ
   - audioPos: 102.0
     methodName: MakerF
-  - audioPos: 102.25
-    methodName: MakerF
   - audioPos: 102.5
-    methodName: MakerF
-  - audioPos: 102.75
     methodName: MakerF
   - audioPos: 103.0
     methodName: MakerD
-  - audioPos: 103.25
-    methodName: MakerD
   - audioPos: 103.5
-    methodName: MakerD
-  - audioPos: 103.75
     methodName: MakerD
   - audioPos: 104.0
     methodName: MakerK

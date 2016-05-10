@@ -18,6 +18,7 @@ public class Angel : MonoBehaviour {
 	// Other global state
 	public static float hp;
 //	public static List<Item> inventory;
+//  quest info maybe?
 
 	public static void TransitionFromBattleToField() {
 		FieldToBattle x = (FieldToBattle) marshalled_state;
