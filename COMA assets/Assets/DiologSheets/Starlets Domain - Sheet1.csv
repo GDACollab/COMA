@@ -6,7 +6,7 @@ Identifier,ACTOR,CUE,CONTEXT,Conversation Path Chain,Choice Type,GameObject Inte
 4,Blue ,“There’s a wet handkerchief here. You barely lift it with two fingers into your pocket.”,Activate huge handkerchief,,,Handkercheif,,Disco,,
 5,Boombox,“How do you like Starlet’s latest hit? I helped with the audio.”,1st approach,,,Blue,,Disco,,
 6,Boombox,"“I can maybe put in a word for you to see her, but it’s not likely.”",2nd approach ,,,Blue,,Disco,,
-8,Saturn,“Yooooo! Come dance with me baby!”,1st approach,33,Continue,Blue,,Disco,,
+8,Saturn,“Yooooo! Come dance with me baby!”,1st approach,33,Continue,Saturn,,Disco,,
 7,Saturn,“Ayeee. Miss me? ;)”,2nd approach,,,Blue,,Disco,,Blue turns to face the camera
 9,Blue ,“There’s a mess on this table. The owner must be pretty lousy.”,Activate big booth and table,,,Table,,SpaceBar,,
 10,Blue ,“You do seem thirsty.”,Blue decides to fetch the water,25,,Eyestravagant,,SpaceBar,,Quest 1 accept
@@ -32,4 +32,5 @@ Identifier,ACTOR,CUE,CONTEXT,Conversation Path Chain,Choice Type,GameObject Inte
 30,Starlet,"""What a wonderful name, Blue! It's a wonderful color. Well, it definitely suits you, but it could use some flair. Let's get acquianted. You can be my back up singer. Sound good? Of course it does!""",Response to Blue's name,,,Blue,,StarletsStage,,Initiates rythm battle with Starlet
 31,Starlet,“But... you were supposed to back me up?”,<Evil Path/ Terrible finish> Starlet passes away and Blue is visibly horrified at her action.,,,Blue,,StarletsStage,,NPC's in Starlets Domain respond with cold dialogue
 32,Starlet,"“Oh, they weren’t kidding when they said Blue!% Need I introduce myself? You've probably heard so much about me..."" ",After Blue enters Starets Stage,28,1st approach,Blue,,StarletsStage,,
-33,Saturn,"NOOOO",cont,,END,Blue,,,Disco,,
+33,Saturn,"NOOOO",cont,,34,Continue,Saturn,,Disco,,
+34,Saturn,"YEESS",cont,,END,Blue,,,Disco,,

@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcefe98f15f740b4680b0415ba3b8160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bluePillarDistance: -0.8
+  bluePillarDistance: -2
 --- !u!1 &263223347
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +368,7 @@ MonoBehaviour:
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -463,6 +464,7 @@ MonoBehaviour:
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -494,9 +496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772cd0a30ccd08a4c8def2b1de06cb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.1
-  fadeIn: 0.1
-  fadeOut: -0.1
+  speed: -0.01
+  fadeIn: -0.01
+  fadeOut: 0.01
   shines: 0
 --- !u!212 &317808546
 SpriteRenderer:
@@ -856,7 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcefe98f15f740b4680b0415ba3b8160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bluePillarDistance: -0.8
+  bluePillarDistance: -2
 --- !u!1 &807451582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1080,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 987514026}
   - 114: {fileID: 987514027}
+  - 212: {fileID: 987514028}
   m_Layer: 0
   m_Name: Shines
   m_TagString: Untagged
@@ -1114,10 +1117,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772cd0a30ccd08a4c8def2b1de06cb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.1
-  fadeIn: 0.1
-  fadeOut: -0.1
-  shines: 1
+  speed: -0.01
+  fadeIn: -0.01
+  fadeOut: 0.01
+  shines: 0
+--- !u!212 &987514028
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 987514025}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1 &1146922959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcefe98f15f740b4680b0415ba3b8160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bluePillarDistance: -0.1
+  bluePillarDistance: -2
 --- !u!114 &1468013249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,20 +1443,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 0}
-  player: {fileID: 2147168463}
-  dialogCSVParserObject: {fileID: 1688428675}
-  dialogue:
-  - I Love this song
-  - CHOICE
-  - Question
-  - Walk Away
-  path1:
-  - I know nothing
-  - RESET
-  path2:
-  - Bye
-  - RESET
+  player: {fileID: 0}
+  dialogCSVParserObject: {fileID: 0}
+  dialogue: []
+  path1: []
+  path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -1513,7 +1539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcefe98f15f740b4680b0415ba3b8160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bluePillarDistance: -0.1
+  bluePillarDistance: -2
 --- !u!114 &1479726728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1532,6 +1558,7 @@ MonoBehaviour:
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
