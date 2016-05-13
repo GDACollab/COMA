@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &185307619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -474,7 +474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &425563764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -572,10 +572,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1610326441}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0.40866303, y: 0}
-  m_AnchorMax: {x: 0.70668495, y: 0.23913044}
-  m_AnchoredPosition: {x: 30.000004, y: 0}
-  m_SizeDelta: {x: -59.999992, y: 0}
+  m_AnchorMin: {x: 0.535, y: 0}
+  m_AnchorMax: {x: 0.630671, y: 0.23913044}
+  m_AnchoredPosition: {x: 0.10000038, y: 0.00005340576}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455735926
 MonoBehaviour:
@@ -744,10 +744,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1610326441}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.108, y: 0}
-  m_AnchorMax: {x: 0.4908425, y: 0.23913044}
-  m_AnchoredPosition: {x: 9.5, y: 0}
-  m_SizeDelta: {x: -19, y: 0}
+  m_AnchorMin: {x: 0.252, y: 0}
+  m_AnchorMax: {x: 0.351, y: 0.23913044}
+  m_AnchoredPosition: {x: 0.6000004, y: 0.0000038146973}
+  m_SizeDelta: {x: 0.2000122, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554114298
 MonoBehaviour:
@@ -855,7 +855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &706108695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1517,10 +1517,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1610326441}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0.30782053, y: 0}
-  m_AnchorMax: {x: 0.602337, y: 0.23913044}
-  m_AnchoredPosition: {x: 23.5, y: 0}
-  m_SizeDelta: {x: -49, y: 0}
+  m_AnchorMin: {x: 0.44400004, y: 0}
+  m_AnchorMax: {x: 0.5371228, y: 0.23913044}
+  m_AnchoredPosition: {x: 0, y: 0.000034332}
+  m_SizeDelta: {x: 0, y: -0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1291517044
 MonoBehaviour:
@@ -1762,19 +1762,19 @@ MonoBehaviour:
     methodName: MakerC
   - audioPos: 0.5
     methodName: MakerK
-  - audioPos: 1.0
+  - audioPos: 1
     methodName: Play
   - audioPos: 1.021
     methodName: MakerL
   - audioPos: 1.5
     methodName: MakerJ
-  - audioPos: 2.0
+  - audioPos: 2
     methodName: MakerA
   - audioPos: 2.5
     methodName: MakerA
   - audioPos: 2.75
     methodName: MakerA
-  - audioPos: 3.0
+  - audioPos: 3
     methodName: MakerD
   - audioPos: 3.25
     methodName: MakerA
@@ -1786,13 +1786,13 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 4.75
     methodName: MakerF
-  - audioPos: 5.0
+  - audioPos: 5
     methodName: MakerD
   - audioPos: 5.25
     methodName: MakerS
   - audioPos: 5.5
     methodName: MakerA
-  - audioPos: 6.0
+  - audioPos: 6
     methodName: MakerA
   - audioPos: 6.25
     methodName: MakerA
@@ -1802,7 +1802,7 @@ MonoBehaviour:
     methodName: MakerS
   - audioPos: 7.75
     methodName: MakerD
-  - audioPos: 8.0
+  - audioPos: 8
     methodName: MakerD
   - audioPos: 8.25
     methodName: MakerF
@@ -1810,7 +1810,7 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 8.75
     methodName: MakerD
-  - audioPos: 9.0
+  - audioPos: 9
     methodName: MakerS
   - audioPos: 9.25
     methodName: MakerF
@@ -1818,13 +1818,13 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 9.75
     methodName: MakerF
-  - audioPos: 10.0
+  - audioPos: 10
     methodName: MakerJ
   - audioPos: 10.5
     methodName: MakerK
   - audioPos: 10.75
     methodName: MakerK
-  - audioPos: 11.0
+  - audioPos: 11
     methodName: MakerL
   - audioPos: 11.5
     methodName: MakerC
@@ -1836,21 +1836,21 @@ MonoBehaviour:
     methodName: MakerC
   - audioPos: 13.5
     methodName: MakerC
-  - audioPos: 14.0
+  - audioPos: 14
     methodName: MakerJ
   - audioPos: 14.75
     methodName: MakerL
-  - audioPos: 15.0
+  - audioPos: 15
     methodName: MakerL
   - audioPos: 15.5
     methodName: MakerL
   - audioPos: 15.75
     methodName: MakerK
-  - audioPos: 17.0
+  - audioPos: 17
     methodName: MakerK
   - audioPos: 17.5
     methodName: MakerJ
-  - audioPos: 18.0
+  - audioPos: 18
     methodName: MakerS
   - audioPos: 18.25
     methodName: MakerD
@@ -1858,13 +1858,13 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 18.75
     methodName: MakerS
-  - audioPos: 19.0
+  - audioPos: 19
     methodName: MakerD
   - audioPos: 19.25
     methodName: MakerF
   - audioPos: 19.5
     methodName: MakerS
-  - audioPos: 20.0
+  - audioPos: 20
     methodName: MakerA
   - audioPos: 20.25
     methodName: MakerS
@@ -1872,7 +1872,7 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 20.75
     methodName: MakerA
-  - audioPos: 21.0
+  - audioPos: 21
     methodName: MakerS
   - audioPos: 21.25
     methodName: MakerD
@@ -1880,7 +1880,7 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 21.75
     methodName: MakerD
-  - audioPos: 22.0
+  - audioPos: 22
     methodName: MakerA
   - audioPos: 22.5
     methodName: MakerA
@@ -1890,7 +1890,7 @@ MonoBehaviour:
     methodName: MakerA
   - audioPos: 23.75
     methodName: MakerS
-  - audioPos: 24.0
+  - audioPos: 24
     methodName: MakerD
   - audioPos: 24.5
     methodName: MakerD
@@ -1900,7 +1900,7 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 25.75
     methodName: MakerF
-  - audioPos: 26.0
+  - audioPos: 26
     methodName: MakerJ
   - audioPos: 26.25
     methodName: MakerK
@@ -1908,13 +1908,13 @@ MonoBehaviour:
     methodName: MakerL
   - audioPos: 26.75
     methodName: MakerJ
-  - audioPos: 27.0
+  - audioPos: 27
     methodName: MakerK
   - audioPos: 27.25
     methodName: MakerL
   - audioPos: 27.5
     methodName: MakerJ
-  - audioPos: 28.0
+  - audioPos: 28
     methodName: MakerK
   - audioPos: 28.25
     methodName: MakerL
@@ -1922,7 +1922,7 @@ MonoBehaviour:
     methodName: MakerC
   - audioPos: 28.75
     methodName: MakerK
-  - audioPos: 29.0
+  - audioPos: 29
     methodName: MakerL
   - audioPos: 29.25
     methodName: MakerC
@@ -1930,7 +1930,7 @@ MonoBehaviour:
     methodName: MakerL
   - audioPos: 29.75
     methodName: MakerK
-  - audioPos: 30.0
+  - audioPos: 30
     methodName: MakerJ
   - audioPos: 30.5
     methodName: MakerJ
@@ -1940,7 +1940,7 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 31.75
     methodName: MakerK
-  - audioPos: 32.0
+  - audioPos: 32
     methodName: MakerL
   - audioPos: 32.5
     methodName: MakerL
@@ -1950,7 +1950,7 @@ MonoBehaviour:
     methodName: MakerL
   - audioPos: 33.75
     methodName: MakerC
-  - audioPos: 34.0
+  - audioPos: 34
     methodName: MakerL
   - audioPos: 34.375
     methodName: MakerL
@@ -1960,7 +1960,7 @@ MonoBehaviour:
     methodName: MakerL
   - audioPos: 35.5
     methodName: MakerL
-  - audioPos: 36.0
+  - audioPos: 36
     methodName: MakerK
   - audioPos: 36.375
     methodName: MakerK
@@ -1970,35 +1970,35 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 37.5
     methodName: MakerK
-  - audioPos: 38.0
+  - audioPos: 38
     methodName: MakerA
   - audioPos: 38.5
     methodName: MakerS
-  - audioPos: 39.0
+  - audioPos: 39
     methodName: MakerD
   - audioPos: 39.5
     methodName: MakerF
-  - audioPos: 40.0
+  - audioPos: 40
     methodName: MakerJ
   - audioPos: 40.5
     methodName: MakerK
   - audioPos: 40.75
     methodName: MakerJ
-  - audioPos: 41.0
+  - audioPos: 41
     methodName: MakerK
   - audioPos: 41.25
     methodName: MakerL
   - audioPos: 41.5
     methodName: MakerC
-  - audioPos: 42.0
+  - audioPos: 42
     methodName: MakerC
   - audioPos: 42.5
     methodName: MakerK
-  - audioPos: 43.0
+  - audioPos: 43
     methodName: MakerL
   - audioPos: 43.5
     methodName: MakerJ
-  - audioPos: 44.0
+  - audioPos: 44
     methodName: MakerA
 --- !u!82 &1409466854
 AudioSource:
@@ -2147,10 +2147,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1610326441}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0.20514652, y: 0}
-  m_AnchorMax: {x: 0.4908425, y: 0.23913044}
-  m_AnchoredPosition: {x: 17.5, y: 0}
-  m_SizeDelta: {x: -35, y: 0}
+  m_AnchorMin: {x: 0.351, y: 0}
+  m_AnchorMax: {x: 0.448, y: 0.23913044}
+  m_AnchoredPosition: {x: 0.5500183, y: 0.000015258789}
+  m_SizeDelta: {x: -0.30000305, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419568664
 MonoBehaviour:
@@ -2348,6 +2348,7 @@ RectTransform:
   - {fileID: 425563764}
   - {fileID: 706108695}
   - {fileID: 185307619}
+  - {fileID: 1845589784}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_AnchorMin: {x: 0, y: 0}
@@ -2355,6 +2356,92 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1845589783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1845589784}
+  - 222: {fileID: 1845589786}
+  - 114: {fileID: 1845589785}
+  - 114: {fileID: 1845589787}
+  m_Layer: 5
+  m_Name: lifeBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1845589784
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845589783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1610326441}
+  m_RootOrder: 8
+  m_AnchorMin: {x: 0.124000005, y: 0.17}
+  m_AnchorMax: {x: 0.87600005, y: 0.194}
+  m_AnchoredPosition: {x: -0.19999, y: 0.100000024}
+  m_SizeDelta: {x: 0.4000001, y: 0.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1845589785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845589783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 629db0aed58517742b00ad452f6554b4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1845589786
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845589783}
+--- !u!114 &1845589787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845589783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef6854c4db434a449200c212a680ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifebarRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  lifebar: {fileID: 0}
 --- !u!1 &1848361821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,10 +2669,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1610326441}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.4908425, y: 0.23913044}
-  m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: -10, y: 0}
+  m_AnchorMin: {x: 0.14621942, y: 0}
+  m_AnchorMax: {x: 0.24276796, y: 0.23913044}
+  m_AnchoredPosition: {x: 0.88699913, y: 0}
+  m_SizeDelta: {x: -3, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974053112
 MonoBehaviour:
