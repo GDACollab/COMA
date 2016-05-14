@@ -54,8 +54,16 @@ public class GatherDiologs : MonoBehaviour
 				if (dialog.Value [i].LOCATION.Equals (Application.loadedLevelName)) {
 					if (!firstFound && dialog.Value [i].CONTEXT.Contains ("1st approach")) {
 						dialog.Key.GetComponent<makeText> ().dialogue.Add (dialog.Value [i].CUE);
-						ChoicePath (dialog, player, listOfCharacterDialogs, newPathNums, i, true);
+						if (!dialog.Value [i].Choice_Type.Equals ("Continue"))
+							ChoicePath (dialog, player, listOfCharacterDialogs, newPathNums, i, true);
+						else {
+							int pathNum1 = 0;
+							int.TryParse (dialog.Value [i].Conversation_Path_Chain, out pathNum1);
+							GameObject tempG = GameObject.Find (dialog.Value [i].GameObject_Interacted_With);
 
+							if(pathNum1 != -1) ConversationSetter (dialog, player, tempG, listOfCharacterDialogs, newPathNums, pathNum1, -1, i, true);
+						}
+							
 						if (dialog.Value.Count > i && dialog.Value [i] != null)
 							dialog.Value.RemoveAt (i);
 						firstFound = true;
@@ -87,8 +95,12 @@ public class GatherDiologs : MonoBehaviour
 								dialogsInOrder [dialog.Key].Add ("SECOND");
 							} 
 
-							if (!dialog.Key.GetComponent<makeText> ().dialogue [dialog.Key.GetComponent<makeText> ().dialogue.Count - 1].Equals ("SECOND")) {
+							if (!dialog.Key.GetComponent<makeText> ().dialogue.Contains ("SECOND") && !dialog.Key.GetComponent<makeText> ().dialogue.Contains ("CONVERSATION") &&
+									!dialog.Key.GetComponent<makeText> ().dialogue.Contains ("CHOICE")) {
 								dialog.Key.GetComponent<makeText> ().dialogue.Add ("SECOND");
+								dialog.Key.GetComponent<makeText> ().nextDialog.Add (listOfCharacterDialogs [dialog.Key] [i].CUE);
+							} else {
+								//dialog.Key.GetComponent<makeText> ().extraDialog.Add ("SECOND");
 								dialog.Key.GetComponent<makeText> ().nextDialog.Add (listOfCharacterDialogs [dialog.Key] [i].CUE);
 							}
 
@@ -317,6 +329,9 @@ public class GatherDiologs : MonoBehaviour
 	}
 
 	private void ConversationSetter(KeyValuePair<GameObject, List<Row>> dialog, GameObject player, GameObject tempG, Dictionary<GameObject, List<Row>> listOfCharacterDialogs, int[] newPathNums, int pathNum1, int pathNum2, int i, bool useDiolog){
+		if (pathNum1 > dialog.Value.Count)
+			pathNum1 = newPathNums [pathNum1];
+		
 		//add basic diolog for generic characters
 		if (dialog.Value [pathNum1].GameObject_Interacted_With.Equals ("Blue") && !dialog.Value[i].Choice_Type.Equals("Continue")) {
 			if (useDiolog)
@@ -342,26 +357,45 @@ public class GatherDiologs : MonoBehaviour
 				if (useDiolog)
 					dialog.Key.GetComponent<makeText> ().path2.Add ("Bye!");
 				if (useDiolog)
-					//dialog.Key.GetComponent<makeText> ().path2.Add ("SECOND");
+					dialog.Key.GetComponent<makeText> ().path2.Add ("SECOND");
 				dialogsInOrder [dialog.Key].Add ("Bye");
 				dialogsInOrder [dialog.Key].Add ("SECOND");
 			}
-		} else if(dialog.Value[pathNum1].Choice_Type.Equals("Continue")){
+		} else if(dialog.Value[i].Choice_Type.Equals("Continue")){
 			if (useDiolog) {
 				dialog.Key.GetComponent<makeText> ().dialogue.Add ("CONVERSATION");
+				if (!dialogsInOrder.ContainsKey (dialog.Key))
+					dialogsInOrder.Add (dialog.Key, new List<string>());
 				dialogsInOrder [dialog.Key].Add ("CONVERSATION");
 			}
-			Debug.Log (dialog.Value [pathNum1]);
+
+			GameObject nextActor = dialog [dialog.Value [pathNum1].ACTOR];
+			Row nextDialogRow = dialog.Value [pathNum1];
+
+			while (!dialog.Value [pathNum1].Choice_Type.Equals ("END")) {
+				dialog.Key.GetComponent<makeText> ().extraDialog.Add (dialog.Value [pathNum1].CUE);
+				dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
+
+				if (dialog.Value.Count > pathNum1 && dialog.Value [pathNum1] != null) {
+					int.TryParse (dialog.Value [pathNum1].Conversation_Path_Chain, out pathNum1);
+
+					dialog.Value.RemoveAt (pathNum1);
+
+					if (pathNum1 != -1) {
+						pathNum1 = newPathNums [pathNum1];
+					}
+				}
+			}
 			dialog.Key.GetComponent<makeText> ().extraDialog.Add (dialog.Value [pathNum1].CUE);
 			dialogsInOrder [dialog.Key].Add (dialog.Value [pathNum1].CUE);
 
-			if (dialog.Value [pathNum1].Choice_Type.Equals("END")) {
-				dialog.Key.GetComponent<makeText> ().extraDialog.Add ("SECOND");
-				dialogsInOrder [dialog.Key].Add ("SECOND");
+			dialog.Key.GetComponent<makeText> ().extraDialog.Add ("SECOND");
+			dialogsInOrder [dialog.Key].Add ("SECOND");
+
+			if (dialog.Value.Count > pathNum1 && dialog.Value [pathNum1] != null) {
+				dialog.Value.RemoveAt (pathNum1);
 			}
 
-			if (dialog.Value.Count > pathNum1 && dialog.Value [pathNum1] != null)
-				dialog.Value.RemoveAt (pathNum1);
 		}
 	}
 }

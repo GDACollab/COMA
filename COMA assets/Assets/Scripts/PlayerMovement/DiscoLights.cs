@@ -14,10 +14,10 @@ public class DiscoLights : MonoBehaviour {
 		for (int i = 0; i < transform.childCount; i++) {
 			Transform obj = transform.GetChild (i);
 
-			Color color = obj.GetComponent<Renderer> ().material.color;
+			Color color = obj.GetComponent<SpriteRenderer> ().color;
 			color.a += speed;
 
-			obj.GetComponent<Renderer> ().material.color = color;
+			obj.GetComponent<SpriteRenderer> ().color = color;
 		}
 	}
 
@@ -33,7 +33,7 @@ public class DiscoLights : MonoBehaviour {
 	}
 
 	private void SetAlpha(Transform obj){
-		Color color = obj.GetComponent<Renderer> ().material.color;
+		Color color = obj.GetComponent<SpriteRenderer> ().color;
 
 		if (color.a <= 0)
 			speed = fadeIn;
@@ -43,6 +43,6 @@ public class DiscoLights : MonoBehaviour {
 
 		color.a += speed;
 
-		obj.GetComponent<Renderer> ().material.color = color;
+		obj.GetComponent<SpriteRenderer> ().color = color;
 	}
 }
