@@ -11,6 +11,7 @@ using UnityObject = UnityEngine.Object;
 
 public class Item_Control : MonoBehaviour 
 {
+	//public Angel Ang;
 	public GameObject inventory;
 	public GameObject theCanvas;
 	public GameObject usePrompt;
@@ -35,7 +36,7 @@ public class Item_Control : MonoBehaviour
 	bool usePrompt_focus;
 	private int use_opt; //3 = use, 4 = examine, 5 = quit
 	private int item_opt; //item_opt determines which item the three options is being selected through [indices 4-7]
-	private int iter;
+	private int iter, last_item, temp;
 	private int use_item; //added this
 	Text Item0_Deselected_Text;
 	Text Item1_Deselected_Text;
@@ -65,6 +66,7 @@ public class Item_Control : MonoBehaviour
 
 	public List<int> ItemOptList;
 	Inventory itemss;
+	//Ang.invent; //USE GLOBALIZED INVENTORY
 	// Use this for initialization
 	void Start () 
 	{
@@ -72,10 +74,13 @@ public class Item_Control : MonoBehaviour
 		Item0 = new HealingItem ("Cherry.", "This is a Cherry.", 30, "Heals 30% of \nyour Health.", 1);
 		Item1 = new QuestItem ("Sword.", "This is a Sword.", "It has a cute \ntattoo on its hilt.", 2); 
 		Item2 = new QuestItem ("Boob.", "It's a boob.", "Still a boob.", 1);
+		Item3 = new HealingItem ("Cherry.", "This is a\nCherry.", 30, "Heals 30% of \nyour Health.", 1);
+		Item4 = new HealingItem ("Cherry.", "This is a\nCherry.", 30, "Heals 30% of \nyour Health.", 1);
 		itemss.Add (Item0);
 		itemss.Add (Item1);
 		itemss.Add (Item2);
-
+		itemss.Add (Item0);
+		itemss.Add (Item1);
 		//(string name, string description, string examineText = "A quest item.",
 		//int quantity = 1)
 
@@ -310,6 +315,7 @@ public class Item_Control : MonoBehaviour
 						usePrompt.transform.GetChild(1).GetChild(4).gameObject.SetActive(false);
 						usePrompt.transform.GetChild(1).GetChild(3).gameObject.SetActive(true);
 						use_item = 1;
+
 					}
 				}
 			}
@@ -368,13 +374,127 @@ public class Item_Control : MonoBehaviour
 					inventory.transform.GetChild (use_opt).gameObject.SetActive (true);
 				} else if (usePrompt_focus)
 				{
-					print(use_item);
 					if (use_item == 1)
 					{
 						usePrompt.SetActive(false);
 						usePrompt_focus = false;
 						itemUse_focus = true;
+
+						if (itemss.get (iter) == healing_item)
+							itemss.get (iter).Operate(ref int globalhealthvar); //Is passed the global health variable.
+
+						last_item = itemss.Remove (itemss.get (iter), 1);
+						temp = iter;
+//Deactivate everything & close the inventory
+						for (iter = 0; iter < 25; iter++) {
+							if (iter < 6){
+								inventory.transform.GetChild (iter).gameObject.SetActive(false); //deactivating all objects under Inventory_BG
+							}
+							if (theCanvas.transform.GetChild (iter).gameObject.activeSelf)
+							{
+								theCanvas.transform.GetChild (iter).gameObject.SetActive(false);
+							}
+
+						}
+//End of closing of inventory
+//Now reopen inventory:
+						//ACTIVATE THE DESELECTED USE/EXAMINE/QUIT options:
+						for (iter = 0; iter < 3; iter++) 
+						{
+							inventory.transform.GetChild (iter).gameObject.SetActive (true);
+						}
+						//Do operations based on Count of items on items:
+						if (itemss.Size() != 0)
+						{
+							theCanvas = inventory.transform.GetChild(6).gameObject;
+							inventory.transform.GetChild(3).gameObject.SetActive(true); //deactivate "use" option
+							theCanvas.transform.GetChild (24).gameObject.SetActive(true); //activate description text
+							theCanvas.SetActive(true);
+							if (last_item==0) {
+								/*
+								 * if item removed was not last item, stay selected on current item
+								 * also, reactivate description text of current item
+								 */
+								Description_Text.text = itemss.get (temp).description;
+								theCanvas.transform.GetChild (temp+12).gameObject.SetActive (true);
+								itemUse_focus = true;
+								inventory_focus = false;
+								use_opt = 3;
+							} else {
+								/*
+								 * Default Description_Text is description of first item
+								 * Have first item already selected,
+								 */
+								Description_Text.text = itemss.get (0).description; 
+								theCanvas.transform.GetChild (12).gameObject.SetActive (true); //have first item already selected
+								inventory.transform.GetChild(3).gameObject.SetActive(false); //deactivate use
+								itemUse_focus = false;
+								inventory_focus = true;
+
+							}
+
+							for (iter = 0; iter < itemss.Size (); iter++)
+							{
+								theCanvas.transform.GetChild(iter).gameObject.SetActive(true); //SetActive all the deselected item
+								if (iter == 0) {
+									Item0_Selected_Text.text = Item0_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 1) {
+									Item1_Selected_Text.text = Item1_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 2) {
+									Item2_Selected_Text.text = Item2_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 3) {
+									Item3_Selected_Text.text = Item3_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 4) {
+									Item4_Selected_Text.text = Item4_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 5) {
+									Item5_Selected_Text.text = Item5_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 6) {
+									Item6_Selected_Text.text = Item6_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 7) {
+									Item7_Selected_Text.text = Item7_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 8) {
+									Item8_Selected_Text.text = Item8_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 9) {
+									Item9_Selected_Text.text = Item9_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 10) {
+									Item10_Selected_Text.text = Item10_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+								if (iter == 11) {
+									Item11_Selected_Text.text = Item11_Deselected_Text.text = itemss.get(iter).ToString ();
+								}
+							}
+							/*
+							 * If it isn't last item that has been removed, keep iter where it's supposed to be
+							 * If it is last item, set iter equal to index of first item
+							 */
+							if (last_item == 0)	iter = temp;
+							else iter = 0;
+							use_opt = 3;
+						} else {
+							//else, itemss.Size() is 0, there are no items in the inventory:
+							iter = -1;
+							Description_Text.text = "";
+							//DEACTIVATE THE SELECTED USE/EXAMINE/QUIT options:
+							for (iter = 3; iter < 6; iter++) 
+							{
+								inventory.transform.GetChild (iter).gameObject.SetActive (false);
+							}
+							usePrompt_focus = false;
+							itemUse_focus = false;
+						}
+						//OPENING inventory displays only items that exist in the item list, and the above makes sure of that
 					}
+
 					if (use_item == -1)
 					{
 						usePrompt.SetActive(false);

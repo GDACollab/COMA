@@ -11,7 +11,7 @@ using UnityObject = UnityEngine.Object;
 /**
  * The player's inventory, containing all the items on their person.
  */
-public class Inventory : MonoBehaviour
+public class Inventory 
 {
 	private List<Item> items;
 	
@@ -25,7 +25,15 @@ public class Inventory : MonoBehaviour
    */
 	public void Add(Item item)
 	{
-		Add(item, 1);
+		foreach (Item itm in items) 
+		{
+			if (itm.Equals (item))
+			{
+				itm.quantity += item.quantity;
+				return;
+			}
+		}
+		Add(item, item.quantity);
 	}
 	
 	/**
@@ -47,18 +55,18 @@ public class Inventory : MonoBehaviour
    * If more items are removed than exist within, this method will only remove
    * and return as many as actually exist.
    */
-	public Item Remove(Item item)
+	public int Remove(Item item)
 	{
 		return Remove(item, item.quantity);
 	}
 	
 	/**
-   * Removes the given amount of the speified item from the inventory. Returns
-   * the items removed, or null if they are not present. If more items are
-   * removed than exist within, this method will only remove and return as many
-   * as actually exist.
+   * Removes the given amount of the speified item from the inventory. 
+   * Returns 1 if the item removed is the last item, 
+   * else if removal will not take out last itme, return 0
+   * If removal fails, returns -1
    */
-	public Item Remove(Item item, int amt)
+	public int Remove(Item item, int amt)
 	{
 		int index = items.IndexOf(item);
 		if(index >= 0)
@@ -66,18 +74,19 @@ public class Inventory : MonoBehaviour
 			if(items[index].quantity > amt)
 			{
 				items[index].quantity -= amt;
-				return item;
+				return 0;
 			}
 			else
 			{
-				Item removed = items[index];
+				//Item removed = items[index];
 				items.RemoveAt(index);
-				return removed;
+				//return removed;
+				return 1;
 			}
 		}
 		else
 		{
-			return null;
+			return -1;
 		}
 	}
 	
@@ -238,7 +247,8 @@ public abstract class Item : System.IComparable<Item>
 
 /**
  * A healing item, operable in or out of battle to heal the player.
- */
+ */ 
+
 public class HealingItem : Item
 {
 	public int healingAmt;
@@ -257,10 +267,22 @@ public class HealingItem : Item
 	
 	/**
    * Operates the healing item, restoring the player's health.
+   * Increases health by 30% of maximum health (which is assumed to be 100; +30 health
+   * To use: pass in the global health variable - ItemName.Operate (ref globalvar);
    */
-	public override void Operate(Object player)
+	public void Operate(ref int health)
 	{
 		// Heal the player by healingAmt
+		health += 30;
+		if (health >= 100)
+		{
+			health = 100;
+			return;
+		}
+	}
+	public override void Operate(Object player)
+	{
+		
 	}
 }
 
