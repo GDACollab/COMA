@@ -158,6 +158,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &280878457 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 125898, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+  m_PrefabInternal: {fileID: 576165658}
 --- !u!1 &417800162
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,13 +277,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 280878457}
   player: {fileID: 424304465}
   dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!61 &512932318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -506,13 +514,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 280878457}
   player: {fileID: 424304465}
   dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!1 &1016308164
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,13 +610,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 280878457}
   player: {fileID: 424304465}
   dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!1 &1681320360
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,13 +692,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 280878457}
   player: {fileID: 424304465}
   dialogCSVParserObject: {fileID: 417800162}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!61 &1681320364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -811,6 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 280878457}
   player: {fileID: 424304465}
   dialogCSVParserObject: {fileID: 417800162}
   dialogue:
@@ -818,7 +839,10 @@ MonoBehaviour:
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!61 &1776385816
 BoxCollider2D:
   m_ObjectHideFlags: 0
