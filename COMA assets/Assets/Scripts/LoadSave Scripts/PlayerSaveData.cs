@@ -9,7 +9,9 @@ using System.IO;
 class PlayerSaveData {
 
 	public string level;
+	public List<string> itemTypes;
 	public List<string> itemNames;
+	public List<string> itemDesc;
 	public List<int> itemNums;
 
 	public void setPrefs() {
