@@ -61,7 +61,7 @@ public class SaveLoadHandler : MonoBehaviour {
 				file.Close ();
 
 				slHandler.currLevel = data.level;
-				for (int i = 0; i < data.itemList.Count; ++i) {
+				for (int i = 0; i < data.itemList.Length; ++i) {
 					Angel.inventory.Add (data.itemList [i]);
 				}
 			}
