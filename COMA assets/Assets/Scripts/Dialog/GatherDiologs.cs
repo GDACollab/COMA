@@ -369,7 +369,7 @@ public class GatherDiologs : MonoBehaviour
 				dialogsInOrder [dialog.Key].Add ("CONVERSATION");
 			}
 
-			GameObject nextActor = dialog [dialog.Value [pathNum1].ACTOR];
+			//GameObject nextActor = dialog [dialog.Value [pathNum1].ACTOR];
 			Row nextDialogRow = dialog.Value [pathNum1];
 
 			while (!dialog.Value [pathNum1].Choice_Type.Equals ("END")) {

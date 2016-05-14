@@ -188,13 +188,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1178594996}
   player: {fileID: 1178594995}
   dialogCSVParserObject: {fileID: 1555010585}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
+  thanks: []
+  useThisConversation: 0
 --- !u!1 &829862244
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +365,10 @@ Prefab:
 --- !u!1 &1178594995 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 188102, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+  m_PrefabInternal: {fileID: 1178594994}
+--- !u!1 &1178594996 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 125898, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
   m_PrefabInternal: {fileID: 1178594994}
 --- !u!1 &1335723669
 GameObject:
