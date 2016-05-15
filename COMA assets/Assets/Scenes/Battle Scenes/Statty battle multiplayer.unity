@@ -834,6 +834,7 @@ RectTransform:
   - {fileID: 1854966082}
   - {fileID: 1586377020}
   - {fileID: 1375575930}
+  - {fileID: 704480400}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_AnchorMin: {x: 0, y: 0}
@@ -896,6 +897,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &704480399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 704480400}
+  - 222: {fileID: 704480403}
+  - 114: {fileID: 704480402}
+  - 114: {fileID: 704480401}
+  m_Layer: 5
+  m_Name: lifeBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &704480400
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704480399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631846027}
+  m_RootOrder: 8
+  m_AnchorMin: {x: 0.15440996, y: 0.1286626}
+  m_AnchorMax: {x: 0.952, y: 0.15346013}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &704480401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704480399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef6854c4db434a449200c212a680ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &704480402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704480399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 629db0aed58517742b00ad452f6554b4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &704480403
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704480399}
 --- !u!1 &762295246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,9 +1466,9 @@ MonoBehaviour:
     methodName: DubFK
   - audioPos: 0.52940625
     methodName: MakerK
-  - audioPos: 0.88234375
+  - audioPos: 0.88234377
     methodName: MakerK
-  - audioPos: 1.0
+  - audioPos: 1
     methodName: Play
   - audioPos: 1.41175
     methodName: DubSK
@@ -1402,9 +1482,9 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 4.23525
     methodName: MakerD
-  - audioPos: 4.76465625
+  - audioPos: 4.764656
     methodName: MakerD
-  - audioPos: 5.11759375
+  - audioPos: 5.117594
     methodName: MakerD
   - audioPos: 5.647
     methodName: MakerF
@@ -1412,31 +1492,31 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 7.05875
     methodName: MakerF
-  - audioPos: 7.4116875
+  - audioPos: 7.4116874
     methodName: MakerS
   - audioPos: 8.4705
     methodName: DubDL
-  - audioPos: 8.8234375
+  - audioPos: 8.823438
     methodName: MakerL
   - audioPos: 9.176375
     methodName: DubDL
   - audioPos: 9.88225
     methodName: MakerS
-  - audioPos: 10.05871875
+  - audioPos: 10.058719
     methodName: MakerK
-  - audioPos: 10.41165625
+  - audioPos: 10.411656
     methodName: MakerJ
   - audioPos: 10.588125
     methodName: MakerF
-  - audioPos: 10.76459375
+  - audioPos: 10.764594
     methodName: MakerK
   - audioPos: 11.294
     methodName: DubDL
-  - audioPos: 11.6469375
+  - audioPos: 11.646937
     methodName: DubDL
   - audioPos: 11.999875
     methodName: DubDL
-  - audioPos: 12.3528125
+  - audioPos: 12.352813
     methodName: MakerC
   - audioPos: 12.70575
     methodName: DubSK
@@ -1444,17 +1524,17 @@ MonoBehaviour:
     methodName: DubDL
   - audioPos: 14.1175
     methodName: DubDJ
-  - audioPos: 14.4704375
+  - audioPos: 14.470437
     methodName: MakerA
-  - audioPos: 14.64690625
+  - audioPos: 14.646906
     methodName: MakerJ
   - audioPos: 14.823375
     methodName: MakerD
   - audioPos: 15.52925
     methodName: DubFK
-  - audioPos: 15.8821875
+  - audioPos: 15.882188
     methodName: MakerS
-  - audioPos: 16.05865625
+  - audioPos: 16.058657
     methodName: MakerK
   - audioPos: 16.235125
     methodName: MakerF
@@ -1470,11 +1550,11 @@ MonoBehaviour:
     methodName: MakerS
   - audioPos: 21.17625
     methodName: MakerS
-  - audioPos: 21.882125
+  - audioPos: 21.882126
     methodName: MakerS
-  - audioPos: 22.2350625
+  - audioPos: 22.235062
     methodName: MakerK
-  - audioPos: 22.41153125
+  - audioPos: 22.411531
     methodName: MakerL
   - audioPos: 22.588
     methodName: DubFK
@@ -1482,13 +1562,13 @@ MonoBehaviour:
     methodName: MakerF
   - audioPos: 23.99975
     methodName: MakerF
-  - audioPos: 24.705625
+  - audioPos: 24.705626
     methodName: MakerF
-  - audioPos: 25.0585625
+  - audioPos: 25.058563
     methodName: MakerJ
   - audioPos: 25.4115
     methodName: DubDK
-  - audioPos: 26.117375
+  - audioPos: 26.117374
     methodName: MakerL
   - audioPos: 26.82325
     methodName: DubDL
@@ -1502,45 +1582,45 @@ MonoBehaviour:
     methodName: DubDJ
   - audioPos: 31.0585
     methodName: DubDL
-  - audioPos: 31.4114375
+  - audioPos: 31.411438
     methodName: MakerD
-  - audioPos: 31.764375
+  - audioPos: 31.764376
     methodName: MakerD
   - audioPos: 32.47025
     methodName: MakerJ
-  - audioPos: 32.64671875
+  - audioPos: 32.646717
     methodName: MakerS
-  - audioPos: 32.99965625
+  - audioPos: 32.999657
     methodName: MakerA
   - audioPos: 33.176125
     methodName: MakerK
-  - audioPos: 33.35259375
+  - audioPos: 33.352592
     methodName: MakerS
   - audioPos: 33.882
     methodName: DubDL
-  - audioPos: 34.2349375
+  - audioPos: 34.234936
     methodName: DubDL
   - audioPos: 34.587875
     methodName: DubDL
-  - audioPos: 34.9408125
+  - audioPos: 34.94081
     methodName: MakerF
   - audioPos: 35.29375
     methodName: DubDL
-  - audioPos: 35.999625
+  - audioPos: 35.999626
     methodName: DubSK
   - audioPos: 36.7055
     methodName: DubSJ
-  - audioPos: 37.23490625
+  - audioPos: 37.234905
     methodName: MakerS
-  - audioPos: 37.411375
+  - audioPos: 37.411373
     methodName: MakerJ
-  - audioPos: 37.58784375
+  - audioPos: 37.587845
     methodName: MakerS
   - audioPos: 38.11725
     methodName: DubDJ
-  - audioPos: 38.4701875
+  - audioPos: 38.47019
     methodName: MakerA
-  - audioPos: 38.823125
+  - audioPos: 38.823124
     methodName: DubFJ
   - audioPos: 39.529
     methodName: MakerK
@@ -1548,25 +1628,25 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 40.94075
     methodName: DubSJ
-  - audioPos: 41.646625
+  - audioPos: 41.646626
     methodName: DubSK
-  - audioPos: 42.17603125
+  - audioPos: 42.176033
     methodName: MakerK
   - audioPos: 42.3525
     methodName: DubAK
-  - audioPos: 43.058375
+  - audioPos: 43.058376
     methodName: DubAK
   - audioPos: 43.76425
     methodName: DubSL
-  - audioPos: 44.1171875
+  - audioPos: 44.117188
     methodName: MakerS
-  - audioPos: 44.470125
+  - audioPos: 44.470123
     methodName: MakerS
-  - audioPos: 44.8230625
+  - audioPos: 44.823063
     methodName: MakerF
   - audioPos: 45.176
     methodName: DubSC
-  - audioPos: 45.881875
+  - audioPos: 45.881874
     methodName: DubDK
 --- !u!82 &1160303306
 AudioSource:
@@ -2416,13 +2496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef6854c4db434a449200c212a680ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifebarRect:
-    serializedVersion: 2
-    x: 140
-    y: 502
-    width: 0
-    height: 0
-  lifebar: {fileID: 2800000, guid: 0cd18a0682ee6504098563d1aab34ab4, type: 3}
 --- !u!4 &1724035289
 Transform:
   m_ObjectHideFlags: 0

@@ -834,6 +834,7 @@ RectTransform:
   - {fileID: 1854966082}
   - {fileID: 1586377020}
   - {fileID: 1375575930}
+  - {fileID: 700444192}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_AnchorMin: {x: 0, y: 0}
@@ -896,6 +897,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &700444191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 700444192}
+  - 222: {fileID: 700444195}
+  - 114: {fileID: 700444194}
+  - 114: {fileID: 700444193}
+  m_Layer: 5
+  m_Name: lifeBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &700444192
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700444191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 631846027}
+  m_RootOrder: 8
+  m_AnchorMin: {x: 0.15440996, y: 0.1286626}
+  m_AnchorMax: {x: 0.952, y: 0.15346013}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &700444193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700444191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef6854c4db434a449200c212a680ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &700444194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700444191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 629db0aed58517742b00ad452f6554b4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &700444195
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700444191}
 --- !u!1 &762295246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1466,7 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 0.705875
     methodName: MakerD
-  - audioPos: 1.0
+  - audioPos: 1
     methodName: Play
   - audioPos: 1.41175
     methodName: MakerF
@@ -1408,23 +1488,23 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 7.05875
     methodName: MakerF
-  - audioPos: 7.4116875
+  - audioPos: 7.4116874
     methodName: MakerS
   - audioPos: 8.4705
     methodName: MakerL
   - audioPos: 9.176375
     methodName: MakerL
-  - audioPos: 10.05871875
+  - audioPos: 10.058719
     methodName: MakerK
-  - audioPos: 10.41165625
+  - audioPos: 10.411656
     methodName: MakerJ
-  - audioPos: 10.76459375
+  - audioPos: 10.764594
     methodName: MakerH
   - audioPos: 11.294
     methodName: MakerL
   - audioPos: 11.999875
     methodName: MakerL
-  - audioPos: 12.3528125
+  - audioPos: 12.352813
     methodName: MakerC
   - audioPos: 12.70575
     methodName: MakerL
@@ -1432,13 +1512,13 @@ MonoBehaviour:
     methodName: MakerK
   - audioPos: 14.1175
     methodName: MakerL
-  - audioPos: 14.4704375
+  - audioPos: 14.470437
     methodName: MakerK
   - audioPos: 14.823375
     methodName: MakerL
   - audioPos: 15.52925
     methodName: MakerC
-  - audioPos: 15.8821875
+  - audioPos: 15.882188
     methodName: MakerL
   - audioPos: 16.235125
     methodName: MakerC
@@ -1454,9 +1534,9 @@ MonoBehaviour:
     methodName: MakerS
   - audioPos: 21.17625
     methodName: MakerS
-  - audioPos: 21.882125
+  - audioPos: 21.882126
     methodName: MakerS
-  - audioPos: 22.2350625
+  - audioPos: 22.235062
     methodName: MakerD
   - audioPos: 22.588
     methodName: MakerS
@@ -1464,13 +1544,13 @@ MonoBehaviour:
     methodName: MakerS
   - audioPos: 23.99975
     methodName: MakerS
-  - audioPos: 24.705625
+  - audioPos: 24.705626
     methodName: MakerS
-  - audioPos: 25.0585625
+  - audioPos: 25.058563
     methodName: MakerA
   - audioPos: 25.4115
     methodName: MakerS
-  - audioPos: 26.117375
+  - audioPos: 26.117374
     methodName: MakerF
   - audioPos: 26.82325
     methodName: MakerF
@@ -1484,7 +1564,7 @@ MonoBehaviour:
     methodName: MakerL
   - audioPos: 31.0585
     methodName: MakerD
-  - audioPos: 31.764375
+  - audioPos: 31.764376
     methodName: MakerD
   - audioPos: 32.47025
     methodName: MakerS
@@ -1494,37 +1574,37 @@ MonoBehaviour:
     methodName: MakerD
   - audioPos: 34.587875
     methodName: MakerD
-  - audioPos: 34.9408125
+  - audioPos: 34.94081
     methodName: MakerF
   - audioPos: 35.29375
     methodName: MakerD
-  - audioPos: 35.999625
+  - audioPos: 35.999626
     methodName: MakerS
   - audioPos: 36.7055
     methodName: MakerL
-  - audioPos: 37.411375
+  - audioPos: 37.411373
     methodName: MakerL
   - audioPos: 38.11725
     methodName: MakerC
-  - audioPos: 38.4701875
+  - audioPos: 38.47019
     methodName: MakerL
-  - audioPos: 38.823125
+  - audioPos: 38.823124
     methodName: MakerC
   - audioPos: 40.234875
     methodName: MakerC
   - audioPos: 40.94075
     methodName: MakerK
-  - audioPos: 41.646625
+  - audioPos: 41.646626
     methodName: MakerL
   - audioPos: 42.3525
     methodName: MakerL
-  - audioPos: 43.058375
+  - audioPos: 43.058376
     methodName: MakerL
   - audioPos: 43.76425
     methodName: MakerL
   - audioPos: 45.176
     methodName: MakerC
-  - audioPos: 45.881875
+  - audioPos: 45.881874
     methodName: MakerJ
 --- !u!82 &1160303306
 AudioSource:
@@ -2374,13 +2454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef6854c4db434a449200c212a680ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifebarRect:
-    serializedVersion: 2
-    x: 140
-    y: 502
-    width: 0
-    height: 0
-  lifebar: {fileID: 2800000, guid: 0cd18a0682ee6504098563d1aab34ab4, type: 3}
 --- !u!4 &1724035289
 Transform:
   m_ObjectHideFlags: 0
