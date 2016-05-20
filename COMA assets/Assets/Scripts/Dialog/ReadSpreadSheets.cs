@@ -16,7 +16,7 @@ public class ReadSpreadSheets
 				numRows++;
 		}*/
 
-		//Identifier,ACTOR,CUE,CONTEXT,Conversation Path Chain,Choice Type,GameObject Interacted With,INFLECTION,LOCATION,AREA,EFFECT
+		//Identifier,ACTOR,CUE,Conversation Path Chain,LOCATION
 		int commaPair = 0;
 		Row row = new Row ();
 		for (int i = 0, j = 0; i < csvFile.text.Length ; i++) {
@@ -36,75 +36,34 @@ public class ReadSpreadSheets
 					}
 					else row.ACTOR += csvFile.text [i];
 					break;
-			case 2:
-				string temp = row.CUE + "";
-				if ((temp.EndsWith("\",") && temp[0] == '"') || (temp.EndsWith(",") && temp[0] != '"') || temp.Contains("CUE,")) {
-						row.CUE = row.CUE.Remove (row.CUE.Length - 1);
-						row.CUE = row.CUE.Trim ();
-						j++;
-						i--;
-					} else {
-						row.CUE += csvFile.text [i];
-					}
-					break;
+				case 2:
+					string temp = row.CUE + "";
+					if ((temp.EndsWith("\",") && temp[0] == '"') || (temp.EndsWith(",") && temp[0] != '"') || temp.Contains("CUE,")) {
+							row.CUE = row.CUE.Remove (row.CUE.Length - 1);
+							row.CUE = row.CUE.Trim ();
+							j++;
+							i--;
+						} else {
+							row.CUE += csvFile.text [i];
+						}
+						break;
 				case 3:
 					if (csvFile.text [i].Equals (',')) {
-						row.CONTEXT = row.CONTEXT.Trim ();
-						j++;
-					}
-					else row.CONTEXT += csvFile.text [i];
-					break;
-				case 4:
-					if (csvFile.text [i].Equals (',')) {
 						row.Conversation_Path_Chain = row.Conversation_Path_Chain.Trim ();
-						if (row.Conversation_Path_Chain.Equals ("\"\""))
-							row.Conversation_Path_Chain = string.Empty;
 						j++;
 					}
 					else row.Conversation_Path_Chain += csvFile.text [i];
 					break;
-				case 5:
-					if (csvFile.text [i].Equals (',')) {
-						row.Choice_Type = row.Choice_Type.Trim ();
-						j++;
-					}
-					else row.Choice_Type += csvFile.text [i];
-					break;
-				case 6:
-					if (csvFile.text [i].Equals (',')) {
-						row.GameObject_Interacted_With = row.GameObject_Interacted_With.Trim ();
-						j++;
-					}
-					else row.GameObject_Interacted_With += csvFile.text [i];
-					break;
-				case 7:
-					if (csvFile.text [i].Equals (',')) {
-						row.INFLECTION = row.INFLECTION.Trim ();
-						j++;
-					}
-					else row.INFLECTION += csvFile.text [i];
-					break;
-				case 8:
+				case 4:
 					if (csvFile.text [i].Equals (',')) {
 						row.LOCATION = row.LOCATION.Trim ();
 						j++;
 					}
 					else row.LOCATION += csvFile.text [i];
 					break;
-				case 9:
-					if (csvFile.text [i].Equals (',')) {
-						row.AREA = row.AREA.Trim ();
-						j++;
-					}
-					else row.AREA += csvFile.text [i];
-					break;
-				case 10:
-					row.EFFECT += csvFile.text [i];
-					break;
 			}
 
 			if (csvFile.text [i].Equals ('\n')) {
-				row.EFFECT = row.EFFECT.Trim ();
 				parsedRows.Add(row);
 				row = new Row ();
 				commaPair = 0;
@@ -155,6 +114,10 @@ public class ReadSpreadSheets
 		}
 
 		return indexRows;
+	}
+
+	public string ActorAtIndex(int index){
+		return parsedRows [index].ACTOR;
 	}
 
 	private List<Row> RemoveAll_ACTOR(string name, List<Row> pR){

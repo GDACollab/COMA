@@ -34,11 +34,9 @@ public class makeText : MonoBehaviour
 	public List<string> path1 = new List<string> ();
 	public List<string> path2 = new List<string> ();
 	public List<string> nextDialog = new List<string> ();
-	public List<string> extraDialog = new List<string> ();
-	public string response = string.Empty;
 	List<string> storage = new List<string> ();
 	//public List<string> waiting = new List<string> ();
-	public List<string> thanks = new List<string> ();
+	//public List<string> thanks = new List<string> ();
 	static int quest = 0;
 	static int i = 0;
 	static int j = 0;
@@ -93,15 +91,6 @@ public class makeText : MonoBehaviour
 								i++;
 							choice2.text = dialogue [i];
 						}
-						if (dialogue [i].CompareTo ("CONTINUE") == 0) {
-							choice1.enabled = true;
-							ChBG.enabled = true;
-							choice1.text = response;
-						}
-						if (dialogue [i].CompareTo ("CONVERSATION") == 0) {
-							dialogue = extraDialog;
-							i = 0;
-						}
 						if (dialogue [i].CompareTo ("QUEST") == 0) {
 							quest = 1;
 							dialogue.Remove ("QUEST");
@@ -127,13 +116,7 @@ public class makeText : MonoBehaviour
 							BG.enabled = false;
 							inConversation = false;
 							player.GetComponent<PlayerMovement> ().inDialog = false;
-						}
-						if (dialogue [i].CompareTo ("BATTLE") == 0) {
-							words.enabled = false;
-							BG.enabled = false;
-							inConversation = false;
-							player.GetComponent<PlayerMovement> ().inDialog = false;
-							//start the boss battle
+							//set nextDialog to be empty so this can be checked to see if a new dialog needs to be added
 						}
 					}
 				} else if (Input.GetKeyDown (KeyCode.Space)) {
@@ -144,7 +127,7 @@ public class makeText : MonoBehaviour
 					if (quest == 1/* && inventory.questItem.obtained == true*/) {
 						//inventory.questItem.obtained = false;
 						quest = 2;
-						dialogue = thanks;
+						//dialogue = thanks;
 					}
 				}
 			} else {
@@ -176,39 +159,6 @@ public class makeText : MonoBehaviour
 					choice2.enabled = false;
 					ChBG.enabled = false;
 					//useThisConversation = false;
-				}
-			}
-		}
-
-		//this is for each characters dialogs meant so that we can have the second set of dialogs start and stay
-		if (dialogCSVParserObject.GetComponent<GatherDiologs> ().dialogsInOrder.ContainsKey (gameObject)) {
-			List<string> characterDialog = dialogCSVParserObject.GetComponent<GatherDiologs> ().dialogsInOrder [gameObject];
-
-			//here check when diolog == path1 if it does then check for next diolg sequence also check first if END exists
-
-			//check if next diolag has been set then change last SECOND path string to RESET
-			if (nextDialog.Equals (dialogue) && path1.Count > 0 && path2.Count > 0) {
-			
-				bool setNextDialog = false;
-				for (int i = 0; i < characterDialog.Count; i++) {
-					if (characterDialog [i].Equals (nextDialog [0])) {
-						dialogue = new List<string> ();
-						setNextDialog = true;
-					}
-					if (setNextDialog && !characterDialog [i].Equals ("END")) {
-						dialogue.Add (characterDialog [i]);
-					}
-				}
-				storage = dialogue;
-				path1 [path1.Count - 1] = "RESET";
-				path2 [path2.Count - 1] = "RESET";
-			}
-
-			if (thanks.Equals (dialogue)) {
-				for (int i = 0; i < characterDialog.Count; i++) {
-					if (!characterDialog [i].Equals ("END")) {
-						Debug.Log (characterDialog [i]); //find in the dialog list the current main dialog then from their find where the next CHOICE text is and set that dialog
-					}
 				}
 			}
 		}
