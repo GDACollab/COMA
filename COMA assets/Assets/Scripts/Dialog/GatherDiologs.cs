@@ -104,6 +104,7 @@ public class GatherDiologs : MonoBehaviour
 							if (pathChainIndex != -1) {
 								pathChainIndex = newPathNums [pathChainIndex];
 								dialog.Key.GetComponent<makeText> ().path2.Add (dialog.Value [pathChainIndex].CUE);
+								dialog.Key.GetComponent<makeText> ().path2.Add ("RESET");
 							}
 						}
 					} else if(pathChainIndex != -1 && dialog.Value.Count > newPathNums [pathChainIndex]){ //else is for when the dialog is a continuous chat
