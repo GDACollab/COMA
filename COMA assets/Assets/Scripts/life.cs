@@ -4,7 +4,8 @@ using System.Collections;
 
 public class life : MonoBehaviour
 {
-	private float pixelScale = 4.16f;
+	private float pixelScale;
+	private const float ratio = 0.8f;
 
 	public static life instance;
 
@@ -15,6 +16,7 @@ public class life : MonoBehaviour
 	{
 		instance = this;
 		lifeBar = this.GetComponent <RectTransform>();
+		pixelScale = (Screen.width * ratio) / 100;
 	}
 	
 	// Update is called once per frame
