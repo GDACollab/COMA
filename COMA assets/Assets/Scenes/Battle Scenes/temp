@@ -172,64 +172,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!1 &133834338
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 133834340}
-  - 212: {fileID: 133834339}
-  m_Layer: 0
-  m_Name: battlescreen_start_tutorial_tophalf
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &133834339
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 133834338}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f9b7bb08045f1b408519eef06878ea9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!4 &133834340
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 133834338}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.08, z: 1}
-  m_LocalScale: {x: 0.9721782, y: 0.7441393, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
 --- !u!1 &175125241
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +344,64 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 185307618}
+--- !u!1 &412836653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412836655}
+  - 212: {fileID: 412836654}
+  m_Layer: 0
+  m_Name: name_disconaut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &412836654
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412836653}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3b39de0cccc091746ada7e85f7fe6da8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &412836655
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412836653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.32, y: 2.39, z: 0}
+  m_LocalScale: {x: 0.7622986, y: 0.8052865, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
 --- !u!1 &413016724
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,85 +714,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
---- !u!1 &532733184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 532733185}
-  - 222: {fileID: 532733188}
-  - 114: {fileID: 532733187}
-  - 114: {fileID: 532733186}
-  m_Layer: 5
-  m_Name: lifeBar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &532733185
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 532733184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1610326441}
-  m_RootOrder: 8
-  m_AnchorMin: {x: 0.15440996, y: 0.1286626}
-  m_AnchorMax: {x: 0.952, y: 0.15346013}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!114 &532733186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 532733184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef6854c4db434a449200c212a680ffc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &532733187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 532733184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 629db0aed58517742b00ad452f6554b4, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &532733188
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 532733184}
 --- !u!1 &554114296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +950,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef6854c4db434a449200c212a680ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifebarRect:
+    serializedVersion: 2
+    x: 140
+    y: 502
+    width: 0
+    height: 0
+  lifebar: {fileID: 2800000, guid: 0cd18a0682ee6504098563d1aab34ab4, type: 3}
 --- !u!4 &812914537
 Transform:
   m_ObjectHideFlags: 0
@@ -1121,7 +1049,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c3b8234accbbf0c4ba9abdfb9ff527e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a07ae77834dd18d4cb11bf58ce7d30d8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1198,64 +1126,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
---- !u!1 &1001789315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1001789317}
-  - 212: {fileID: 1001789316}
-  m_Layer: 0
-  m_Name: name_T42
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1001789316
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1001789315}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5ab7e58c10053a42aab10a22d04868f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!4 &1001789317
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1001789315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3405733, y: 2.6067283, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
 --- !u!1 &1063154121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1374,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1 &1179962164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1179962166}
+  - 212: {fileID: 1179962165}
+  m_Layer: 0
+  m_Name: battlescreen_start_tutorial_tophalf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1179962165
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179962164}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1f9b7bb08045f1b408519eef06878ea9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &1179962166
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179962164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.08, z: 1}
+  m_LocalScale: {x: 0.9721782, y: 0.7441393, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &1285224664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,206 +1758,88 @@ MonoBehaviour:
   dirty: 0
   colors: []
   triggers:
+  - audioPos: 0.075
+    methodName: MakerS
   - audioPos: 1.0
     methodName: Play
-  - audioPos: 0.7248
+  - audioPos: 1.021
+    methodName: MakerF
+  - audioPos: 1.5
     methodName: MakerD
-  - audioPos: 1.44
-    methodName: MakerK
-  - audioPos: 2.111040743
-    methodName: MakerF
-  - audioPos: 2.844720991
-    methodName: MakerJ
-  - audioPos: 3.545
-    methodName: MakerJ
-  - audioPos: 4.224981486
-    methodName: MakerK
-  - audioPos: 4.95761734
-    methodName: MakerD
-  - audioPos: 5.655982
-    methodName: MakerD
-  - audioPos: 6.36122229
-    methodName: MakerS
-  - audioPos: 6.684962353
-    methodName: MakerF
-  - audioPos: 7.036802477
-    methodName: MakerK
-  - audioPos: 7.740482725
-    methodName: MakerL
-  - audioPos: 8.444162972
-    methodName: MakerJ
-  - audioPos: 9.851523468
-    methodName: MakerF
-  - audioPos: 10.55520372
-    methodName: MakerD
-  - audioPos: 11.25888396
-    methodName: MakerS
-  - audioPos: 11.96256421
-    methodName: MakerS
-  - audioPos: 12.66624446
-    methodName: MakerF
-  - audioPos: 13.36992471
-    methodName: MakerJ
-  - audioPos: 14.07360495
-    methodName: MakerJ
-  - audioPos: 14.7772852
-    methodName: MakerJ
-  - audioPos: 15.48096545
-    methodName: MakerL
-  - audioPos: 16.1846457
-    methodName: MakerK
-  - audioPos: 16.88832594
-    methodName: MakerF
-  - audioPos: 17.59200619
-    methodName: MakerS
-  - audioPos: 18.29568644
-    methodName: MakerD
-  - audioPos: 18.99936669
-    methodName: DubFJ
-  - audioPos: 19.5
-    methodName: DubDK
-  - audioPos: 19.9836
-    methodName: DubSL
-  - audioPos: 20.41975
-    methodName: DubAC
-  - audioPos: 20.83968
-    methodName: MakerF
-  - audioPos: 21.65399014
-    methodName: MakerD
-  - audioPos: 22.46830029
-    methodName: MakerF
-  - audioPos: 23.28261043
-    methodName: MakerS
-  - audioPos: 24.09692057
+  - audioPos: 2.0
     methodName: MakerA
-  - audioPos: 24.91123072
-    methodName: MakerD
-  - audioPos: 25.72554086
-    methodName: MakerJ
-  - audioPos: 26.53985101
+  - audioPos: 3.0
+    methodName: MakerF
+  - audioPos: 4.0
+    methodName: MakerC
+  - audioPos: 5.0
     methodName: MakerL
-  - audioPos: 27.35416115
-    methodName: MakerC
-  - audioPos: 28.43990801
-    methodName: MakerC
-  - audioPos: 28.98278144
+  - audioPos: 5.5
     methodName: MakerK
-  - audioPos: 30.06852829
+  - audioPos: 6.0
     methodName: MakerJ
-  - audioPos: 30.61140172
-    methodName: MakerD
-  - audioPos: 31.69714858
-    methodName: MakerD
-  - audioPos: 32.24002201
-    methodName: MakerF
-  - audioPos: 32.78289544
-    methodName: MakerJ
-  - audioPos: 33.32576887
+  - audioPos: 7.0
     methodName: MakerK
-  - audioPos: 33.8686423
-    methodName: DubFJ
-  - audioPos: 34.278
-    methodName: DubDK
-  - audioPos: 34.618
-    methodName: DubSL
-  - audioPos: 34.973
-    methodName: DubAC
-  - audioPos: 35.272
+  - audioPos: 8.0
     methodName: MakerJ
-  - audioPos: 35.66783581
-    methodName: MakerF
-  - audioPos: 36.06367161
+  - audioPos: 9.0
+    methodName: MakerJ
+  - audioPos: 9.5
+    methodName: MakerK
+  - audioPos: 10.0
     methodName: MakerS
-  - audioPos: 36.45950742
+  - audioPos: 11.0
     methodName: MakerD
-  - audioPos: 37.05326113
+  - audioPos: 11.5
     methodName: MakerF
-  - audioPos: 37.64701484
-    methodName: MakerK
-  - audioPos: 38.04285065
-    methodName: MakerK
-  - audioPos: 38.43868646
-    methodName: MakerJ
-  - audioPos: 38.83452227
-    methodName: MakerF
-  - audioPos: 39.42827598
-    methodName: MakerF
-  - audioPos: 40.02202969
-    methodName: MakerD
-  - audioPos: 40.41786549
-    methodName: MakerF
-  - audioPos: 40.8137013
-    methodName: MakerJ
-  - audioPos: 41.20953711
-    methodName: MakerK
-  - audioPos: 41.60537292
-    methodName: MakerD
-  - audioPos: 42.00120872
-    methodName: MakerS
-  - audioPos: 42.39704453
-    methodName: MakerA
-  - audioPos: 43.18871615
-    methodName: MakerD
-  - audioPos: 43.58455195
-    methodName: MakerF
-  - audioPos: 44.17830566
-    methodName: MakerJ
-  - audioPos: 44.77205938
-    methodName: MakerD
-  - audioPos: 45.16789518
-    methodName: MakerF
-  - audioPos: 45.9595668
-    methodName: MakerS
-  - audioPos: 46.3554026
-    methodName: MakerD
-  - audioPos: 47.14707422
-    methodName: MakerA
-  - audioPos: 47.93874583
-    methodName: MakerD
-  - audioPos: 48.33458164
-    methodName: MakerJ
-  - audioPos: 48.73041745
-    methodName: MakerK
-  - audioPos: 49.12625326
+  - audioPos: 12.0
     methodName: MakerL
-  - audioPos: 49.52208906
-    methodName: MakerC
-  - audioPos: 50.31376068
-    methodName: MakerC
-  - audioPos: 50.70959648
+  - audioPos: 13.0
     methodName: MakerK
-  - audioPos: 51.5012681
-    methodName: MakerK
-  - audioPos: 51.89710391
-    methodName: MakerD
-  - audioPos: 52.68877552
-    methodName: MakerD
-  - audioPos: 53.08461133
-    methodName: MakerF
-  - audioPos: 53.87628294
-    methodName: MakerK
-  - audioPos: 54.27211875
-    methodName: MakerF
-  - audioPos: 54.58
-    methodName: MakerD
-  - audioPos: 54.89
-    methodName: MakerS
-  - audioPos: 55.26
-    methodName: MakerA
-  - audioPos: 57.26
-    methodName: MakerA
-  - audioPos: 57.89335233
-    methodName: MakerD
-  - audioPos: 58.52670467
-    methodName: MakerF
-  - audioPos: 59.160057
+  - audioPos: 14.0
     methodName: MakerJ
-  - audioPos: 59.79340934
-    methodName: MakerK
-  - audioPos: 60.42676167
-    methodName: MakerL
-  - audioPos: 61.060114
+  - audioPos: 16.0
+    methodName: MakerS
+  - audioPos: 17.0
+    methodName: MakerF
+  - audioPos: 17.5
+    methodName: MakerD
+  - audioPos: 18.0
+    methodName: MakerA
+  - audioPos: 19.0
+    methodName: MakerF
+  - audioPos: 20.0
     methodName: MakerC
+  - audioPos: 21.0
+    methodName: MakerL
+  - audioPos: 21.5
+    methodName: MakerK
+  - audioPos: 22.0
+    methodName: MakerJ
+  - audioPos: 23.0
+    methodName: MakerK
+  - audioPos: 24.0
+    methodName: MakerJ
+  - audioPos: 25.0
+    methodName: MakerJ
+  - audioPos: 25.5
+    methodName: MakerK
+  - audioPos: 26.0
+    methodName: MakerD
+  - audioPos: 27.0
+    methodName: MakerF
+  - audioPos: 27.5
+    methodName: MakerS
+  - audioPos: 28.0
+    methodName: MakerD
+  - audioPos: 28.5
+    methodName: MakerF
+  - audioPos: 29.0
+    methodName: MakerK
+  - audioPos: 29.5
+    methodName: MakerJ
+  - audioPos: 30.0
+    methodName: MakerF
 --- !u!82 &1409466854
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2039,7 +1849,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c3b8234accbbf0c4ba9abdfb9ff527e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a07ae77834dd18d4cb11bf58ce7d30d8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2378,7 +2188,6 @@ RectTransform:
   - {fileID: 425563764}
   - {fileID: 706108695}
   - {fileID: 185307619}
-  - {fileID: 532733185}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_AnchorMin: {x: 0, y: 0}
