@@ -21,6 +21,8 @@ public class life : MonoBehaviour
 	void Update ()
 	{
 		lifeBar.sizeDelta = new Vector2 ((-100+Health.hp)*pixelScale,0);
+        print(Health.hp);
+        if (Health.hp <= 0) Application.LoadLevel("Death");
 	}
 
 }
