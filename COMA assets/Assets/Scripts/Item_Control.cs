@@ -380,13 +380,8 @@ public class Item_Control : MonoBehaviour
 						usePrompt_focus = false;
 						itemUse_focus = true;
 /*
- * Compare the item being selected for USE with the global healing item
- * If the item is EQUAL to the global healing item, then it IS the global_healing_item
- * Operate it as if it were a global healing item
- * /
-/*
-						if (itemss.get (iter).Equals (global_healing_item_name))
-							itemss.get (iter).Operate(ref int global_health_variable); //Is passed the global health variable.
+						if (itemss.get (iter) == healing_item)
+							itemss.get (iter).Operate(ref int globalhealthvar); //Is passed the global health variable.
 */
 						last_item = itemss.Remove (itemss.get (iter), 1);
 						temp = iter;
