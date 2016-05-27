@@ -18,9 +18,13 @@ public class Angel : MonoBehaviour {
 	// Other global state
 	public static float hp;
 	public static Inventory inventory;
-//  quest info maybe?
+    public static Item Item0 = new HealingItem("Cherry.", "This is a Cherry.", 30, "Heals 30% of \nyour Health.", 1);
+    public static Item Item1 = new QuestItem("Sword.", "This is a Sword.", "It has a cute \ntattoo on its hilt.", 2);
+    public static Item Item2 = new QuestItem("Boob.", "It's a boob.", "Still a boob.", 1);
+  
+    //  quest info maybe?
 
-	public static void TransitionFromBattleToField() {
+    public static void TransitionFromBattleToField() {
 		FieldToBattle x = (FieldToBattle) marshalled_state;
 		Application.LoadLevel(x.field_name);
 	}
