@@ -17,7 +17,7 @@ public class Angel : MonoBehaviour {
 
 	// Other global state
 	public static float hp;
-	public static Inventory inventory;
+	public static Inventory inventory = new Inventory();
     public static Item Item0 = new HealingItem("Cherry.", "This is a Cherry.", 30, "Heals 30% of \nyour Health.", 1);
     public static Item Item1 = new QuestItem("Sword.", "This is a Sword.", "It has a cute \ntattoo on its hilt.", 2);
     public static Item Item2 = new QuestItem("Boob.", "It's a boob.", "Still a boob.", 1);

@@ -81,12 +81,17 @@ public class Item_Control : MonoBehaviour
 		itemss.Add (Item2);
 		itemss.Add (Item0);
 		itemss.Add (Item1);
-		//(string name, string description, string examineText = "A quest item.",
-		//int quantity = 1)
+        Angel.inventory.Add(Item0);
+        Angel.inventory.Add(Item1);
+        Angel.inventory.Add(Item2);
+        Angel.inventory.Add(Item0);
+        Angel.inventory.Add(Item1);
+        //(string name, string description, string examineText = "A quest item.",
+        //int quantity = 1)
 
-		//(string name, string description, string examineText = "A healing item.",
-		//int healingAmt, int quantity = 1)
-		inventory = GameObject.Find ("Inventory_BG");
+        //(string name, string description, string examineText = "A healing item.",
+        //int healingAmt, int quantity = 1)
+        inventory = GameObject.Find ("Inventory_BG");
 		theCanvas = inventory.transform.GetChild (6).gameObject; //theCanvas is the Canvas at index(6), child of Inventory_BG; do not change this variable
 		usePrompt = GameObject.Find ("Use_Prompt");
 		for (iter = 0; iter < 25; iter++) {
@@ -158,50 +163,50 @@ public class Item_Control : MonoBehaviour
 				}
 
 				//Do operations based on Count of items on items:
-				if (itemss.Size() != 0)
+				if (Angel.inventory.Size() != 0)
 				{
-					Description_Text.text = itemss.get (0).description; //Default Description_Text is description of first item
+					Description_Text.text = Angel.inventory.get (0).description; //Default Description_Text is description of first item
 					theCanvas = inventory.transform.GetChild(6).gameObject;
 					theCanvas.SetActive(true);
 					theCanvas.transform.GetChild (12).gameObject.SetActive (true); //have first item already selected
-					for (iter = 0; iter < itemss.Size (); iter++)
+					for (iter = 0; iter < Angel.inventory.Size (); iter++)
 					{
 						theCanvas.transform.GetChild(iter).gameObject.SetActive(true); //SetActive all the deselected item
 						if (iter == 0) {
-							Item0_Selected_Text.text = Item0_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item0_Selected_Text.text = Item0_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 1) {
-							Item1_Selected_Text.text = Item1_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item1_Selected_Text.text = Item1_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 2) {
-							Item2_Selected_Text.text = Item2_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item2_Selected_Text.text = Item2_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 3) {
-							Item3_Selected_Text.text = Item3_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item3_Selected_Text.text = Item3_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 4) {
-							Item4_Selected_Text.text = Item4_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item4_Selected_Text.text = Item4_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 5) {
-							Item5_Selected_Text.text = Item5_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item5_Selected_Text.text = Item5_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 6) {
-							Item6_Selected_Text.text = Item6_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item6_Selected_Text.text = Item6_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 7) {
-							Item7_Selected_Text.text = Item7_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item7_Selected_Text.text = Item7_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 8) {
-							Item8_Selected_Text.text = Item8_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item8_Selected_Text.text = Item8_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 9) {
-							Item9_Selected_Text.text = Item9_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item9_Selected_Text.text = Item9_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 10) {
-							Item10_Selected_Text.text = Item10_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item10_Selected_Text.text = Item10_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 						if (iter == 11) {
-							Item11_Selected_Text.text = Item11_Deselected_Text.text = itemss.get(iter).ToString ();
+							Item11_Selected_Text.text = Item11_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 						}
 					}
 					iter = 0; //set iter equal to the index of the first item
@@ -209,7 +214,7 @@ public class Item_Control : MonoBehaviour
 					itemUse_focus = false;
 					use_opt = 3;
 				} else {
-					//else, itemss.Size() is 0, there are no items in the inventory:
+					//else, Angel.inventory.Size() is 0, there are no items in the inventory:
 					iter = -1;
 					Description_Text.text = "";
 				}
@@ -242,7 +247,7 @@ public class Item_Control : MonoBehaviour
 						theCanvas.transform.GetChild (iter+12).gameObject.SetActive (false); //deactivating current position;
 						theCanvas.transform.GetChild (iter+11).gameObject.SetActive (true); //activate position higher on list
 						iter--;
-						Description_Text.text = itemss.get(iter).description;
+						Description_Text.text = Angel.inventory.get(iter).description;
 					}
 				}
 				if (itemUse_focus) 
@@ -258,12 +263,12 @@ public class Item_Control : MonoBehaviour
 			if (Input.GetKeyUp(KeyCode.DownArrow)){
 				if (inventory_focus)
 				{
-					if (iter < itemss.Size () -1 && iter != -1) 
+					if (iter < Angel.inventory.Size () -1 && iter != -1) 
 					{
 						theCanvas.transform.GetChild (iter+12).gameObject.SetActive (false); //deactivating current position;
 						theCanvas.transform.GetChild (iter+13).gameObject.SetActive (true); //activating position lower on list
 						iter++;
-						Description_Text.text = itemss.get(iter).description;
+						Description_Text.text = Angel.inventory.get(iter).description;
 					}
 				}
 				if (itemUse_focus)
@@ -343,18 +348,18 @@ public class Item_Control : MonoBehaviour
 					{
 						//Change Description Text to Examine Text depending on item_opt
 						theCanvas.transform.GetChild (24).gameObject.SetActive (true); //activating description text
-						if (item_opt == 0) Description_Text.text = itemss.get (0).examineText;
-						if (item_opt == 1) Description_Text.text = itemss.get (1).examineText;
-						if (item_opt == 2) Description_Text.text = itemss.get (2).examineText;
-						if (item_opt == 3) Description_Text.text = itemss.get (4).examineText;
-						if (item_opt == 4) Description_Text.text = itemss.get (5).examineText;
-						if (item_opt == 5) Description_Text.text = itemss.get (6).examineText;
-						if (item_opt == 6) Description_Text.text = itemss.get (7).examineText;
-						if (item_opt == 7) Description_Text.text = itemss.get (8).examineText;
-						if (item_opt == 8) Description_Text.text = itemss.get (9).examineText;
-						if (item_opt == 9) Description_Text.text = itemss.get (10).examineText;
-						if (item_opt == 10) Description_Text.text = itemss.get (11).examineText;
-						if (item_opt == 11) Description_Text.text = itemss.get (12).examineText;
+						if (item_opt == 0) Description_Text.text = Angel.inventory.get (0).examineText;
+						if (item_opt == 1) Description_Text.text = Angel.inventory.get (1).examineText;
+						if (item_opt == 2) Description_Text.text = Angel.inventory.get (2).examineText;
+						if (item_opt == 3) Description_Text.text = Angel.inventory.get (4).examineText;
+						if (item_opt == 4) Description_Text.text = Angel.inventory.get (5).examineText;
+						if (item_opt == 5) Description_Text.text = Angel.inventory.get (6).examineText;
+						if (item_opt == 6) Description_Text.text = Angel.inventory.get (7).examineText;
+						if (item_opt == 7) Description_Text.text = Angel.inventory.get (8).examineText;
+						if (item_opt == 8) Description_Text.text = Angel.inventory.get (9).examineText;
+						if (item_opt == 9) Description_Text.text = Angel.inventory.get (10).examineText;
+						if (item_opt == 10) Description_Text.text = Angel.inventory.get (11).examineText;
+						if (item_opt == 11) Description_Text.text = Angel.inventory.get (12).examineText;
 					}
 
 					if (use_opt == 5) 
@@ -380,10 +385,10 @@ public class Item_Control : MonoBehaviour
 						usePrompt_focus = false;
 						itemUse_focus = true;
 /*
-						if (itemss.get (iter) == healing_item)
-							itemss.get (iter).Operate(ref int globalhealthvar); //Is passed the global health variable.
+						if (Angel.inventory.get (iter) == healing_item)
+							Angel.inventory.get (iter).Operate(ref int globalhealthvar); //Is passed the global health variable.
 */
-						last_item = itemss.Remove (itemss.get (iter), 1);
+						last_item = Angel.inventory.Remove (Angel.inventory.get (iter), 1);
 						temp = iter;
 //Deactivate everything & close the inventory
 						for (iter = 0; iter < 25; iter++) {
@@ -404,7 +409,7 @@ public class Item_Control : MonoBehaviour
 							inventory.transform.GetChild (iter).gameObject.SetActive (true);
 						}
 						//Do operations based on Count of items on items:
-						if (itemss.Size() != 0)
+						if (Angel.inventory.Size() != 0)
 						{
 							theCanvas = inventory.transform.GetChild(6).gameObject;
 							inventory.transform.GetChild(3).gameObject.SetActive(true); //deactivate "use" option
@@ -415,7 +420,7 @@ public class Item_Control : MonoBehaviour
 								 * if item removed was not last item, stay selected on current item
 								 * also, reactivate description text of current item
 								 */
-								Description_Text.text = itemss.get (temp).description;
+								Description_Text.text = Angel.inventory.get (temp).description;
 								theCanvas.transform.GetChild (temp+12).gameObject.SetActive (true);
 								itemUse_focus = true;
 								inventory_focus = false;
@@ -425,7 +430,7 @@ public class Item_Control : MonoBehaviour
 								 * Default Description_Text is description of first item
 								 * Have first item already selected,
 								 */
-								Description_Text.text = itemss.get (0).description; 
+								Description_Text.text = Angel.inventory.get (0).description; 
 								theCanvas.transform.GetChild (12).gameObject.SetActive (true); //have first item already selected
 								inventory.transform.GetChild(3).gameObject.SetActive(false); //deactivate use
 								itemUse_focus = false;
@@ -433,44 +438,44 @@ public class Item_Control : MonoBehaviour
 
 							}
 
-							for (iter = 0; iter < itemss.Size (); iter++)
+							for (iter = 0; iter < Angel.inventory.Size (); iter++)
 							{
 								theCanvas.transform.GetChild(iter).gameObject.SetActive(true); //SetActive all the deselected item
 								if (iter == 0) {
-									Item0_Selected_Text.text = Item0_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item0_Selected_Text.text = Item0_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 1) {
-									Item1_Selected_Text.text = Item1_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item1_Selected_Text.text = Item1_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 2) {
-									Item2_Selected_Text.text = Item2_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item2_Selected_Text.text = Item2_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 3) {
-									Item3_Selected_Text.text = Item3_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item3_Selected_Text.text = Item3_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 4) {
-									Item4_Selected_Text.text = Item4_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item4_Selected_Text.text = Item4_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 5) {
-									Item5_Selected_Text.text = Item5_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item5_Selected_Text.text = Item5_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 6) {
-									Item6_Selected_Text.text = Item6_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item6_Selected_Text.text = Item6_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 7) {
-									Item7_Selected_Text.text = Item7_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item7_Selected_Text.text = Item7_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 8) {
-									Item8_Selected_Text.text = Item8_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item8_Selected_Text.text = Item8_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 9) {
-									Item9_Selected_Text.text = Item9_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item9_Selected_Text.text = Item9_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 10) {
-									Item10_Selected_Text.text = Item10_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item10_Selected_Text.text = Item10_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 								if (iter == 11) {
-									Item11_Selected_Text.text = Item11_Deselected_Text.text = itemss.get(iter).ToString ();
+									Item11_Selected_Text.text = Item11_Deselected_Text.text = Angel.inventory.get(iter).ToString ();
 								}
 							}
 							/*
@@ -481,7 +486,7 @@ public class Item_Control : MonoBehaviour
 							else iter = 0;
 							use_opt = 3;
 						} else {
-							//else, itemss.Size() is 0, there are no items in the inventory:
+							//else, Angel.inventory.Size() is 0, there are no items in the inventory:
 							iter = -1;
 							Description_Text.text = "";
 							//DEACTIVATE THE SELECTED USE/EXAMINE/QUIT options:
