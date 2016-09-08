@@ -40,6 +40,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NEET/NEET.unity
   - enabled: 1
-    path: Assets/Scenes/Battle Scenes/Jubilee battle normal.unity
+    path: Assets/Scenes/Battle Scenes/Jubilee battle extreme.unity
   - enabled: 1
     path: Assets/Scenes/Death.unity
