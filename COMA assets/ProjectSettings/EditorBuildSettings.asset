@@ -24,21 +24,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/main_menu/title.unity
   - enabled: 1
-    path: Assets/Scenes/NEET/Hallway.unity
+    path: Assets/Scenes/NEET Zone/Hallway.unity
   - enabled: 1
-    path: Assets/Scenes/NEET/Crossroads.unity
+    path: Assets/Scenes/NEET Zone/Crossroads.unity
   - enabled: 0
     path: Assets/Scenes/NEET/Scraproom.unity
   - enabled: 1
-    path: Assets/Scenes/NEET/Scraproom1.unity
+    path: Assets/Scenes/NEET Zone/Scraproom1.unity
   - enabled: 1
-    path: Assets/Scenes/NEET/Scraproom2.unity
+    path: Assets/Scenes/NEET Zone/Scraproom2.unity
   - enabled: 1
     path: Assets/Scenes/Battle Scenes/Disconaut battle normal.unity
   - enabled: 1
     path: Assets/Scenes/saveTestScene.unity
   - enabled: 1
-    path: Assets/Scenes/NEET/NEET.unity
+    path: Assets/Scenes/NEET Zone/NEET.unity
   - enabled: 1
     path: Assets/Scenes/Battle Scenes/Jubilee battle extreme.unity
   - enabled: 1
