@@ -172,12 +172,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -267,12 +269,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -346,6 +350,57 @@ BoxCollider2D:
   m_Offset: {x: -0.015613184, y: -0.5776941}
   serializedVersion: 2
   m_Size: {x: 1.4887732, y: 1.2706264}
+--- !u!1 &419636296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 419636299}
+  - 114: {fileID: 419636298}
+  - 114: {fileID: 419636297}
+  m_Layer: 0
+  m_Name: Uriel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &419636297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419636296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910730dd429196f48b5c6b137259a54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &419636298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419636296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7053e9e5e65a94fb3fa07d0bce912b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &419636299
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419636296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.15509668, y: -0.03873699, z: 6.9902344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!1001 &528331820
 Prefab:
   m_ObjectHideFlags: 0
@@ -421,12 +476,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -515,12 +572,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -666,6 +725,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1193206082 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 125898, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
+  m_PrefabInternal: {fileID: 528331820}
 --- !u!1001 &1262598703
 Prefab:
   m_ObjectHideFlags: 0
@@ -705,14 +768,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6177250, guid: 9728b82dd7cd9c74d90db19948dfd8ef, type: 2}
-      propertyPath: m_Offset.y
-      value: 3.8409696
-      objectReference: {fileID: 0}
-    - target: {fileID: 6177250, guid: 9728b82dd7cd9c74d90db19948dfd8ef, type: 2}
-      propertyPath: m_Size.y
-      value: 1.3739473
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9728b82dd7cd9c74d90db19948dfd8ef, type: 2}
   m_IsPrefabParent: 0
@@ -745,12 +800,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -839,12 +896,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -933,12 +992,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -1027,12 +1088,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0
@@ -1121,12 +1184,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObject: {fileID: 1193206082}
   player: {fileID: 528331821}
   dialogCSVParserObject: {fileID: 2045452705}
   dialogue: []
   path1: []
   path2: []
   nextDialog: []
+  extraDialog: []
   response: 
   thanks: []
   useThisConversation: 0

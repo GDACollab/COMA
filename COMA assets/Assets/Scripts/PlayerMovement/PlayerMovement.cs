@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour {
 			anim.SetBool ("isWalking", isWalking);
 			anim.SetBool ("shaded", shaded);
 			anim.SetFloat ("x", input_x);
+
 			if (input_x == 0)
 				anim.SetFloat ("y", input_y);
 			else

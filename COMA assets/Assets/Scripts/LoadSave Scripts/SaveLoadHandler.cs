@@ -11,7 +11,6 @@ public class SaveLoadHandler : MonoBehaviour {
 	public Font pixel;
 	public static SaveLoadHandler slHandler;
 	public static int SaveSlotNumber = 0;
-	private List<string> itemNames = new List<string> ();
 
 	private string currLevel = "saveTestScene";
 
@@ -20,8 +19,6 @@ public class SaveLoadHandler : MonoBehaviour {
 	void Start() {
 		if (slHandler == null) {
 			slHandler = this;
-			PlayerPrefs.SetInt("corn",0);
-			itemNames.Add("corn");
 		}
 		else if (slHandler != this) {
 			Destroy (gameObject);
@@ -44,9 +41,6 @@ public class SaveLoadHandler : MonoBehaviour {
 		if(GUI.Button(new Rect(300, 60, 200, 30), "Load Slot 0", pixelStyle))
 			Load (SaveSlotNumber);
 
-		if (GUI.Button (new Rect (300, 100, 200, 30), "Add Corn", pixelStyle))
-			addItem ("corn", 1);
-
 		if (GUI.Button (new Rect (300, 140, 200, 30), "Reload Level", pixelStyle))
 			LoadLevel ();
 
@@ -67,9 +61,9 @@ public class SaveLoadHandler : MonoBehaviour {
 				file.Close ();
 
 				slHandler.currLevel = data.level;
-				slHandler.itemNames = data.itemNames;
-				data.setPrefs();
-				print (data.itemNums[0]);
+				for (int i = 0; i < data.itemList.Length; ++i) {
+					Angel.inventory.Add (data.itemList [i]);
+				}
 			}
 		}
 	}
@@ -86,8 +80,7 @@ public class SaveLoadHandler : MonoBehaviour {
 
 			PlayerSaveData data = new PlayerSaveData();
 			data.level = slHandler.currLevel;
-			data.itemNames = slHandler.itemNames;
-			data.getPrefs();
+			data.itemList = Angel.inventory.ToArray();
 			bf.Serialize (file, data);
 			file.Close ();
 		}
@@ -95,11 +88,6 @@ public class SaveLoadHandler : MonoBehaviour {
 
 	private void LoadLevel() {
 		SceneManager.LoadScene ("saveTestScene");
-	}
-
-	public int addItem(string name, int num) {
-		PlayerPrefs.SetInt (name, PlayerPrefs.GetInt (name) + num);
-		return PlayerPrefs.GetInt (name);
 	}
 
 	private void SetSlotNum(int num) {
