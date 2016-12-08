@@ -168,13 +168,14 @@ public class AudioEvents : MonoBehaviour {
 		}
 		*/
 
-		// New code COMPLETELY avoids the binary search
-		// I have absolutely no idea why they used a binary search in the first place
-		float currentTime = GetComponent<AudioSource> ().time;
+		// triggers is a List of the events
+		// currentEvent is just an index into that List
+
+		float currentTime = GetComponent<AudioSource> ().time; // Current time
 		// If we still have triggers to run, and we've just passed one
 		if (currentEvent < triggers.Count &&
 			currentTime > triggers [currentEvent].audioPos) {
-			// Send a message to all BroodMothers to spawn a note
+			// Send a message to Maestro to spawn a note
 			SendMessage(triggers[currentEvent].methodName, 
 				        SendMessageOptions.DontRequireReceiver);
 			currentEvent++; // Go to next event
