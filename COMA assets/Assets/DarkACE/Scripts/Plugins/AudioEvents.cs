@@ -28,7 +28,7 @@ public class AudioEvents : MonoBehaviour {
 	
 	Hashtable nameMapping = new Hashtable();
 	
-	int currentEvent = -1;
+	int currentEvent = 0;
 	
 	
 	public float GetCurrentValue(int curve) {
@@ -158,12 +158,26 @@ public class AudioEvents : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		/* Old code
 		int prevEvent = currentEvent;
 		currentEvent = BinarySearchFirstTrigger(GetComponent<AudioSource>().time);
 		
 		//Passed an event
 		if(prevEvent != currentEvent && currentEvent>=0){
 			SendMessage(triggers[currentEvent].methodName, SendMessageOptions.DontRequireReceiver);
+		}
+		*/
+
+		// New code COMPLETELY avoids the binary search
+		// I have absolutely no idea why they used a binary search in the first place
+		float currentTime = GetComponent<AudioSource> ().time;
+		// If we still have triggers to run, and we've just passed one
+		if (currentEvent < triggers.Count &&
+			currentTime > triggers [currentEvent].audioPos) {
+			// Send a message to all BroodMothers to spawn a note
+			SendMessage(triggers[currentEvent].methodName, 
+				        SendMessageOptions.DontRequireReceiver);
+			currentEvent++; // Go to next event
 		}
 	}
 }
