@@ -27,9 +27,8 @@ public class AudioEvents : MonoBehaviour {
 	public List<AudioPosTrigger> triggers = new List<AudioPosTrigger>();
 	
 	Hashtable nameMapping = new Hashtable();
-	
-	int currentEvent = 0;
-	
+
+	int currentEvent = 0; // Index of current event in triggers List
 	
 	public float GetCurrentValue(int curve) {
 		return GetValueAtTime(curve, GetComponent<AudioSource>().time);
@@ -155,7 +154,7 @@ public class AudioEvents : MonoBehaviour {
 			nameMapping.Add(names[i], i);
 		}
 	}
-	
+		
 	// Update is called once per frame
 	void FixedUpdate () {
 		/* Old code
@@ -170,11 +169,10 @@ public class AudioEvents : MonoBehaviour {
 
 		// triggers is a List of the events
 		// currentEvent is just an index into that List
-
 		float currentTime = GetComponent<AudioSource> ().time; // Current time
-		// If we still have triggers to run, and we've just passed one
+		// If we still have triggers to run, and we've just hit one
 		if (currentEvent < triggers.Count &&
-			currentTime > triggers [currentEvent].audioPos) {
+			currentTime >= triggers [currentEvent].audioPos) {
 			// Send a message to Maestro to spawn a note
 			SendMessage(triggers[currentEvent].methodName, 
 				        SendMessageOptions.DontRequireReceiver);

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class makeNote : MonoBehaviour {
 
 	public spawnA wrath;
