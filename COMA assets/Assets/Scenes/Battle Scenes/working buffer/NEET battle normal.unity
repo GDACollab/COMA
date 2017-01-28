@@ -781,9 +781,9 @@ MonoBehaviour:
   - audioPos: 13.44
     methodName: MakerS
   - audioPos: 13.92
-    methodName: DubSJ
+    methodName: MakerS
   - audioPos: 14.4
-    methodName: DubSK
+    methodName: DubSL
   - audioPos: 14.88
     methodName: DubSL
   - audioPos: 15.36
@@ -814,6 +814,72 @@ MonoBehaviour:
     methodName: MakerS
   - audioPos: 22.08
     methodName: MakerS
+  - audioPos: 22.56
+    methodName: MakerS
+  - audioPos: 23.04
+    methodName: MakerD
+  - audioPos: 23.52
+    methodName: MakerD
+  - audioPos: 24.0
+    methodName: DubDK
+  - audioPos: 24.24
+    methodName: DubDK
+  - audioPos: 24.96
+    methodName: MakerS
+  - audioPos: 25.92
+    methodName: MakerS
+  - audioPos: 26.4
+    methodName: MakerS
+  - audioPos: 26.88
+    methodName: MakerS
+  - audioPos: 27.36
+    methodName: MakerJ
+  - audioPos: 27.84
+    methodName: MakerS
+  - audioPos: 28.32
+    methodName: MakerK
+  - audioPos: 28.8
+    methodName: MakerS
+  - audioPos: 29.28
+    methodName: MakerL
+  - audioPos: 29.76
+    methodName: MakerS
+  - audioPos: 30.24
+    methodName: MakerC
+  - audioPos: 30.72
+    methodName: MakerS
+  - audioPos: 33.6
+    methodName: MakerS
+  - audioPos: 34.08
+    methodName: MakerS
+  - audioPos: 34.32
+    methodName: MakerS
+  - audioPos: 34.56
+    methodName: MakerD
+  - audioPos: 34.8
+    methodName: MakerD
+  - audioPos: 35.04
+    methodName: MakerF
+  - audioPos: 35.28
+    methodName: MakerF
+  - audioPos: 35.52
+    methodName: MakerJ
+  - audioPos: 35.88
+    methodName: MakerK
+  - audioPos: 36.24
+    methodName: MakerL
+  - audioPos: 36.48
+    methodName: MakerD
+  - audioPos: 36.72
+    methodName: MakerD
+  - audioPos: 36.96
+    methodName: MakerF
+  - audioPos: 37.2
+    methodName: MakerF
+  - audioPos: 37.44
+    methodName: MakerL
+  - audioPos: 37.92
+    methodName: MakerJ
 --- !u!82 &484409102
 AudioSource:
   m_ObjectHideFlags: 0
