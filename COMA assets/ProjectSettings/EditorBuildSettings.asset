@@ -7,39 +7,41 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletDisco.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ScarletZone/Disco.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ScarletZone/SpaceBar.unity
   - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletStage.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ScarletZone/StarletsStage.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MotherZone/Toybox.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MotherZone/Home.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MotherZone/Greenhouse.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/main_menu/title.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NEET Zone/Hallway.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NEET Zone/Crossroads.unity
   - enabled: 0
     path: Assets/Scenes/NEET/Scraproom.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NEET Zone/Scraproom1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NEET Zone/Scraproom2.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Battle Scenes/Disconaut battle normal.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/saveTestScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NEET Zone/NEET.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Battle Scenes/Jubilee battle extreme.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Death.unity
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/working buffer/NEET battle normal.unity
