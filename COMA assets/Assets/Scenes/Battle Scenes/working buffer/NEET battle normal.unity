@@ -1282,6 +1282,52 @@ MonoBehaviour:
     methodName: DubSL
   - audioPos: 113.43
     methodName: MakerD
+  - audioPos: 113.91
+    methodName: MakerF
+  - audioPos: 114.39
+    methodName: MakerD
+  - audioPos: 114.87
+    methodName: MakerL
+  - audioPos: 115.35
+    methodName: MakerD
+  - audioPos: 115.83
+    methodName: MakerF
+  - audioPos: 116.31
+    methodName: MakerD
+  - audioPos: 116.79
+    methodName: MakerL
+  - audioPos: 117.27
+    methodName: MakerJ
+  - audioPos: 117.65
+    methodName: MakerL
+  - audioPos: 118.11
+    methodName: MakerK
+  - audioPos: 118.54
+    methodName: MakerC
+  - audioPos: 118.94
+    methodName: MakerJ
+  - audioPos: 119.4
+    methodName: MakerL
+  - audioPos: 119.8
+    methodName: MakerK
+  - audioPos: 120.15
+    methodName: MakerC
+  - audioPos: 120.5
+    methodName: MakerJ
+  - audioPos: 120.85
+    methodName: MakerL
+  - audioPos: 121.2
+    methodName: MakerK
+  - audioPos: 121.55
+    methodName: MakerC
+  - audioPos: 121.9
+    methodName: MakerJ
+  - audioPos: 122.25
+    methodName: MakerL
+  - audioPos: 122.6
+    methodName: MakerK
+  - audioPos: 122.95
+    methodName: MakerC
 --- !u!82 &484409102
 AudioSource:
   m_ObjectHideFlags: 0
