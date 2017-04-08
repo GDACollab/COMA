@@ -7,13 +7,13 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletDisco.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ScarletZone/Disco.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ScarletZone/SpaceBar.unity
   - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletStage.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ScarletZone/StarletsStage.unity
   - enabled: 0
     path: Assets/Scenes/MotherZone/Toybox.unity
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NEET Zone/Scraproom1.unity
   - enabled: 0
     path: Assets/Scenes/NEET Zone/Scraproom2.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Battle Scenes/Disconaut battle normal.unity
   - enabled: 0
     path: Assets/Scenes/saveTestScene.unity
@@ -41,11 +41,11 @@ EditorBuildSettings:
     path: Assets/Scenes/NEET Zone/NEET.unity
   - enabled: 0
     path: Assets/Scenes/Battle Scenes/Jubilee battle extreme.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Death.unity
   - enabled: 0
     path: Assets/Scenes/Battle Scenes/working buffer/NEET battle normal.unity
   - enabled: 0
     path: Assets/Scenes/Battle Scenes/NEET battle normal.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Battle Scenes/Antivirus battle normal.unity

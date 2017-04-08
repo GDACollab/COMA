@@ -25,6 +25,10 @@ public class makeNote : MonoBehaviour {
     {
         monstro.Play();
     }
+	void EndBattle ()
+	{
+		Angel.TransitionFromBattleToField ();
+	}
 
 	void MakerA () {
 		wrath.ANoteS ();

@@ -26,11 +26,14 @@ public class PlayerMovement : MonoBehaviour {
     {
 		if (background == null)
 			background = GameObject.FindGameObjectWithTag ("Background");
-		
         anim = GetComponent<Animator>();
-
 		//the set of variables assigned to know where the end of each walkable area is
 		backgroundSides = background.GetComponent<SpriteRenderer>().bounds.extents.x - transform.localScale.x;
+		Debug.Log (Angel.transitionPos);
+		GameObject.FindGameObjectWithTag ("Player").transform.position = Angel.transitionPos;
+
+		//testing
+		random_encounters.Add("Disconaut Battle Normal");
 	}
 	
 	// Update is called once per frame
@@ -65,21 +68,15 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 			// Random encounter
-			if(isWalking && Random.Range(0f,1f) < 0.005)
-				get_into_a_random_encounter();
+			if (isWalking && Random.Range (0f, 1f) < 0.005) 
+				get_into_a_random_encounter ();
 		}
 		else
 			anim.SetBool ("isWalking", false);
     }
 
 	void get_into_a_random_encounter() {
-		// For testing purposes
-		//Angel.TransitionFromFieldToBattle("Disconaut battle normal");
-		//return;
-
-		if(random_encounters.Count == 0)
-			return;
-
+		if(random_encounters.Count == 0) return;
 		int random_index = Random.Range(0, random_encounters.Count);
 		string chosen = random_encounters[random_index];
 		Angel.TransitionFromFieldToBattle(chosen);
