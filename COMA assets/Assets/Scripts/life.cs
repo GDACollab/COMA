@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class life : MonoBehaviour
@@ -24,7 +25,7 @@ public class life : MonoBehaviour
 	{
 		lifeBar.sizeDelta = new Vector2 ((-100+Health.hp)*pixelScale,0);
         print(Health.hp);
-        if (Health.hp <= 0) Application.LoadLevel("Death");
+		if (Health.hp <= 0) SceneManager.LoadScene("Death");
 	}
 
 }
