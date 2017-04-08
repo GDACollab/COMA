@@ -43,5 +43,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Battle Scenes/Jubilee battle extreme.unity
   - enabled: 0
     path: Assets/Scenes/Death.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Battle Scenes/working buffer/NEET battle normal.unity
+  - enabled: 0
+    path: Assets/Scenes/Battle Scenes/NEET battle normal.unity
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Antivirus battle normal.unity
