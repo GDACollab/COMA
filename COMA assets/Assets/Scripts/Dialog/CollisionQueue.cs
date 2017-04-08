@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class CollisionQueue : MonoBehaviour {
 
-	private List<GameObject> dialogQueue = new List<GameObject> ();
+	/*private List<GameObject> dialogQueue = new List<GameObject> ();
 
 	void OnTriggerEnter2D(Collider2D obj){
 		if (obj.gameObject.GetComponent<makeText> () != null)
@@ -38,5 +38,5 @@ public class CollisionQueue : MonoBehaviour {
 				
 			dialogQueue = new List<GameObject> ();
 		}
-	}
+	}*/
 }
