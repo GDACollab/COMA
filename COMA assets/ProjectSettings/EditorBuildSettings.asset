@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletDisco.unity
   - enabled: 1
-    path: Assets/Scenes/ScarletZone/Disco.unity
+    path: Assets/Scenes/StarletZone/Disco.unity
   - enabled: 1
-    path: Assets/Scenes/ScarletZone/SpaceBar.unity
+    path: Assets/Scenes/StarletZone/SpaceBar.unity
   - enabled: 0
     path: Assets/Scenes/ScarletZone/ScarletStage.unity
-  - enabled: 1
-    path: Assets/Scenes/ScarletZone/StarletsStage.unity
+  - enabled: 0
+    path: Assets/Scenes/StarletZone/StarletsStage.unity
   - enabled: 0
     path: Assets/Scenes/MotherZone/Toybox.unity
   - enabled: 0
