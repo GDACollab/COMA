@@ -1,110 +1,56 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class Angel : MonoBehaviour {
+// Comments from James:
+//   I've removed all of "MarshalledState" from the original code. 
+//   I'm not quite sure why the original writer did that.
 
-	void Start() {
-		Angel.marshalled_state.Start();
-		Angel.marshalled_state = null;
-	}
+public class Angel : MonoBehaviour
+{
+    public static Vector2 transitionPos; // New position after a field transition
+    public static string currScene; // Keep track of scene for returning from battles
 
-//////////////////////////
-// Start of static section
-
-	// This is the thing that remembers stuff about the previous scene
-	//   so that the current scene can initialize itself accordingly.
-	private static MarshalledState marshalled_state = new NoState();
-
-	// Other global state
-	public static float hp;
-	public static Inventory inventory = new Inventory();
+    // Other global state
+    public static float hp;
+    public static Inventory inventory = new Inventory();
     public static Item Item0 = new HealingItem("Cherry.", "This is a Cherry.", 30, "Heals 30% of \nyour Health.", 1);
     public static Item Item1 = new QuestItem("Sword.", "This is a Sword.", "It has a cute \ntattoo on its hilt.", 2);
     public static Item Item2 = new QuestItem("Boob.", "It's a boob.", "Still a boob.", 1);
-  
-    //  quest info maybe?
 
-    public static void TransitionFromBattleToField() {
-		FieldToBattle x = (FieldToBattle) marshalled_state;
-		Application.LoadLevel(x.field_name);
-	}
+    public void Start()
+    {
+        hp = 100f;
+    }
 
-	public static void TransitionFromFieldToBattle(string destination) {
-		marshalled_state = new FieldToBattle();
-		//Application.LoadLevel(destination);
-		Application.LoadLevel(Application.loadedLevelName);
-	}
+    public static void TransitionFromBattleToField()
+    {
+        Debug.Log(transitionPos);
+        Debug.Log(currScene);
+        SceneManager.LoadScene(currScene);
+    }
 
-	public static void TransitionFromFieldToField(string destination) {
-		marshalled_state = new FieldToField();
-		Application.LoadLevel(destination);
-	}
+    public static void TransitionFromFieldToBattle(string destination)
+    {
+        transitionPos = GameObject.FindGameObjectWithTag("Player").transform.position; // Keep track of old position
+        currScene = SceneManager.GetActiveScene().name; // Keep track of old scene
+        Debug.Log(transitionPos);
+        Debug.Log(currScene);
+        SceneManager.LoadScene(destination);
+    }
 
-	interface MarshalledState {
-		void Start();
-	}
-
-	class NoState : MarshalledState {
-		public void Start() {}
-	}
-
-	class FieldToField : MarshalledState {
-		string prev_field;
-
-		public FieldToField() {
-			prev_field = Application.loadedLevelName;
-		}
-
-		// This is called after transitioning from one field scene to another.
-		//   Its purpose is to move Blue to an appropriate location based by
-		//   taking into account the previous scene.
-		public void Start() {
-			GameObject blue = getBlue();
-
-			Exit[] exits = Object.FindObjectsOfType<Exit>();
-			foreach(Exit e in exits) {
-				if(e.LevelLoad == prev_field) {
-					blue.transform.position = Vector2.Scale(e.gameObject.GetComponent<BoxCollider2D>().offset, new Vector2(0.8f, 0.8f));
-					return;
-				}
-			}
-
-			ChangeArea ca = GameObject.FindGameObjectWithTag("Background").GetComponent<ChangeArea>();
-
-			if(ca.LeftLevelLoad == prev_field) {
-				blue.transform.position = new Vector3(-3, -1, 0);
-				return;
-			}
-			if(ca.RightLevelLoad == prev_field) {
-				blue.transform.position = new Vector3(3, -1, 0);
-				return;
-			}
-		}
-	}
-
-	class FieldToBattle : MarshalledState {
-		public string field_name;
-		Vector3 blue_pos;
-
-		public FieldToBattle() {
-			field_name = Application.loadedLevelName;
-			blue_pos = getBlue().transform.position;
-		}
-
-		public void Start() {
-			GameObject blue = getBlue();
-
-			// I'm expecting this code to run ONLY when starting a FIELD scene!
-			// The following assertion is an attempt to guarantee this ...
-			if(blue == null)
-				throw new System.Exception("Assertion failed");
-
-			blue.transform.position = blue_pos;
-			Debug.Log("returning from a random encounter");
-		}
-	}
-
-	static private GameObject getBlue() {
-		return GameObject.FindGameObjectWithTag ("Player") as GameObject;
-	}
+    // Load new field scene and set new position for Blue
+    public static void TransitionFromFieldToField(string destination)
+    {
+        SceneManager.LoadScene(destination); // Load new scene
+        ChangeArea ca = GameObject.FindGameObjectWithTag("Background").GetComponent<ChangeArea>();
+        if (ca.LeftLevelLoad == destination)
+        { // Going left
+            transitionPos = new Vector2(1.7f, -0.65f);
+        }
+        else if (ca.RightLevelLoad == destination)
+        { // Going right
+            transitionPos = new Vector2(-1.6f, -0.65f);
+        }
+    }
 }
