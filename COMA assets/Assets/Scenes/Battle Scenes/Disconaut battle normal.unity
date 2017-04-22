@@ -1990,7 +1990,7 @@ MonoBehaviour:
     methodName: MakerJ
   - audioPos: 44
     methodName: MakerA
-  - audioPos: 45.875607
+  - audioPos: 46.053658
     methodName: EndBattle
 --- !u!82 &1409466854
 AudioSource:
