@@ -17,9 +17,10 @@ using System.Collections.Generic;
 public class makeText : MonoBehaviour
 {
 
-    new GameObject textObject;
-    new GameObject choiceObject;
-    new GameObject choiceObject2;
+    GameObject textObject;
+    GameObject choiceObject;
+    GameObject choiceObject2;
+    GameObject playerObject;
     Text choice1;
     Text choice2;
     Image ChBG;
@@ -34,6 +35,7 @@ public class makeText : MonoBehaviour
 	static int quest = 0;*/
     static int i = 0;
     static int j = 0;
+    bool person = false;
 
     // Use this for initialization
     void Start()
@@ -42,6 +44,7 @@ public class makeText : MonoBehaviour
         textObject = GameObject.Find("Text");
         choiceObject = GameObject.Find("Ctext1");
         choiceObject2 = GameObject.Find("Ctext2");
+        playerObject = GameObject.Find("Blue");
         words = textObject.GetComponent<Text>();
         BG = textObject.GetComponentInParent<Image>();
         choice1 = choiceObject.GetComponent<Text>();
@@ -54,7 +57,20 @@ public class makeText : MonoBehaviour
         ChBG.enabled = false;
 
     }
-
+    void OnCollisionStay2D(Collider2D other)
+    {
+        if (other == playerObject)
+        {
+            person = true;
+        }
+    }
+    void OnCollisionExit2D(Collider2D other)
+    {
+        if (other == playerObject)
+        {
+            person = false;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -94,7 +110,7 @@ public class makeText : MonoBehaviour
                     BG.enabled = false;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Space))
+            else if (Input.GetKeyDown(KeyCode.Space) && )
             {
                 words.enabled = true;
                 BG.enabled = true;
