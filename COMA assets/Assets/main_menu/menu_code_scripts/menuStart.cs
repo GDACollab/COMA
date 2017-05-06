@@ -3,7 +3,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Start : MenuCode {
+public class menuStart : MenuCode {
 	public override void on_select() {
 		Application.LoadLevel("Home");
 	}

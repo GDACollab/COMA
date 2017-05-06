@@ -20,7 +20,7 @@ public class makeText : MonoBehaviour
     GameObject textObject;
     GameObject choiceObject;
     GameObject choiceObject2;
-    GameObject playerObject;
+    public GameObject playerObject;
     Text choice1;
     Text choice2;
     Image ChBG;
@@ -35,7 +35,7 @@ public class makeText : MonoBehaviour
 	static int quest = 0;*/
     static int i = 0;
     static int j = 0;
-    bool person = false;
+    bool person;
 
     // Use this for initialization
     void Start()
@@ -44,7 +44,6 @@ public class makeText : MonoBehaviour
         textObject = GameObject.Find("Text");
         choiceObject = GameObject.Find("Ctext1");
         choiceObject2 = GameObject.Find("Ctext2");
-        playerObject = GameObject.Find("Blue");
         words = textObject.GetComponent<Text>();
         BG = textObject.GetComponentInParent<Image>();
         choice1 = choiceObject.GetComponent<Text>();
@@ -55,18 +54,19 @@ public class makeText : MonoBehaviour
         choice1.enabled = false;
         choice2.enabled = false;
         ChBG.enabled = false;
+        person = false;
 
     }
-    void OnCollisionStay2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other == playerObject)
+        if (other.gameObject == playerObject)
         {
             person = true;
         }
     }
-    void OnCollisionExit2D(Collider2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
-        if (other == playerObject)
+        if (other.gameObject == playerObject)
         {
             person = false;
         }
@@ -74,6 +74,8 @@ public class makeText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(i);
+        Debug.Log(words.enabled);
         if (choice1.enabled == false)
         {
             if (words.enabled == true)
@@ -82,7 +84,9 @@ public class makeText : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space) && words.enabled == true)
             {
+                Debug.Log("increment");
                 i++;
+                Debug.Log(dialogue[i]);
                 if (i > dialogue.Count - 1)
                 {
                     words.enabled = false;
@@ -110,8 +114,9 @@ public class makeText : MonoBehaviour
                     BG.enabled = false;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && )
+            else if (Input.GetKeyDown(KeyCode.Space) && person)
             {
+                Debug.Log("space");
                 words.enabled = true;
                 BG.enabled = true;
                 i = 0;
