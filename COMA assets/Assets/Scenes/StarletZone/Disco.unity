@@ -186,6 +186,26 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224491626595343034, guid: fb6c31b6451bb3c4699725c97bc65cf6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224491626595343034, guid: fb6c31b6451bb3c4699725c97bc65cf6,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224491626595343034, guid: fb6c31b6451bb3c4699725c97bc65cf6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 224491626595343034, guid: fb6c31b6451bb3c4699725c97bc65cf6,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
   m_IsPrefabParent: 0
@@ -387,14 +407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textObject: {fileID: 1176843937}
-  player: {fileID: 2147168463}
-  dialogCSVParserObject: {fileID: 1688428675}
   dialogue: []
   path1: []
   path2: []
-  nextDialog: []
-  useThisConversation: 0
 --- !u!1 &286403002
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,14 +501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textObject: {fileID: 1176843937}
-  player: {fileID: 2147168463}
-  dialogCSVParserObject: {fileID: 1688428675}
   dialogue: []
   path1: []
   path2: []
-  nextDialog: []
-  useThisConversation: 0
 --- !u!1 &317808544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,10 +1379,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &1176843937 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 125898, guid: fb6c31b6451bb3c4699725c97bc65cf6, type: 2}
-  m_PrefabInternal: {fileID: 53341995}
 --- !u!1 &1317720605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,14 +1547,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textObject: {fileID: 0}
-  player: {fileID: 0}
-  dialogCSVParserObject: {fileID: 0}
   dialogue: []
   path1: []
   path2: []
-  nextDialog: []
-  useThisConversation: 0
 --- !u!1 &1479726723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,14 +1654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbcefb02146fc940abce84ebdb9c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textObject: {fileID: 1176843937}
-  player: {fileID: 2147168463}
-  dialogCSVParserObject: {fileID: 1688428675}
   dialogue: []
   path1: []
   path2: []
-  nextDialog: []
-  useThisConversation: 0
 --- !u!1 &1520858927
 GameObject:
   m_ObjectHideFlags: 0
