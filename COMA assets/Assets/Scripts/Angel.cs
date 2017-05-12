@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 // Comments from James:
 //   I've removed all of "MarshalledState" from the original code. 
 //   I'm not quite sure why the original writer did that.
-
 public class Angel : MonoBehaviour
 {
     public static Vector2 transitionPos; // New position after a field transition
