@@ -33,13 +33,14 @@ public class makeText : MonoBehaviour
     /*public List<string> waiting = new List<string> ();
 	public List<string> thanks = new List<string> ();
 	static int quest = 0;*/
-    static int i = 0;
+    static int i;
     static int j = 0;
     bool person;
 
     // Use this for initialization
     void Start()
     {
+        i = 0;
         storage = dialogue;
         textObject = GameObject.Find("Text");
         choiceObject = GameObject.Find("Ctext1");

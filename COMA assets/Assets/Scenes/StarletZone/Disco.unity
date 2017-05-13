@@ -292,6 +292,8 @@ MonoBehaviour:
   playerObject: {fileID: 2147168463}
   dialogue:
   - Functional
+  - Continued
+  - Success
   path1: []
   path2: []
 --- !u!1 &286403002
