@@ -294,6 +294,7 @@ MonoBehaviour:
   - Functional
   - Continued
   - Success
+  - RESET
   path1: []
   path2: []
 --- !u!1 &286403002
@@ -389,9 +390,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObject: {fileID: 2147168463}
   dialogue:
-  - Despise
-  path1: []
-  path2: []
+  - Wanna dance?
+  - CHOICE
+  - In your dreams
+  - Not a chance
+  path1:
+  - It's good to have dreams
+  - RESET
+  path2:
+  - Don't be like that
+  - RESET
 --- !u!1 &317808544
 GameObject:
   m_ObjectHideFlags: 0

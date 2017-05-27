@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
+    GameObject textObject;
+    Text words;
 
     public float speed;
     public float rightX = 0.2f;
@@ -25,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        textObject = GameObject.Find("Text");
+        words = textObject.GetComponent<Text>();
+        
         if (background == null)
             background = GameObject.FindGameObjectWithTag("Background");
         anim = GetComponent<Animator>();
@@ -40,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (words.enabled == true){inDialog = true;}
+        if (words.enabled == false){inDialog = false;}
         if (!inDialog)
         {
 
