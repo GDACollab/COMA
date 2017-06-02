@@ -11,6 +11,7 @@ using System.Collections.Generic;
  * the first choice will correspond to the path1 tree.
  * If the player accepts a quest from a character, type "QUEST"
  * as the last box of that tree.
+ * Type BOSS as the last box of a tree to enter a boss battle after a conversation.
  * If the player denies a quest, or otherwise needs to restart the conversation,
  * type "RESET" as the last box of that tree.*/
 
@@ -36,6 +37,7 @@ public class makeText : MonoBehaviour
     static int i;
     static int j = 0;
     bool person;
+    string boss = "Starlet battle normal";
 
     // Use this for initialization
     void Start()
@@ -109,6 +111,9 @@ public class makeText : MonoBehaviour
                      * this.quest = 1;
                      * dialogue = waiting;
                      * }*/
+                    if (dialogue[i].CompareTo("BOSS") == 0){
+                        Angel.TransitionFromFieldToBattle(boss);
+                    }
                     if (dialogue[i].CompareTo("RESET") == 0)
                     {
                         dialogue = storage;

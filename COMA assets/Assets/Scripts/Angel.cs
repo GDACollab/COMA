@@ -53,4 +53,8 @@ public class Angel : MonoBehaviour
             transitionPos = new Vector2(-1.6f, -0.65f);
         }
     }
+    
+    /*public static void TransitionToEnd(){
+        SceneManager.LoadScene("Thanks");
+    }*/
 }

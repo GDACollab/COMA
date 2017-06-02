@@ -32,6 +32,10 @@ public class makeNote : MonoBehaviour
     {
         Angel.TransitionFromBattleToField();
     }
+    
+    /*void EndGame(){
+        Angel.TransitionToEnd();
+    }*/
 
     void MakerA()
     {

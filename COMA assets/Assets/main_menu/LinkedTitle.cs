@@ -139,6 +139,7 @@ public class LinkedTitle : MonoBehaviour {
 
 	void Update() {
 		checkInput();
+        Debug.Log(curr.getCurrObject());
 	}
 
 	private void checkInput () {
@@ -146,7 +147,7 @@ public class LinkedTitle : MonoBehaviour {
 			curr.nextObject();
 		} else if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown (KeyCode.UpArrow)) {
 			curr.prevObject();
-		} else if (Input.GetKeyDown (KeyCode.Return)) {
+		} else if (Input.GetKeyDown (KeyCode.Space)) {
 			curr = curr.selectChoice();
 		} else if (Input.GetKeyDown (KeyCode.Backspace)) {
 			curr = curr.prevLevel();
