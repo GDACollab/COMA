@@ -18,13 +18,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MotherZone/Toybox.unity
   - enabled: 0
-    path: Assets/Scenes/MotherZone/Home.unity
-  - enabled: 0
     path: Assets/Scenes/MotherZone/Greenhouse.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/main_menu/title.unity
   - enabled: 0
     path: Assets/Scenes/NEET Zone/Hallway.unity
+  - enabled: 0
+    path: Assets/Scenes/MotherZone/Home.unity
   - enabled: 0
     path: Assets/Scenes/NEET Zone/Crossroads.unity
   - enabled: 0
@@ -55,3 +55,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StarletZone/StarletsStage.unity
   - enabled: 1
     path: Assets/Scenes/Battle Scenes/Starlet battle normal.unity
+  - enabled: 1
+    path: Assets/Scenes/Thanks.unity
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Statty battle normal.unity

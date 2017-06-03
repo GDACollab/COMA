@@ -54,7 +54,7 @@ public class Angel : MonoBehaviour
         }
     }
     
-    /*public static void TransitionToEnd(){
+    public static void TransitionToEnd(){
         SceneManager.LoadScene("Thanks");
-    }*/
+    }
 }

@@ -27,11 +27,11 @@ public class contactK : MonoBehaviour {
             if ( missed == 0){
 				if (Vector3.Distance(this.transform.position, source.Kscore[source.top].transform.position) < 2.01){
 					source.kill ();
-					words.enabled = true;
+					//words.enabled = true;
 					words.text = "Good";
 				}else if (Vector3.Distance(this.transform.position, source.Kscore[source.top].transform.position)<2.1){
 					source.kill ();
-					words.enabled = true;
+					//words.enabled = true;
 					words.text = "Bad";
 					//lower health
 					//Health.hp -= 2.5f;
@@ -46,7 +46,7 @@ public class contactK : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		source.kill ();
 		missed = 0;
-		words.enabled = true;
+		//words.enabled = true;
 		words.text = "Miss";
 		//lower health a lot
 		Health.hp -= 2.5f;

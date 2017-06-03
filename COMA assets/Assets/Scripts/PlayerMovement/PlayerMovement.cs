@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
         //testing
         random_encounters.Add("Disconaut Battle Normal");
+        random_encounters.Add("Statty battle normal");
     }
 
     // Update is called once per frame
